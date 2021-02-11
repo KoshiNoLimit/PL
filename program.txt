@@ -1,0 +1,21 @@
+$EXTRN CARD , PROUT ;
+$ENTRY Go {
+            = <Prout <Word <Card >>>;
+          }
+
+Word {
+      e.1 ' ' e.2 = <Inverse e.1> ' ' <Word e.2>;
+      e.1         = <Inverse e.1>;
+     }
+
+Inverse {
+         s.a e.1 = <Inverse e.1> s.a;
+         e.1        = ;
+        }
+
+Answer {
+    e.1 ' ' e.2 s.a e.1 = <Prout 'Отлично!'>;
+    s.a e.1 e.1 ' ' e.2 = <Prout 'Очень жаль…'>;
+    'no' = <Prout 'Очень жаль…'>;
+    e.other = <Prout 'Некорректный ответ'>;
+}
