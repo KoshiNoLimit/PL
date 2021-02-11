@@ -3,6 +3,7 @@ from atom import *
 
 
 class PatternException(Exception):
+    """Образец не подходит для анализа"""
     def __init__(self, text):
         self.txt = text
 
