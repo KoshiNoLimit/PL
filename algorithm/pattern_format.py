@@ -1,5 +1,5 @@
 from collections import Counter
-from atom import *
+from algorithm.atom import *
 
 
 class PatternException(Exception):

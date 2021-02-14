@@ -4,12 +4,13 @@ class SubstitutionException(Exception):
 
 
 class Substitution:
-    def __init(self, const, pattern):
+    def __init__(self, const, pattern):
         self.const = const
         self.pattern = pattern
         self.t_dict = dict()
 
-    def algorithm(self, i_c, i_p):
+    def algorithm(self, i_c=0, i_p=0):
+        """Алгоритм сопосавления образца с константным выражением"""
 
         if self.pattern[i_p].type == 'e':
             if i_c == len(self.const) - 1:

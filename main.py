@@ -1,17 +1,11 @@
-from work_creator import funcs_from_file, samples_from_func
-from enclosure import *
-from pattern_format import PatternException
-funcs = funcs_from_file('program.txt')
+from work_creator import program_to_works
+from algorithm.enclosure import enclosure_check
+from tests import EnclosureTest, WorkCreatingTest
 
-funcs_samples = [samples_from_func(func) for func in funcs]
+en_test = EnclosureTest(enclosure_check)
+en_test.without_t()
+en_test.with_anchor_t()
+en_test.with_float_t()
 
-for func_samples in funcs_samples:
-
-    for i in range(len(func_samples)):
-        for j in range(i + 1, len(func_samples)):
-            try:
-                print('\033[32m' + func_samples[i] + ' \033[33m;\t' +
-                      '\033[32m' + func_samples[j] + ' \033[33m:\t' +
-                      '\033[30m' + str(enclosure(func_samples[i], func_samples[j])))
-            except PatternException as exception:
-                print(exception.txt)
+cr_test = WorkCreatingTest(program_to_works)
+cr_test.programs_to_works()

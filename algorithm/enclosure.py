@@ -1,6 +1,6 @@
-from atom import *
+from algorithm.atom import *
 import pattern_format as pf
-from substitution import algorithm as subs
+from substitution import Substitution
 
 
 def get_N(atoms):
@@ -44,8 +44,8 @@ def NePL_method(atoms1, atoms2):
 
     N = get_N(atoms1)
     q = get_Q(atoms2, N)
-
-    return subs(q, atoms1)
+    subs = Substitution(q, atoms1)
+    return subs.algorithm()
 
 
 def NePL_test(atoms1, atoms2):
@@ -77,10 +77,11 @@ def EPL_method(atoms1, atoms2):
     N = get_N(atoms1)
     q = get_Q(atoms2, N)
 
-    return subs(q, atoms1, N)
+    subs = Substitution(q, atoms1)
+    return subs.algorithm()
 
 
-def enclosure(p1, p2):
+def enclosure_check(p1, p2):
     """Алгоритм проверки вложения образцов"""
     atoms1, atoms2 = atomize_sample(p1), atomize_sample(p2)
 
