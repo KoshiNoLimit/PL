@@ -14,24 +14,39 @@ class EnclosureTest(unittest.TestCase):
 
     def without_t(self):
         """Проверка на образцах без t"""
-        examples = []
+        examples = [
+            Example(
+                ('e.Var',
+                 'Iamscreened'), True),
+            Example(
+                ('e.X A e.Y',
+                 'e.X'), False),
+        ]
         for ex in examples:
             with self.subTest(i=ex):
-                self.assertEqual(self.method(ex.ps[0], ex.ps[1]), ex.aswer)
+                self.assertEqual(self.method(ex.ps[0], ex.ps[1]), ex.answer, msg=ex.ps)
 
     def with_anchor_t(self):
         """Проверка на образцах с якорными t"""
-        examples = []
+        examples = [
+            Example(
+                ('t.x',
+                 'A'), True),
+        ]
         for ex in examples:
             with self.subTest(i=ex):
-                self.assertEqual(self.method(ex.ps[0], ex.ps[1]), ex.aswer)
+                self.assertEqual(self.method(ex.ps[0], ex.ps[1]), ex.answer, msg=ex.ps)
 
     def with_float_t(self):
         """Проверка на образцах с плавающими t"""
-        examples = []
+        examples = [
+            Example(
+                ('t.X1 e.Y1',
+                 'e.X2 t.Y2'), True),
+        ]
         for ex in examples:
             with self.subTest(i=ex):
-                self.assertEqual(self.method(ex.ps[0], ex.ps[1]), ex.aswer)
+                self.assertEqual(self.method(ex.ps[0], ex.ps[1]), ex.answer, msg=ex.ps)
 
 
 class WorkCreatingTest(unittest.TestCase):

@@ -5,43 +5,49 @@ class SubstitutionException(Exception):
 
 class Substitution:
     def __init__(self, const, pattern):
+        print('P&C', pattern, const)
         self.const = const
         self.pattern = pattern
         self.t_dict = dict()
 
     def algorithm(self, i_c=0, i_p=0):
         """Алгоритм сопосавления образца с константным выражением"""
-
+        if i_p == len(self.pattern):
+            if i_c == len(self.const):
+                return True
+            else:
+                return False
         if self.pattern[i_p].type == 'e':
-            if i_c == len(self.const) - 1:
+
+            if i_c == len(self.const):
                 return True
             return self.e(i_c, i_p)
 
         elif self.pattern[i_p].type == 'v':
-            if i_c == len(self.const) - 1:
+            if i_c == len(self.const):
                 return False
             return self.v(i_c, i_p)
 
         elif self.pattern[i_p].type == 't':
-            if i_c == len(self.const) - 1:
+            if i_c == len(self.const):
                 return False
             return self.t(i_c, i_p)
 
         elif self.pattern[i_p].type == 's':
-            if i_c == len(self.const) - 1:
+            if i_c == len(self.const):
                 return False
             return self.s(i_c, i_p)
 
-        raise SubstitutionException('Unknown atom type')
+        raise SubstitutionException('Unknown atom type: ' + self.pattern[i_p].type)
 
     def e(self, i_c, i_p):
-        for i in range(len(self.const) - i_c - 1, -1, -1):
+        for i in range(len(self.const) - i_c, -1, -1):
             if self.algorithm(i_c + i, i_p + 1):
                 return True
         return False
 
     def v(self, i_c, i_p):
-        for i in range(len(self.const) - i_c - 1, 0, -1):
+        for i in range(len(self.const) - i_c, 0, -1):
             if self.algorithm(i_c + i, i_p + 1):
                 return True
         return False

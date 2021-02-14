@@ -96,3 +96,27 @@ def is_linear(atoms):
             return False
         es.add(atom.val)
     return True
+
+
+def tfe_to_v(atoms):
+    atomsv = []
+    i = 0
+    while i < len(atoms):
+        if atoms[i].type == 'e':
+            if i < len(atoms) - 1:
+                if atoms[i+1].type == 'tf':
+                    atomsv.append(atoms[i])
+                    atomsv[-1].type = 'v'
+                    i += 1
+                if i < len(atoms) - 1 and atoms[i+1].type == 'e':
+                    i += 1
+        if atoms[i].type == 'tf':
+            if i < len(atoms) - 1 and atoms[i + 1].type == 'e':
+                atomsv.append(atoms[i])
+                atomsv[-1].type = 'v'
+                i += 1
+        else:
+            atomsv.append(atoms[i])
+        i += 1
+
+    return atomsv

@@ -1,13 +1,13 @@
 from algorithm.atom import *
-import pattern_format as pf
-from substitution import Substitution
+import algorithm.pattern_format as pf
+from algorithm.substitution import Substitution
 
 
 def get_N(atoms):
     """Поиск максимальной длины подслова из t"""
     N, temp_n = 0, 0
     for atom in atoms:
-        if atom.type == 't':
+        if atom.type in ('t', 'tf'):
             temp_n += 1
         else:
             N = max(N, temp_n)
@@ -34,15 +34,8 @@ def get_Q(atoms, N):
 
 
 def NePL_method(atoms1, atoms2):
-    atoms2v = []
-    for atom in atoms2:
-        if atom.type == 'e':
-            continue
-        if atom.type == 'tf':
-            atom.type = 'v'
-        atoms2v.append(atom)
-
     N = get_N(atoms1)
+    atoms1, atoms2 = pf.tfe_to_v(atoms1), pf.tfe_to_v(atoms2)
     q = get_Q(atoms2, N)
     subs = Substitution(q, atoms1)
     return subs.algorithm()
@@ -63,7 +56,7 @@ def NePL_test(atoms1, atoms2):
     t_free = set()
     t_splited = set()
     for atom in atoms1:
-        if atom.type == 't':
+        if atom.type in ('t', 'tf'):
             if atom.val in t_splited:
                 return False
             t_free.add(atom.val)
@@ -94,7 +87,9 @@ def enclosure_check(p1, p2):
             if not NePL_test(atoms1, atoms2):
                 raise pf.PatternException('Can\'t try NePL and EPL')
             atoms1, atoms2 = pf.normalize(atoms1), pf.normalize(atoms2)
+            print('Normalize', atoms1, atoms2)
             return NePL_method(atoms1, atoms2)
 
     atoms1, atoms2 = pf.normalize(atoms1), pf.normalize(atoms2)
+    print('Normalize', atoms1, atoms2)
     return EPL_method(atoms1, atoms2)
