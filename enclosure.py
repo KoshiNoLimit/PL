@@ -1,40 +1,6 @@
 from atom import *
 import pattern_format as pf
-
-
-def subs(const, pattern, N):
-    """Алгоритм сопоставления константного выражения с образцом"""
-    i = 0
-    t_dict = dict()
-    for atom in pattern:
-        try:
-            if atom.type in ('e', 'v'):
-                index = const[i][1:-1]
-                for j in range(N+1):
-                    if const[i] != 'A' + index + str(j):
-                        return False
-                    i += 1
-
-            elif atom.type == 't':
-                index = const[i][1:]
-                if atom.val in t_dict:
-                    if const[i] != 'B' + t_dict[atom.val]:
-                        return False
-                else:
-                    if const[i][0] != 'B':
-                        return False
-                    t_dict[atom.val] = index
-                i += 1
-
-            else:
-                if not const[i] == atom.val:
-                    return False
-                i += 1
-
-        except IndexError:
-            return False
-
-        return True
+from substitution import algorithm as subs
 
 
 def get_N(atoms):
@@ -79,7 +45,7 @@ def NePL_method(atoms1, atoms2):
     N = get_N(atoms1)
     q = get_Q(atoms2, N)
 
-    return subs(q, atoms1, N)
+    return subs(q, atoms1)
 
 
 def NePL_test(atoms1, atoms2):

@@ -4,18 +4,29 @@ $ENTRY Go {
           }
 
 Word {
-      e.1 ' ' e.2 = <Inverse e.1> ' ' <Word e.2>;
-      e.1         = <Inverse e.1>;
+      e.1 a e.2 = 1;
+      a         = 2;
+
      }
 
+FLoatingTVarTest {
+    t.X1 e.Y1 = 1;
+    e.X2 t.Y2 = 2;
+}
+
 Inverse {
-         s.a e.1 = <Inverse e.1> s.a;
-         e.1        = ;
+         s.a e.1 = 1;
+         e.1     = 2;
         }
 
 Answer {
-    e.1 ' ' e.2 s.a e.1 = <Prout 'Отлично!'>;
-    s.a e.1 e.1 ' ' e.2 = <Prout 'Очень жаль…'>;
-    'no' = <Prout 'Очень жаль…'>;
-    e.other = <Prout 'Некорректный ответ'>;
+    e.1 '' e.2 s.a = 1;
+    t.1 e.1 t.1 b e.2 = 2;
+    t.2 a t.1 b e.3 = 3;
+    e.other = 4;
+}
+
+EVarsTest {
+    e.X s.Y = 1;
+    s.Y e.X = 2;
 }
