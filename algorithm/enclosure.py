@@ -1,6 +1,6 @@
 from algorithm.atom import *
 import algorithm.pattern_format as pf
-from algorithm.substitution import Substitution
+from algorithm.substitution import Substitution, PToPSubstitution
 
 
 def get_N(atoms):
@@ -34,6 +34,8 @@ def get_Q(atoms, N):
 
 
 def NePL_method(atoms1, atoms2):
+    atoms1, atoms2 = pf.normalize(atoms1), pf.normalize(atoms2)
+
     N = get_N(atoms1)
     atoms1, atoms2 = pf.tfe_to_v(atoms1), pf.tfe_to_v(atoms2)
     q = get_Q(atoms2, N)
@@ -67,10 +69,18 @@ def NePL_test(atoms1, atoms2):
 
 
 def EPL_method(atoms1, atoms2):
+    atoms1, atoms2 = pf.normalize(atoms1), pf.normalize(atoms2)
+
     N = get_N(atoms1)
     q = get_Q(atoms2, N)
 
     subs = Substitution(q, atoms1)
+    return subs.algorithm()
+
+
+def not_linear_method(atoms1, atoms2):
+    """Метод для сопоставления образцов с кратными e-переменными"""
+    subs = PToPSubstitution(atoms1, atoms2)
     return subs.algorithm()
 
 
@@ -79,17 +89,14 @@ def enclosure_check(p1, p2):
     atoms1, atoms2 = atomize_sample(p1), atomize_sample(p2)
 
     if not pf.is_linear(atoms1) or not pf.is_linear(atoms2):
-        raise pf.PatternException('Not linear pattern')
+        return not_linear_method(atoms1, atoms2)
 
     if pf.t_exist(atoms1):
         fl1, fl2 = pf.t_float_exist(atoms1), pf.t_float_exist(atoms2)
         if fl1:
             if not NePL_test(atoms1, atoms2):
                 raise pf.PatternException('Can\'t try NePL and EPL')
-            atoms1, atoms2 = pf.normalize(atoms1), pf.normalize(atoms2)
-            print('Normalize', atoms1, atoms2)
+
             return NePL_method(atoms1, atoms2)
 
-    atoms1, atoms2 = pf.normalize(atoms1), pf.normalize(atoms2)
-    print('Normalize', atoms1, atoms2)
     return EPL_method(atoms1, atoms2)

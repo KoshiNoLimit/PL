@@ -5,7 +5,7 @@ class SubstitutionException(Exception):
 
 class Substitution:
     def __init__(self, const, pattern):
-        print('P&C', pattern, const)
+        # print('P&C', pattern, const)
         self.const = const
         self.pattern = pattern
         self.t_dict = dict()
@@ -17,8 +17,8 @@ class Substitution:
                 return True
             else:
                 return False
-        if self.pattern[i_p].type == 'e':
 
+        if self.pattern[i_p].type == 'e':
             if i_c == len(self.const):
                 return True
             return self.e(i_c, i_p)
@@ -63,4 +63,50 @@ class Substitution:
     def s(self, i_c, i_p):
         if self.const[i_c] == self.pattern[i_p].val:
             return self.algorithm(i_c + 1, i_p + 1)
+        return False
+
+
+class PToPSubstitution:
+    """Подстановка P в P"""
+    def __init__(self, p1, p2):
+        self.p1 = p1
+        self.p2 = p2
+        self.e_dict = dict()
+
+    def algorithm(self, i_p1=0, i_p2=0):
+        if i_p1 == len(self.p1):
+            if i_p2 == len(self.p2):
+                return True
+            else:
+                return False
+
+        if self.p1[i_p1].type == 'e':
+            if i_p2 == len(self.p2):
+                return True
+            return self.e(i_p1, i_p2)
+
+        elif self.p1[i_p1].type == 's':
+            if i_p2 == len(self.p2):
+                return False
+            return self.s(i_p1, i_p2)
+
+        raise SubstitutionException('Unknown atom type: ' + self.p1[i_p1].type)
+
+    def e(self, i_p1, i_p2):
+        if self.p1[i_p1].val in self.e_dict:
+            for atom in self.e_dict[self.p1[i_p1].val]:
+                if atom != self.p2[i_p2]:
+                    return False
+            return self.algorithm(i_p1 + 1, i_p2 + len(self.e_dict[self.p1[i_p1].val]))
+
+        else:
+            for i in range(len(self.p2) - i_p2, -1, -1):
+                self.e_dict[self.p1[i_p1].val] = self.p2[i_p2: i_p2+i]
+                if self.algorithm(i_p1 + 1, i_p2 + i):
+                    return True
+            return False
+
+    def s(self, i_p1, i_p2):
+        if self.p2[i_p2].val == self.p1[i_p1].val:
+            return self.algorithm(i_p1 + 1, i_p2 + 1)
         return False

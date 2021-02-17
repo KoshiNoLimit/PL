@@ -48,6 +48,17 @@ class EnclosureTest(unittest.TestCase):
             with self.subTest(i=ex):
                 self.assertEqual(self.method(ex.ps[0], ex.ps[1]), ex.answer, msg=ex.ps)
 
+    def not_linear(self):
+        """Проверка на нелинейных образцах"""
+        examples = [
+            Example(
+                ('e.Z e.Y e.Z',
+                 'e.X B B A B e.X B'), True),
+        ]
+        for ex in examples:
+            with self.subTest(i=ex):
+                self.assertEqual(self.method(ex.ps[0], ex.ps[1]), ex.answer, msg=ex.ps)
+
 
 class WorkCreatingTest(unittest.TestCase):
     """Проверка правильности нахождения образцов в коде программы"""
