@@ -82,7 +82,9 @@ class PToPSubstitution:
 
         if self.p1[i_p1].type == 'e':
             if i_p2 == len(self.p2):
-                return True
+                if self.p1[i_p1].val not in self.e_dict or len(self.e_dict[self.p1[i_p1].val]) == 0:
+                    return self.algorithm(i_p1+1, i_p2)
+                return False
             return self.e(i_p1, i_p2)
 
         elif self.p1[i_p1].type == 's':
@@ -102,8 +104,10 @@ class PToPSubstitution:
         else:
             for i in range(len(self.p2) - i_p2, -1, -1):
                 self.e_dict[self.p1[i_p1].val] = self.p2[i_p2: i_p2+i]
+                dict_copy = self.e_dict.copy()
                 if self.algorithm(i_p1 + 1, i_p2 + i):
                     return True
+                self.e_dict = dict_copy
             return False
 
     def s(self, i_p1, i_p2):

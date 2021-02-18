@@ -12,6 +12,11 @@ class EnclosureTest(unittest.TestCase):
         super().__init__()
         self.method = method
 
+    def work_tests(self, exs):
+        for ex in exs:
+            with self.subTest(i=ex):
+                self.assertEqual(self.method(ex.ps[0], ex.ps[1]), ex.answer, msg=ex.ps)
+
     def without_t(self):
         """Проверка на образцах без t"""
         examples = [
@@ -22,9 +27,7 @@ class EnclosureTest(unittest.TestCase):
                 ('e.X A e.Y',
                  'e.X'), False),
         ]
-        for ex in examples:
-            with self.subTest(i=ex):
-                self.assertEqual(self.method(ex.ps[0], ex.ps[1]), ex.answer, msg=ex.ps)
+        self.work_tests(examples)
 
     def with_anchor_t(self):
         """Проверка на образцах с якорными t"""
@@ -33,9 +36,7 @@ class EnclosureTest(unittest.TestCase):
                 ('t.x',
                  'A'), True),
         ]
-        for ex in examples:
-            with self.subTest(i=ex):
-                self.assertEqual(self.method(ex.ps[0], ex.ps[1]), ex.answer, msg=ex.ps)
+        self.work_tests(examples)
 
     def with_float_t(self):
         """Проверка на образцах с плавающими t"""
@@ -44,9 +45,7 @@ class EnclosureTest(unittest.TestCase):
                 ('t.X1 e.Y1',
                  'e.X2 t.Y2'), True),
         ]
-        for ex in examples:
-            with self.subTest(i=ex):
-                self.assertEqual(self.method(ex.ps[0], ex.ps[1]), ex.answer, msg=ex.ps)
+        self.work_tests(examples)
 
     def not_linear(self):
         """Проверка на нелинейных образцах"""
@@ -54,10 +53,17 @@ class EnclosureTest(unittest.TestCase):
             Example(
                 ('e.Z e.Y e.Z',
                  'e.X B B A B e.X B'), True),
+            Example(
+                ('e.1 e.2 e.2 e.1',
+                 'A B A'), False),
+            Example(
+                ('e.1 e.2 e.2 e.1',
+                 'e.1 e.2 e.1'), False),
+            Example(
+                ('e.1 e.2 e.2 e.1',
+                 'ABA'), False),
         ]
-        for ex in examples:
-            with self.subTest(i=ex):
-                self.assertEqual(self.method(ex.ps[0], ex.ps[1]), ex.answer, msg=ex.ps)
+        self.work_tests(examples)
 
 
 class WorkCreatingTest(unittest.TestCase):
