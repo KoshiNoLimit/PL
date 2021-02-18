@@ -22,7 +22,7 @@ class EnclosureTest(unittest.TestCase):
         examples = [
             Example(
                 ('e.Var',
-                 'Iamscreened'), True),
+                 'Iams c re en ed'), True),
             Example(
                 ('e.X A e.Y',
                  'e.X'), False),
@@ -44,6 +44,9 @@ class EnclosureTest(unittest.TestCase):
             Example(
                 ('t.X1 e.Y1',
                  'e.X2 t.Y2'), True),
+            Example(
+                ('e.x t.y1 t.y2',
+                 'A e.x B'), True)
         ]
         self.work_tests(examples)
 

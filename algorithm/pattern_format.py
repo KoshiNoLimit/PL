@@ -55,15 +55,31 @@ def t_exist(atoms):
 
 
 def t_float_exist(atoms):
+    for atom in atoms:
+        if atom.type == 'tf':
+            return True
+    return False
+
+
+def t_float_combine(atoms):
     """Проверка на наличие плавающих t-переменных"""
 
-    def test_neighbor(atoms, index, counter):
-        if atoms[index].type == 'e':
-            return False
-        elif atoms[index].type == 't' and counter[atoms[index].val] < 2:
-            return False
-        elif atoms[index].type == 'tf':
-            return False
+    def test_neighbors(atoms, index, counter):
+        i = index + 1
+        while i < len(atoms):
+            if (atoms[i].type == 't' and counter[atoms[i].val] > 1) or atoms[i].type == 's':
+                i = len(atoms)
+            elif atoms[i].type == 'e':
+                return False
+            i += 1
+
+        i = index - 1
+        while i >= 0:
+            if (atoms[i].type == 't' and counter[atoms[i].val] > 1) or atoms[i].type == 's':
+                i = -1
+            elif atoms[i].type == 'e':
+                return False
+            i -= 1
         return True
 
     t_counter = Counter()
@@ -77,14 +93,9 @@ def t_float_exist(atoms):
             if t_counter[atoms[i].val] > 1:
                 continue
             else:
-                if i > 0:
-                    if not test_neighbor(atoms, i - 1, t_counter):
-                        atoms[i].type = 'tf'
-                        result = True
-                if i < len(atoms) - 1:
-                    if not test_neighbor(atoms, i + 1, t_counter):
-                        atoms[i].type = 'tf'
-                        result = True
+                if not test_neighbors(atoms, i, t_counter):
+                    atoms[i].type = 'tf'
+                    result = True
     return result
 
 

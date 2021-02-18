@@ -13,7 +13,7 @@ class Atom:
             return 's'
 
     def __repr__(self):
-        return self.val
+        return self.type+'|'+self.val
 
     def __eq__(self, other):
         return self.val == other.val

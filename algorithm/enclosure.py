@@ -46,6 +46,8 @@ def NePL_method(atoms1, atoms2):
 def NePL_test(atoms1, atoms2):
     """Проверка на возможность применения NePL метода"""
     for atoms in (atoms1, atoms2):
+        if not pf.t_float_exist(atoms):
+            continue
         for i in range(len(atoms)):
             if atoms[i].type == 'e':
                 if i > 0 and atoms[i-1].type == 'tf':
@@ -92,7 +94,7 @@ def enclosure_check(p1, p2):
         return not_linear_method(atoms1, atoms2)
 
     if pf.t_exist(atoms1):
-        fl1, fl2 = pf.t_float_exist(atoms1), pf.t_float_exist(atoms2)
+        fl1, fl2 = pf.t_float_combine(atoms1), pf.t_float_combine(atoms2)
         if fl1:
             if not NePL_test(atoms1, atoms2):
                 raise pf.PatternException('Can\'t try NePL and EPL')
