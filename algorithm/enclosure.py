@@ -57,15 +57,15 @@ def NePL_test(atoms1, atoms2):
                 return False
 
     # Дополнительно требуем, чтобы повторные вхождения t в P1 не разделялись вхождением e-переменной
-    t_free = set()
-    t_splited = set()
-    for atom in atoms1:
-        if atom.type in ('t', 'tf'):
-            if atom.val in t_splited:
-                return False
-            t_free.add(atom.val)
-        elif atom.type == 'e':
-            t_splited.update(t_free)
+    # t_free = set()
+    # t_splited = set()
+    # for atom in atoms1:
+    #     if atom.type in ('t', 'tf'):
+    #         if atom.val in t_splited:
+    #             return False
+    #         t_free.add(atom.val)
+    #     elif atom.type == 'e':
+    #         t_splited.update(t_free)
 
     return True
 
@@ -97,7 +97,7 @@ def enclosure_check(p1, p2):
         fl1, fl2 = pf.t_float_combine(atoms1), pf.t_float_combine(atoms2)
         if fl1:
             if not NePL_test(atoms1, atoms2):
-                raise pf.PatternException('Can\'t try NePL and EPL')
+                raise pf.PatternException('Can\'t try NePL and EPL' + str(atoms1) + str(atoms2))
 
             return NePL_method(atoms1, atoms2)
 

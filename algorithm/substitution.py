@@ -20,6 +20,9 @@ class Substitution:
 
         if self.pattern[i_p].type == 'e':
             if i_c == len(self.const):
+                for i in range(i_p+1, len(self.pattern)):
+                    if self.pattern[i].type != 'e':
+                        return False
                 return True
             return self.e(i_c, i_p)
 
@@ -56,6 +59,8 @@ class Substitution:
         if self.pattern[i_p].val in self.t_dict:
             if self.const[i_c] != self.t_dict[self.pattern[i_p].val]:
                 return False
+            else:
+                return self.algorithm(i_c + 1, i_p + 1)
         else:
             self.t_dict[self.pattern[i_p].val] = self.const[i_c]
             return self.algorithm(i_c + 1, i_p + 1)

@@ -29,6 +29,24 @@ class EnclosureTest(unittest.TestCase):
         ]
         self.work_tests(examples)
 
+    def with_repeated_t(self):
+        """Проверка на образцах с кратными t-переменными"""
+        examples = [
+            Example(
+                ('t.1 A t.2 e.1 t.1',
+                 'e.1 AB e.2 A e.3'), False),
+            Example(
+                ('t.1 A t.2 e.1 t.1',
+                 'B A e.x t.3 A'), False),
+            Example(
+                ('t.1 A t.2 e.1 t.1',
+                 'B A e.x t.3 B'), True),
+            Example(
+                ('t.1 A t.2 e.1 t.1',
+                 'B A e.x t.3 B A'), False),
+        ]
+        self.work_tests(examples)
+
     def with_anchor_t(self):
         """Проверка на образцах с якорными t"""
         examples = [

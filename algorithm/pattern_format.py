@@ -62,7 +62,7 @@ def t_float_exist(atoms):
 
 
 def t_float_combine(atoms):
-    """Проверка на наличие плавающих t-переменных"""
+    """Обнаружение и маркировака плавающих t"""
 
     def test_neighbors(atoms, index, counter):
         i = index + 1
