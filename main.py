@@ -9,6 +9,7 @@ en_test.with_float_t()
 en_test.not_linear()
 en_test.with_repeated_t()
 en_test.with_s()
+en_test.with_repeated_s()
 
 # cr_test = WorkCreatingTest(program_to_works)
 # cr_test.programs_to_works()

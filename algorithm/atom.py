@@ -9,8 +9,8 @@ class Atom:
             return 'e'
         elif val.startswith('t.'):
             return 't'
-        elif val.startswith('c.'):
-            return 'c'
+        elif val.startswith('s.'):
+            return 's'
         else:
             return 'c'
 
