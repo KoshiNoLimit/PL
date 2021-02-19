@@ -36,7 +36,7 @@ class Substitution:
                 return False
             return self.t(i_c, i_p)
 
-        elif self.pattern[i_p].type == 's':
+        elif self.pattern[i_p].type == 'c':
             if i_c == len(self.const):
                 return False
             return self.s(i_c, i_p)
@@ -92,7 +92,7 @@ class PToPSubstitution:
                 return False
             return self.e(i_p1, i_p2)
 
-        elif self.p1[i_p1].type == 's':
+        elif self.p1[i_p1].type == 'c':
             if i_p2 == len(self.p2):
                 return False
             return self.s(i_p1, i_p2)

@@ -67,7 +67,7 @@ def t_float_combine(atoms):
     def test_neighbors(atoms, index, counter):
         i = index + 1
         while i < len(atoms):
-            if (atoms[i].type == 't' and counter[atoms[i].val] > 1) or atoms[i].type == 's':
+            if (atoms[i].type == 't' and counter[atoms[i].val] > 1) or atoms[i].type == 'c':
                 i = len(atoms)
             elif atoms[i].type == 'e':
                 return False
@@ -75,7 +75,7 @@ def t_float_combine(atoms):
 
         i = index - 1
         while i >= 0:
-            if (atoms[i].type == 't' and counter[atoms[i].val] > 1) or atoms[i].type == 's':
+            if (atoms[i].type == 't' and counter[atoms[i].val] > 1) or atoms[i].type == 'c':
                 i = -1
             elif atoms[i].type == 'e':
                 return False

@@ -10,7 +10,7 @@ class Atom:
         elif val.startswith('t.'):
             return 't'
         else:
-            return 's'
+            return 'c'
 
     def __repr__(self):
         return self.type+'|'+self.val
