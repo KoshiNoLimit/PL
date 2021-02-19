@@ -68,6 +68,21 @@ class EnclosureTest(unittest.TestCase):
         ]
         self.work_tests(examples)
 
+    def with_s(self):
+        """Проверка на образцах с s"""
+        examples = [
+            Example(
+                ('s.1 e.x s.2',
+                 's.6 s.5'), True),
+            Example(
+                ('s.1 s.2',
+                 'A B'), True),
+            Example(
+                ('e.x s.y',
+                 's.x. e.y'), False),
+        ]
+        self.work_tests(examples)
+
     def not_linear(self):
         """Проверка на нелинейных образцах"""
         examples = [

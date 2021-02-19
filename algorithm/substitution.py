@@ -4,6 +4,7 @@ class SubstitutionException(Exception):
 
 
 class Substitution:
+    """Подстановка константного выражения в P"""
     def __init__(self, const, pattern):
         # print('P&C', pattern, const)
         self.const = const
@@ -11,7 +12,6 @@ class Substitution:
         self.t_dict = dict()
 
     def algorithm(self, i_c=0, i_p=0):
-        """Алгоритм сопосавления образца с константным выражением"""
         if i_p == len(self.pattern):
             if i_c == len(self.const):
                 return True
@@ -39,9 +39,15 @@ class Substitution:
         elif self.pattern[i_p].type == 'c':
             if i_c == len(self.const):
                 return False
+            return self.c(i_c, i_p)
+
+        elif self.pattern[i_p].type == 's':
+            if i_c == len(self.const):
+                return False
             return self.s(i_c, i_p)
 
-        raise SubstitutionException('Unknown atom type: ' + self.pattern[i_p].type)
+        else:
+            raise SubstitutionException('Unknown atom type: ' + self.pattern[i_p].type)
 
     def e(self, i_c, i_p):
         for i in range(len(self.const) - i_c, -1, -1):
@@ -65,8 +71,13 @@ class Substitution:
             self.t_dict[self.pattern[i_p].val] = self.const[i_c]
             return self.algorithm(i_c + 1, i_p + 1)
 
-    def s(self, i_c, i_p):
+    def c(self, i_c, i_p):
         if self.const[i_c] == self.pattern[i_p].val:
+            return self.algorithm(i_c + 1, i_p + 1)
+        return False
+
+    def s(self, i_c, i_p):
+        if not (self.const[i_c].startswith('A.') or self.const[i_c].startswith('B.')):
             return self.algorithm(i_c + 1, i_p + 1)
         return False
 
@@ -95,6 +106,11 @@ class PToPSubstitution:
         elif self.p1[i_p1].type == 'c':
             if i_p2 == len(self.p2):
                 return False
+            return self.c(i_p1, i_p2)
+
+        elif self.p1[i_p1].type == 's':
+            if i_p2 == len(self.p2):
+                return False
             return self.s(i_p1, i_p2)
 
         raise SubstitutionException('Unknown atom type: ' + self.p1[i_p1].type)
@@ -115,7 +131,15 @@ class PToPSubstitution:
                 self.e_dict = dict_copy
             return False
 
-    def s(self, i_p1, i_p2):
+    def c(self, i_p1, i_p2):
         if self.p2[i_p2].val == self.p1[i_p1].val:
             return self.algorithm(i_p1 + 1, i_p2 + 1)
         return False
+
+    def s(self, i_p1, i_p2):
+        if self.p2[i_p2].type == 'c':
+            return self.algorithm(i_p1 + 1, i_p2 + 1)
+        if self.p2[i_p2].type == 's':
+            return self.algorithm(i_p1 + 1, i_p2 + 1)
+        else:
+            return False

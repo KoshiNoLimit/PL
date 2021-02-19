@@ -22,13 +22,19 @@ def get_Q(atoms, N):
 
         if atom.type == 'e' or atom.type == 'v':
             for i in range(N+1):
-                q.append('A'+atom.val[2:]+str(i))
+                q.append('A.'+atom.val[2:]+str(i))
 
         elif atom.type == 't':
-            q.append('B' + atom.val[2:])
+            q.append('B.' + atom.val[2:])
+
+        elif atom.type == 's':
+            q.append('C.' + atom.val[2:])
+
+        elif atom.type == 'c':
+            q.append(atom.val)
 
         else:
-            q.append(atom.val)
+            raise pf.PatternException('Unknown type: ' + atom.type)
 
     return q
 
