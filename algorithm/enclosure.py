@@ -40,10 +40,10 @@ def get_Q(atoms, N):
 
 
 def NePL_method(atoms1, atoms2):
-    atoms1, atoms2 = pf.normalize(atoms1), pf.normalize(atoms2)
+    atoms1 = pf.normalize(atoms1)
 
     N = get_N(atoms1)
-    atoms1, atoms2 = pf.tfe_to_v(atoms1), pf.tfe_to_v(atoms2)
+    atoms1 = pf.tfe_to_v(atoms1)
     q = get_Q(atoms2, N)
     subs = Substitution(q, atoms1)
     return subs.algorithm()
@@ -77,7 +77,7 @@ def NePL_test(atoms1, atoms2):
 
 
 def EPL_method(atoms1, atoms2):
-    atoms1, atoms2 = pf.normalize(atoms1), pf.normalize(atoms2)
+    atoms1 = pf.normalize(atoms1)
 
     N = get_N(atoms1)
     q = get_Q(atoms2, N)
@@ -100,10 +100,10 @@ def enclosure_check(p1, p2):
         return not_linear_method(atoms1, atoms2)
 
     if pf.t_exist(atoms1):
-        fl1, fl2 = pf.t_float_combine(atoms1), pf.t_float_combine(atoms2)
-        if fl1:
+        if pf.t_float_combine(atoms1):
             if not NePL_test(atoms1, atoms2):
-                raise pf.PatternException('Can\'t try NePL and EPL' + str(atoms1) + str(atoms2))
+                print("Algorithm wasn't learned to work with patterns like these")
+                return False
 
             return NePL_method(atoms1, atoms2)
 
