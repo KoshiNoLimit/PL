@@ -72,14 +72,29 @@ class EnclosureTest(unittest.TestCase):
         """Проверка на образцах с s"""
         examples = [
             Example(
-                ('s.1 e.x s.2',
-                 's.6 s.5'), True),
-            Example(
                 ('s.1 s.2',
                  'A B'), True),
             Example(
+                ('s.1 e.x s.2',
+                 's.6 s.5'), True),
+            Example(
                 ('e.x s.y',
                  's.x. e.y'), False),
+        ]
+        self.work_tests(examples)
+
+    def with_repeated_s(self):
+        """Проверка на образцах с s"""
+        examples = [
+            Example(
+                ('s.1 A s.1',
+                 'B A B'), True),
+            Example(
+                ('s.1 A s.1',
+                 'B A A'), False),
+            Example(
+                ('s.1 e.x s.1',
+                 's.3 A s.3'), True),
         ]
         self.work_tests(examples)
 
