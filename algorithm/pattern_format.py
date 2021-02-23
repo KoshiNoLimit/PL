@@ -110,6 +110,7 @@ def is_linear(atoms):
 
 
 def tfe_to_v(atoms):
+    """Замена пар (плавающая t, e) на v"""
     atomsv = []
     i = 0
     while i < len(atoms):
@@ -131,3 +132,27 @@ def tfe_to_v(atoms):
         i += 1
 
     return atomsv
+
+
+def s_to_c(p):
+    """Замена s на свежие константы"""
+    s_index = 0
+    s_dict = {}
+    for i in range(len(p)):
+        if p[i].type == 's':
+            if p[i] not in s_dict:
+                s_dict[p[i]] = 'C.' + str(s_index)
+                s_index += 1
+            p[i] = Atom(s_dict[p[i]])
+
+
+def get_N(p):
+    """Поиск максимальной длины подслова из t"""
+    N, temp_n = 0, 0
+    for atom in p:
+        if atom.type in ('t', 'tf'):
+            temp_n += 1
+        else:
+            N = max(N, temp_n)
+            temp_n = 0
+    return N

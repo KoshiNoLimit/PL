@@ -1,110 +1,139 @@
 from algorithm.atom import *
 import algorithm.pattern_format as pf
-from algorithm.substitution import Substitution, PToPSubstitution
+from algorithm.substitution import *
+from collections import Counter
 
 
-def get_N(atoms):
-    """Поиск максимальной длины подслова из t"""
-    N, temp_n = 0, 0
-    for atom in atoms:
-        if atom.type in ('t', 'tf'):
-            temp_n += 1
-        else:
-            N = max(N, temp_n)
-            temp_n = 0
-    return N
+def NePL_method(p1, p2):
+    p1 = pf.normalize(p1)
 
-
-def get_Q(atoms, N):
-    """Создание подстановки"""
-    q = []
-    for atom in atoms:
-
-        if atom.type == 'e' or atom.type == 'v':
-            for i in range(N+1):
-                q.append('A.'+atom.val[2:]+str(i))
-
-        elif atom.type == 't':
-            q.append('B.' + atom.val[2:])
-
-        elif atom.type == 's':
-            q.append('C.' + atom.val[2:])
-
-        elif atom.type == 'c':
-            q.append(atom.val)
-
-        else:
-            raise pf.PatternException('Unknown type: ' + atom.type)
-
-    return q
-
-
-def NePL_method(atoms1, atoms2):
-    atoms1 = pf.normalize(atoms1)
-
-    N = get_N(atoms1)
-    atoms1 = pf.tfe_to_v(atoms1)
-    q = get_Q(atoms2, N)
-    subs = Substitution(q, atoms1)
+    N = pf.get_N(p1)
+    p1 = pf.tfe_to_v(p1)
+    q = get_Q(p2, N)
+    subs = ConstSubstitution(q, p1)
     return subs.algorithm()
 
 
-def NePL_test(atoms1, atoms2):
+def NePL_test(p1, p2):
     """Проверка на возможность применения NePL метода"""
-    for atoms in (atoms1, atoms2):
-        if not pf.t_float_exist(atoms):
+    for p in (p1, p2):
+        if not pf.t_float_exist(p):
             continue
-        for i in range(len(atoms)):
-            if atoms[i].type == 'e':
-                if i > 0 and atoms[i-1].type == 'tf':
+        for i in range(len(p)):
+            if p[i].type == 'e':
+                if i > 0 and p[i - 1].type == 'tf':
                     continue
-                if i < len(atoms)-1 and atoms[i+1].type == 'tf':
+                if i < len(p) - 1 and p[i + 1].type == 'tf':
                     continue
                 return False
 
-    # Дополнительно требуем, чтобы повторные вхождения t в P1 не разделялись вхождением e-переменной
-    # t_free = set()
-    # t_splited = set()
-    # for atom in atoms1:
-    #     if atom.type in ('t', 'tf'):
-    #         if atom.val in t_splited:
-    #             return False
-    #         t_free.add(atom.val)
-    #     elif atom.type == 'e':
-    #         t_splited.update(t_free)
+    # Дополнительно требуем, чтобы повторные вхождения t и s в P1 не разделялись вхождением e-переменной
+    val_free = set()
+    val_splited = set()
+    for atom in p1:
+        if atom.type in ('t', 's'):
+            if atom.val in val_splited:
+                return False
+            val_free.add(atom.val)
+        elif atom.type == 'e':
+            val_splited.update(val_free)
 
     return True
 
 
-def EPL_method(atoms1, atoms2):
-    atoms1 = pf.normalize(atoms1)
+def EPL_method(p1, p2):
+    p1 = pf.normalize(p1)
 
-    N = get_N(atoms1)
-    q = get_Q(atoms2, N)
+    N = pf.get_N(p1)
+    q = get_Q(p2, N)
 
-    subs = Substitution(q, atoms1)
+    subs = ConstSubstitution(q, p1)
     return subs.algorithm()
 
 
-def not_linear_method(atoms1, atoms2):
+def not_linear_method(p1, p2):
     """Метод для сопоставления образцов с кратными e-переменными"""
-    subs = PToPSubstitution(atoms1, atoms2)
+    subs = PToPSubstitution(p1, p2)
     return subs.algorithm()
+
+
+def bruteforce_algorithm(p1, p2):
+    """Переборный алгоритм"""
+    pf.s_to_c(p2)
+    subs = SplitSubstitution(p1, p2, EPL_method).algorithm()
+
+    e_subs = set()
+    map(lambda sub: e_subs.update(TruncatedMap().algorithm(sub, p2)), subs)
+
+    for sub in e_subs:
+        for key, value in sub:
+            e_cnt, tf_cnt = 0, 0
+            for atom in value:
+                if atom.type == 'e':
+                    e_cnt += 1
+                elif atom.type == 'tf':
+                    tf_cnt += 1
+            sub[key] = (tf_cnt, bool(e_cnt))
+
+    map(lambda s: set(s.items()), e_subs)
+
+    fix_point = False
+    while not fix_point:
+        fix_point = True
+
+        for sub in e_subs:
+            for e in sub:
+                if e[1][0] == 0 and e[1][1]:
+                    fix_point = False
+                    sub.remove(e)
+
+        e_list = list(e_subs)
+        for i in range(len(e_subs)):
+            for j in range(i+1, len(e_subs)):
+                inner = list(e_list[i] ^ e_list[j])
+                if len(inner) == 2 and inner[0][0] == inner[1][0]:
+                    if inner[0][1][1] and inner[1][1][1]:
+                        fix_point = False
+                        new_set = e_list[i] & e_list[j]
+                        new_set.add((inner[0][0], (min(inner[0][1][0], inner[1][1][0]), True)))
+                        e_subs.remove(e_list[i])
+                        e_subs.remove(e_list[j])
+                        e_subs.add(new_set)
+
+        e_list = list(e_subs)
+        for i in range(len(e_subs)):
+            for j in range(i + 1, len(e_subs)):
+                inner = list(e_list[i] ^ e_list[j])
+                if len(inner) == 2 and inner[0][0] == inner[1][0]:
+                    if abs(inner[0][1][0] - inner[1][1][0]) == 1:
+                        if inner[0][1][0] > inner[1][1][0]:
+                            big, small = inner[0], inner[1]
+                        else:
+                            big, small = inner[1], inner[0]
+                        if big[1][1] and not small[1][1]:
+                            fix_point = False
+                            new_set = e_list[i] & e_list[j]
+                            new_set.add((inner[0][0], (small[1][0], True)))
+                            e_subs.remove(e_list[i])
+                            e_subs.remove(e_list[j])
+                            e_subs.add(new_set)
+
+    return e_subs == set(set())
 
 
 def enclosure_check(p1, p2):
     """Алгоритм проверки вложения образцов"""
-    atoms1, atoms2 = atomize_sample(p1), atomize_sample(p2)
+    p1, p2 = atomize_sample(p1), atomize_sample(p2)
 
-    if not pf.is_linear(atoms1) or not pf.is_linear(atoms2):
-        return not_linear_method(atoms1, atoms2)
+    if not pf.is_linear(p1) or not pf.is_linear(p2):
+        return not_linear_method(p1, p2)
 
-    if pf.t_exist(atoms1):
-        if pf.t_float_combine(atoms1):
-            if not NePL_test(atoms1, atoms2):
-                print("Algorithm wasn't learned to work with patterns like these")
-                return False
+    if pf.t_exist(p1):
+        if pf.t_float_combine(p1):
 
-            return NePL_method(atoms1, atoms2)
+            if NePL_test(p1, p2):
+                return NePL_method(p1, p2)
 
-    return EPL_method(atoms1, atoms2)
+            return bruteforce_algorithm(p1, p2)
+
+    return EPL_method(p1, p2)

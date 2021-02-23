@@ -1,9 +1,15 @@
+from algorithm.atom import Atom
+from collections import Counter
+import algorithm.pattern_format as pf
+from copy import deepcopy
+
+
 class SubstitutionException(Exception):
     def __init__(self, text):
         self.txt = text
 
 
-class Substitution:
+class ConstSubstitution:
     """Подстановка константного выражения в P"""
     def __init__(self, const, pattern):
         # print('P&C', pattern, const)
@@ -154,3 +160,206 @@ class PToPSubstitution:
                 self.val_dict[self.p1[i_p1].val] = self.p2[i_p2]
                 return self.algorithm(i_p1 + 1, i_p2 + 1)
             return False
+
+
+def get_Q(p, N):
+    """Создание подстановки"""
+    q = []
+    for atom in p:
+
+        if atom.type == 'e' or atom.type == 'v':
+            for i in range(N + 1):
+                q.append('A.' + atom.val[2:] + str(i))
+
+        elif atom.type == 't':
+            q.append('B.' + atom.val[2:])
+
+        elif atom.type == 's':
+            q.append('C.' + atom.val[2:])
+
+        elif atom.type == 'c':
+            q.append(atom.val)
+
+        else:
+            raise SubstitutionException('Unknown type: ' + atom.type)
+
+    return q
+
+
+class SplitSubstitution:
+    """Все возможные подстановки под повторяющиеся переменные"""
+    def __init__(self, p1, p2, EPL_method):
+        self.p1 = p1
+        self.p2 = p2
+        self.EPL_method = EPL_method
+        self.splited_vals = set()
+        val_free = set()
+        val_busy = set()
+
+        for atom in p1:
+            if atom.type in ('t', 's'):
+                if atom.val in val_busy:
+                    self.splited_vals.add(atom)
+                else:
+                    val_free.add(atom.val)
+            elif atom.type == 'e':
+                val_busy.update(val_free)
+
+    def algorithm(self):
+        p_1 = self.change_p1()
+        if not self.EPL_method(p_1, self.p2):
+            return []
+
+        count_index_values = [[] for _ in range(len(self.p2))]
+        repeated_vals = list(filter(lambda x: x[0] in self.splited_vals, Counter(self.p1).items()))
+        map(
+            lambda x: count_index_values[x[1]].append(x[0]),
+            Counter(self.p2).items())
+
+        qs = self.get_qs(repeated_vals=repeated_vals, count_index_values=count_index_values)
+        repeated_vals = [val[0] for val in repeated_vals]
+        map(lambda q: dict(zip(repeated_vals, q)), qs)
+
+        subs = []
+        for q in qs:
+            p_1 = self.p1.copy()
+            for i in range(len(p_1)):
+                p_1[i] = q.get(p_1[i], p_1[i])
+            subs.append(p_1)
+
+        return subs
+
+    def change_p1(self):
+        e_index = 0
+
+        for i in range(len(self.p1)):
+            if self.p1[i].type == 'e':
+                self.p1[i].val = 'e.' + str(e_index)
+                e_index += 1
+
+        p_1 = []
+        for atom in self.p1:
+            if atom in self.splited_vals:
+                p_1.append(Atom('e.' + str(e_index)))
+                e_index += 1
+                p_1.append(atom)
+                p_1.append(Atom('e.' + str(e_index)))
+                e_index += 1
+            else:
+                p_1.append(atom)
+
+        pf.t_float_combine(p_1)
+        return list(filter(lambda x: x.type != 'tf', p_1))
+
+    def get_qs(self, i_val=0, busy=None, repeated_vals=None, count_index_values=None):
+        if busy is None:
+            busy = set()
+        qs = []
+        atom, cnt = repeated_vals[i_val][0], repeated_vals[i_val][1]
+
+        for ls in count_index_values[cnt:]:
+            for val in ls:
+                if (val.type == 't' and atom.type != 't') or val in busy:
+                    continue
+
+                if i_val < len(repeated_vals) - 1:
+                    map(lambda q: qs.append([val] + q),
+                        self.get_qs(i_val + 1, set(val) | busy, repeated_vals, count_index_values))
+                else:
+                    qs.append([val])
+        return qs
+
+
+class TruncatedMap:
+    """Усеченное сопоставление с образцом"""
+    @staticmethod
+    def algorithm(p1, p2, i_p1=0, i_p2=0, e_dict=None):
+        subs = []
+
+        if len(p1) - i_p1 == 1 and p1[i_p1].type == 'e':
+            return [e_dict]
+
+        if i_p1 == len(p1):
+            for i in range(i_p2, len(p2)):
+                if p2[i_p2].type == 'e':
+                    e_dict[p2[i_p2]] = []
+                else:
+                    return []
+            return [e_dict]
+
+        if i_p2 == len(p2):
+            for i in range(i_p2, len(p2)):
+                if p2[i_p2].type != 'e':
+                    return []
+            return [e_dict]
+
+        if p2[i_p2].type == 'e':
+            if p1[i_p1].type == 'e':
+                subs.extend(TruncatedMap.step_1(p1, p2, i_p1, i_p2, deepcopy(e_dict)))
+
+                subs.extend(TruncatedMap.step_2(p1, p2, i_p1, i_p2, deepcopy(e_dict)))
+
+                subs.extend(TruncatedMap.step_3(p1, p2, i_p1, i_p2, deepcopy(e_dict)))
+
+                subs.extend(TruncatedMap.step_4(p1, p2, i_p1, i_p2, deepcopy(e_dict)))
+
+            elif p1[i_p1].type == 'tf':
+                subs.extend(TruncatedMap.step_1(p1, p2, i_p1, i_p2, deepcopy(e_dict)))
+
+                subs.extend(TruncatedMap.step_2(p1, p2, i_p1, i_p2, deepcopy(e_dict)))
+
+            elif p1[i_p1].type in ['t', 's', 'c']:
+                subs.extend(TruncatedMap.step_2(p1, p2, i_p1, i_p2, deepcopy(e_dict)))
+
+            else:
+                raise SubstitutionException('Unknown type of val' + p1[i_p1].type)
+
+        elif p2[i_p2].type in ('c', 't', 'tf') and p1[i_p1].type == 'e':
+            subs.extend(TruncatedMap.step_3(p1, p2, i_p1, i_p2, deepcopy(e_dict)))
+
+            subs.extend(TruncatedMap.step_4(p1, p2, i_p1, i_p2, deepcopy(e_dict)))
+
+        elif p2[i_p2].type == 'c' and p1[i_p1].type in ('s', 't', 'tf'):
+            subs.extend(TruncatedMap.step_5(p1, p2, i_p1, i_p2, deepcopy(e_dict)))
+
+        elif p2[i_p2].type in ('t', 'tf') and p1[i_p1].type in ('t', 'tf'):
+            subs.extend(TruncatedMap.step_5(p1, p2, i_p1, i_p2, deepcopy(e_dict)))
+
+        elif p2[i_p2] == p1[i_p1]:
+            subs.extend(TruncatedMap.step_6(p1, p2, i_p1, i_p2, deepcopy(e_dict)))
+
+        else:
+            return []
+
+        return subs
+
+    @staticmethod
+    def step_1(p1, p2, i_p1, i_p2, e_dict):
+        e_dict.setdefault(p2[i_p2], [])
+        e_dict[p2[i_p2]].append(p1[i_p1])
+        return TruncatedMap.algorithm(p1, p2, i_p1 + 1, i_p2, e_dict)
+
+    @staticmethod
+    def step_2(p1, p2, i_p1, i_p2, e_dict):
+        e_dict.setdefault(p2[i_p2], [])
+        return TruncatedMap.algorithm(p1, p2, i_p1, i_p2+1, e_dict)
+
+    @staticmethod
+    def step_3(p1, p2, i_p1, i_p2, e_dict):
+        return TruncatedMap.algorithm(p1, p2, i_p1+1, i_p2, e_dict)
+
+    @staticmethod
+    def step_4(p1, p2, i_p1, i_p2, e_dict):
+        return TruncatedMap.algorithm(p1, p2, i_p1, i_p2+1, e_dict)
+
+    @staticmethod
+    def step_5(p1, p2, i_p1, i_p2, e_dict):
+        p_1 = deepcopy(p1)
+        for i in range(len(p_1)):
+            if p_1[i] == p1[i_p1]:
+                p_1[i] = p2[i_p2]
+        return TruncatedMap.algorithm(p_1, p2, i_p1, i_p2+1, e_dict)
+
+    @staticmethod
+    def step_6(p1, p2, i_p1, i_p2, e_dict):
+        return TruncatedMap.algorithm(p1, p2, i_p1+1, i_p2+1, e_dict)
