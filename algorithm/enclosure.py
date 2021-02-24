@@ -2,9 +2,13 @@ from algorithm.atom import *
 import algorithm.pattern_format as pf
 from algorithm.substitution import *
 from collections import Counter
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
 
 
 def NePL_method(p1, p2):
+    logging.debug('NePL: ' + str(p1) + str(p2))
     p1 = pf.normalize(p1)
 
     N = pf.get_N(p1)
@@ -42,10 +46,12 @@ def NePL_test(p1, p2):
 
 
 def EPL_method(p1, p2):
+    logging.debug('EPL: ' + str(p1) + str(p2))
     p1 = pf.normalize(p1)
 
     N = pf.get_N(p1)
     q = get_Q(p2, N)
+    logging.debug(str(p1) + str(q))
 
     subs = ConstSubstitution(q, p1)
     return subs.algorithm()
@@ -53,72 +59,36 @@ def EPL_method(p1, p2):
 
 def not_linear_method(p1, p2):
     """Метод для сопоставления образцов с кратными e-переменными"""
+    logging.debug('NotLinear: ' + str(p1) + str(p2))
     subs = PToPSubstitution(p1, p2)
     return subs.algorithm()
 
 
 def bruteforce_algorithm(p1, p2):
     """Переборный алгоритм"""
+    e_cnt = pf.e_normalize(p2)
     pf.s_to_c(p2)
+    logging.debug('BF: ' + str(p1) + str(p2))
     subs = SplitSubstitution(p1, p2, EPL_method).algorithm()
+    logging.debug('SplitSubstitution: ' + str(subs))
+    if len(subs) == 0:
+        return False
 
-    e_subs = set()
-    map(lambda sub: e_subs.update(TruncatedMap().algorithm(sub, p2)), subs)
+    e_subs = []
+    for sub in subs:
+        e_subs.extend(TruncatedMap(e_cnt).algorithm(sub, p2))
+        logging.debug('\nTruncatedMap: ' + str(TruncatedMap(e_cnt).algorithm(sub, p2)))
 
-    for sub in e_subs:
-        for key, value in sub:
-            e_cnt, tf_cnt = 0, 0
-            for atom in value:
-                if atom.type == 'e':
-                    e_cnt += 1
-                elif atom.type == 'tf':
-                    tf_cnt += 1
-            sub[key] = (tf_cnt, bool(e_cnt))
+    subs_list = pf.get_subatom_sets(e_subs, e_cnt)
 
-    map(lambda s: set(s.items()), e_subs)
+    print('Sets of SubAtoms:', subs_list)
 
     fix_point = False
     while not fix_point:
-        fix_point = True
+        subs_list, fix_point = pf.subatom_simplification(subs_list)
 
-        for sub in e_subs:
-            for e in sub:
-                if e[1][0] == 0 and e[1][1]:
-                    fix_point = False
-                    sub.remove(e)
-
-        e_list = list(e_subs)
-        for i in range(len(e_subs)):
-            for j in range(i+1, len(e_subs)):
-                inner = list(e_list[i] ^ e_list[j])
-                if len(inner) == 2 and inner[0][0] == inner[1][0]:
-                    if inner[0][1][1] and inner[1][1][1]:
-                        fix_point = False
-                        new_set = e_list[i] & e_list[j]
-                        new_set.add((inner[0][0], (min(inner[0][1][0], inner[1][1][0]), True)))
-                        e_subs.remove(e_list[i])
-                        e_subs.remove(e_list[j])
-                        e_subs.add(new_set)
-
-        e_list = list(e_subs)
-        for i in range(len(e_subs)):
-            for j in range(i + 1, len(e_subs)):
-                inner = list(e_list[i] ^ e_list[j])
-                if len(inner) == 2 and inner[0][0] == inner[1][0]:
-                    if abs(inner[0][1][0] - inner[1][1][0]) == 1:
-                        if inner[0][1][0] > inner[1][1][0]:
-                            big, small = inner[0], inner[1]
-                        else:
-                            big, small = inner[1], inner[0]
-                        if big[1][1] and not small[1][1]:
-                            fix_point = False
-                            new_set = e_list[i] & e_list[j]
-                            new_set.add((inner[0][0], (small[1][0], True)))
-                            e_subs.remove(e_list[i])
-                            e_subs.remove(e_list[j])
-                            e_subs.add(new_set)
-
-    return e_subs == set(set())
+    print('Simplification: ', subs_list)
+    return set() in subs_list
 
 
 def enclosure_check(p1, p2):

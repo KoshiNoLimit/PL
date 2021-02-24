@@ -47,6 +47,16 @@ def normalize(atoms):
     return norm_atoms
 
 
+def e_normalize(p):
+    e_index = 0
+    for i in range(len(p)):
+        if p[i].type == 'e':
+            p[i].val = 'e.' + str(e_index)
+            e_index += 1
+
+    return e_index
+
+
 def t_exist(atoms):
     for atom in atoms:
         if atom.type == 't':
@@ -156,3 +166,57 @@ def get_N(p):
             N = max(N, temp_n)
             temp_n = 0
     return N
+
+
+def get_subatom_sets(subs, e_cnt):
+    """Подстановки под е –> Атомы-подстановки"""
+    subatom_sets = []
+    for sub in subs:
+        subatom_set = set()
+        for i in range(e_cnt):
+            e_exist, tf_cnt = False, 0
+            for atom in sub[i]:
+                if atom.type == 'e':
+                    e_exist = True
+                elif atom.type == 'tf':
+                    tf_cnt += 1
+            subatom_set.add(SubAtom('e.' + str(i), (tf_cnt, e_exist)))
+        subatom_sets.append(subatom_set)
+    return subatom_sets
+
+
+def subatom_simplification(subs_list):
+    """Упрощение условий на длины"""
+    fix_point = True
+
+    for sub in subs_list:
+        for subatom in sub:
+            if subatom.len == 0 and subatom.have_plus:
+                fix_point = False
+                sub.remove(subatom)
+
+    subs_set = set(map(lambda s: frozenset(s), subs_list))
+    for i in range(len(subs_list)):
+        for j in range(i + 1, len(subs_list)):
+            diff = list(subs_list[i] ^ subs_list[j])
+            if len(diff) == 2 and diff[0].have_plus and diff[0].have_plus:
+                fix_point = False
+                new_set = (subs_list[i] & subs_list[j])
+                new_set.add(SubAtom(diff[0].val, (min(diff[0].len, diff[1].len), diff[0].have_plus)))
+                subs_set.remove(subs_list[i])
+                subs_set.remove(subs_list[j])
+                subs_set.add(new_set)
+    subs_list = list(map(lambda fs: set(fs), subs_set))
+
+    for i in range(len(subs_list)):
+        for j in range(i + 1, len(subs_list)):
+            diff = sorted(list(subs_list[i] ^ subs_list[j]), key=lambda x: x.len)
+            if len(diff) == 2 and diff[0].len == diff[1].len-1 and diff[1].have_plus and not diff[0].have_plus:
+                fix_point = False
+                new_set = subs_list[i] & subs_list[j]
+                new_set.add(SubAtom(diff[0].val, (diff[0].len, True)))
+                subs_set.remove(subs_list[i])
+                subs_set.remove(subs_list[j])
+                subs_set.add(frozenset(new_set))
+
+    return list(map(lambda fs: set(fs), subs_set)), fix_point
