@@ -42,8 +42,8 @@ class EnclosureTest(unittest.TestCase):
                 ('e.y0 t.y e.y1 t.y1 t.y C e.y2',
                  'C A e.x1 A B C e.x2'), False),
             Example(
-                ('t.1 A t.2 e.1 t.1',
-                 'B A e.x t.3 B'), True),
+                ('t.1 A e.2 t.2 t.1',
+                 'B A t.x e.3 B'), True),
             Example(
                 ('t.1 A t.2 e.1 t.1',
                  'B A e.x t.3 B A'), False),

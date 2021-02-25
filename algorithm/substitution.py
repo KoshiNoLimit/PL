@@ -13,7 +13,6 @@ class SubstitutionException(Exception):
 class ConstSubstitution:
     """Подстановка константного выражения в P"""
     def __init__(self, const, pattern):
-        # print('P&C', pattern, const)
         self.const = const
         self.pattern = pattern
         self.val_dict = dict()
@@ -211,16 +210,16 @@ class SplitSubstitution:
     def algorithm(self):
         p_1 = self.change_p1()
         if not self.EPL_method(p_1, self.p2):
-            logging.debug('–––––EPL: ' + str(p_1))
+            #logging.debug('–––––EPL: ' + str(p_1))
             return []
 
         count_index_values = [[] for _ in range(len(self.p2))]
         repeated_vals = list(filter(lambda x: x[0] in self.splited_vals, Counter(self.p1).items()))
 
-        for item in Counter(self.p2).items():
+        for item in filter(lambda x: x[0].type == 'c', (Counter(self.p2)-Counter(self.p1)).items()):
             count_index_values[item[1]].append(item[0])
 
-        logging.debug('civ' + str(count_index_values))
+        #logging.debug('civ' + str(count_index_values))
 
         qs = self.get_qs(repeated_vals=repeated_vals, count_index_values=count_index_values)
         repeated_vals = [val[0] for val in repeated_vals]
@@ -292,23 +291,23 @@ class TruncatedMap:
 
     def algorithm(self, p1, p2, i_p1=0, i_p2=0, es=None):
         if es is None:
-            es = tuple([] for _ in range(self.e_cnt))
+            es = [[] for _ in range(self.e_cnt)]
         subs = set()
 
         if len(p1) - i_p1 == 1 and p1[i_p1].type == 'e':
-            return {tuple(map(lambda l: tuple(l), es)), }
+            return {tuple(map(lambda l: tuple(l) if l is not None else l, es)), }
 
         if i_p1 == len(p1):
             for i in range(i_p2, len(p2)):
-                if p2[i_p2].type != 'e':
+                if p2[i].type != 'e':
                     return {}
-            return {tuple(map(lambda l: tuple(l), es)), }
+            return {tuple(map(lambda l: tuple(l) if l is not None else l, es)), }
 
         if i_p2 == len(p2):
-            for i in range(i_p2, len(p2)):
-                if p2[i_p2].type != 'e':
+            for i in range(i_p1, len(p1)):
+                if p1[i].type != 'e':
                     return {}
-            return {tuple(map(lambda l: tuple(l), es)), }
+            return {tuple(map(lambda l: tuple(l) if l is not None else l, es)), }
 
         if p2[i_p2].type == 'e':
             if p1[i_p1].type == 'e':
@@ -357,7 +356,10 @@ class TruncatedMap:
 
     def step_4(self, p1, p2, i_p1, i_p2, es):
         if p2[i_p2].type == 'e':
-            es[int(p2[i_p2].val[2:])].append('None')
+            if len(es[int(p2[i_p2].val[2:])]) == 0:
+                es[int(p2[i_p2].val[2:])] = None
+            else:
+                return {}
         return self.algorithm(p1, p2, i_p1, i_p2 + 1, es)
 
     def step_5(self, p1, p2, i_p1, i_p2, es):

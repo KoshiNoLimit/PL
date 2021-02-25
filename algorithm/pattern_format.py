@@ -174,6 +174,9 @@ def get_subatom_sets(subs, e_cnt):
     for sub in subs:
         subatom_set = set()
         for i in range(e_cnt):
+            if sub[i] is None:
+                continue
+
             e_exist, tf_cnt = False, 0
             for atom in sub[i]:
                 if atom.type == 'e':
@@ -188,28 +191,44 @@ def get_subatom_sets(subs, e_cnt):
 def subatom_simplification(subs_list):
     """Упрощение условий на длины"""
     fix_point = True
+    subs_list = list(map(lambda fs: set(fs), set(map(lambda s: frozenset(s), subs_list))))
 
     for sub in subs_list:
-        for subatom in sub:
+        for subatom in sub.copy():
             if subatom.len == 0 and subatom.have_plus:
                 fix_point = False
                 sub.remove(subatom)
 
     subs_set = set(map(lambda s: frozenset(s), subs_list))
+    subs_list = list(map(lambda fs: set(fs), subs_set))
+    removed = set()
+
     for i in range(len(subs_list)):
+        if i in removed:
+            continue
         for j in range(i + 1, len(subs_list)):
+            if j in removed:
+                continue
             diff = list(subs_list[i] ^ subs_list[j])
             if len(diff) == 2 and diff[0].have_plus and diff[0].have_plus:
                 fix_point = False
-                new_set = (subs_list[i] & subs_list[j])
+                new_set = subs_list[i] & subs_list[j]
                 new_set.add(SubAtom(diff[0].val, (min(diff[0].len, diff[1].len), diff[0].have_plus)))
                 subs_set.remove(subs_list[i])
                 subs_set.remove(subs_list[j])
-                subs_set.add(new_set)
+                subs_set.add(frozenset(new_set))
+                removed.update([i, j])
+                break
+
     subs_list = list(map(lambda fs: set(fs), subs_set))
+    removed = set()
 
     for i in range(len(subs_list)):
+        if i in removed:
+            continue
         for j in range(i + 1, len(subs_list)):
+            if j in removed:
+                continue
             diff = sorted(list(subs_list[i] ^ subs_list[j]), key=lambda x: x.len)
             if len(diff) == 2 and diff[0].len == diff[1].len-1 and diff[1].have_plus and not diff[0].have_plus:
                 fix_point = False
@@ -218,5 +237,7 @@ def subatom_simplification(subs_list):
                 subs_set.remove(subs_list[i])
                 subs_set.remove(subs_list[j])
                 subs_set.add(frozenset(new_set))
+                removed.update([i, j])
+                break
 
     return list(map(lambda fs: set(fs), subs_set)), fix_point

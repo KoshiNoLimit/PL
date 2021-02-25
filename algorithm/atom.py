@@ -16,7 +16,7 @@ class Atom:
             return 'c'
 
     def __repr__(self):
-        return self.val  # +'|'+self.val
+        return self.val   #+'|'+self.type
 
     def __eq__(self, other):
         return self.val == other.val
@@ -33,7 +33,7 @@ class SubAtom:
         self.have_plus = power[1]
 
     def __repr__(self):
-        return self.val + ':' + str(self.len) + '+' if self.have_plus else ''
+        return self.val + ':' + str(self.len) + ('+' if self.have_plus else '')
 
     def __eq__(self, other):
         return \

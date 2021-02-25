@@ -69,17 +69,21 @@ def bruteforce_algorithm(p1, p2):
     e_cnt = pf.e_normalize(p2)
     pf.s_to_c(p2)
     logging.debug('BF: ' + str(p1) + str(p2))
-    subs = SplitSubstitution(p1, p2, EPL_method).algorithm()
-    logging.debug('SplitSubstitution: ' + str(subs))
-    if len(subs) == 0:
+    split_subs = SplitSubstitution(p1, p2, EPL_method).algorithm()
+    logging.debug('SplitSubstitution: ' + str(split_subs))
+    if len(split_subs) == 0:
         return False
 
     e_subs = []
-    for sub in subs:
+    for sub in split_subs:
         e_subs.extend(TruncatedMap(e_cnt).algorithm(sub, p2))
-        logging.debug('\nTruncatedMap: ' + str(TruncatedMap(e_cnt).algorithm(sub, p2)))
+
+    logging.debug('\nSubs of e: ' + str(e_subs))
 
     subs_list = pf.get_subatom_sets(e_subs, e_cnt)
+
+    # if set() in subs_list:
+    #     return True
 
     print('Sets of SubAtoms:', subs_list)
 
