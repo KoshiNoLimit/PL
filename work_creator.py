@@ -19,7 +19,8 @@ def program_to_works(program_path):
 
 
 def patters_from_func(func):
-    sentences = func.split('\n')[2:-1]
+    sentences = filter(lambda s: '=' in s,func.split('\n')[2:-1])
+
     samples = [s.split(' = ')[0].strip()[1:-1] for s in sentences]
     if not(2 <= len(samples) <= 10):
         raise Exception('Неподходящее кол-во предложений')
