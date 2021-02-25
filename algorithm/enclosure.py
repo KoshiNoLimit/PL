@@ -4,7 +4,7 @@ from algorithm.substitution import *
 from collections import Counter
 import logging
 
-logging.basicConfig(level=logging.DEBUG)
+#logging.basicConfig(level=logging.DEBUG)
 
 
 def NePL_method(p1, p2):

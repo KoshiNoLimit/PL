@@ -1,4 +1,6 @@
 import re
+from sys import argv
+from algorithm.enclosure import enclosure_check
 
 
 FUNC = re.compile('\n[a-zA-Z]+ \\{[^\\}]+\\}')
@@ -13,6 +15,7 @@ def program_to_works(program_path):
         for i in range(len(group)):
             for j in range(i+1, len(group)):
                 work_pairs.append((group[i], group[j]))
+    return work_pairs
 
 
 def patters_from_func(func):
@@ -24,3 +27,9 @@ def patters_from_func(func):
 def funcs_from_file(path):
     with open(path) as f:
         return FUNC.findall(f.read())
+
+
+if __name__ == '__main__':
+    works = program_to_works(argv[1])
+    for work in works:
+        print('[' + str(work[0]) + '] [' + str(work[1]) + '] : ' + str(enclosure_check(work[0], work[1])))
