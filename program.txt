@@ -3,9 +3,9 @@ $ENTRY Go {
             = <Prout <Word <Card >>>;
           }
 
-Word {
-      e.1 a e.2 = 1;
-      a         = 2;
+<Word> {
+      <e.1 a e.2> = <1>;
+      <a>         = <2>;
 
      }
 

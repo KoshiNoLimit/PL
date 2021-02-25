@@ -3,8 +3,8 @@ from sys import argv
 from algorithm.enclosure import enclosure_check
 
 
-FUNC = re.compile('\n[a-zA-Z]+ \\{[^\\}]+\\}')
-ATOM = re.compile('\'[^\']*\'')
+FUNC = re.compile('\n<[a-zA-Z]+> \\{[^\\}]+\\}')
+ATOM = re.compile('<\'[^\']*\'>')
 
 
 def program_to_works(program_path):
@@ -20,7 +20,7 @@ def program_to_works(program_path):
 
 def patters_from_func(func):
     sentences = func.split('\n')[2:-1]
-    samples = [s.split(' = ')[0].strip() for s in sentences]
+    samples = [s.split(' = ')[0].strip()[1:-1] for s in sentences]
     return samples
 
 
