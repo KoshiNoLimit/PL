@@ -73,25 +73,6 @@ def t_float_exist(atoms):
 
 def t_float_combine(atoms):
     """Обнаружение и маркировака плавающих t"""
-
-    def test_neighbors(atoms, index, counter):
-        i = index + 1
-        while i < len(atoms):
-            if (atoms[i].type == 't' and counter[atoms[i].val] > 1) or atoms[i].type in ['c', 'c']:
-                i = len(atoms)
-            elif atoms[i].type == 'e':
-                return False
-            i += 1
-
-        i = index - 1
-        while i >= 0:
-            if (atoms[i].type == 't' and counter[atoms[i].val] > 1) or atoms[i].type in ['c', 'c']:
-                i = -1
-            elif atoms[i].type == 'e':
-                return False
-            i -= 1
-        return True
-
     t_counter = Counter()
     for atom in atoms:
         if atom.type == 't':
@@ -103,10 +84,29 @@ def t_float_combine(atoms):
             if t_counter[atoms[i].val] > 1:
                 continue
             else:
-                if not test_neighbors(atoms, i, t_counter):
+                if not _test_neighbors(atoms, i, t_counter):
                     atoms[i].type = 'tf'
                     result = True
     return result
+
+
+def _test_neighbors(atoms, index, counter):
+    i = index + 1
+    while i < len(atoms):
+        if (atoms[i].type == 't' and counter[atoms[i].val] > 1) or atoms[i].type in ['c', 'c']:
+            i = len(atoms)
+        elif atoms[i].type == 'e':
+            return False
+        i += 1
+
+    i = index - 1
+    while i >= 0:
+        if (atoms[i].type == 't' and counter[atoms[i].val] > 1) or atoms[i].type in ['c', 'c']:
+            i = -1
+        elif atoms[i].type == 'e':
+            return False
+        i -= 1
+    return True
 
 
 def is_linear(atoms):
@@ -146,8 +146,7 @@ def tfe_to_v(atoms):
 
 def s_to_c(p):
     """Замена s на свежие константы"""
-    s_index = 0
-    s_dict = {}
+    s_index, s_dict = 0, {}
     for i in range(len(p)):
         if p[i].type == 's':
             if p[i] not in s_dict:
@@ -156,16 +155,43 @@ def s_to_c(p):
             p[i] = Atom(s_dict[p[i]])
 
 
-def get_N(p):
-    """Поиск максимальной длины подслова из t"""
-    N, temp_n = 0, 0
+def len_max_t_subword(p):
+    """Поиск максимальной длины подслова из _t"""
+    cnt, temp_cnt = 0, 0
     for atom in p:
         if atom.type in ('t', 'tf'):
-            temp_n += 1
+            temp_cnt += 1
         else:
-            N = max(N, temp_n)
-            temp_n = 0
-    return N
+            cnt = max(cnt, temp_cnt)
+            temp_cnt = 0
+    return cnt
+
+
+def NePL_test(p1, p2):
+    """Проверка на возможность применения NePL метода"""
+    for p in (p1, p2):
+        if not t_float_exist(p):
+            continue
+        for i in range(len(p)):
+            if p[i].type == 'e':
+                if i > 0 and p[i - 1].type == 'tf':
+                    continue
+                if i < len(p) - 1 and p[i + 1].type == 'tf':
+                    continue
+                return False
+
+    # Дополнительно требуем, чтобы повторные вхождения _t и _s в P1 не разделялись вхождением e-переменной
+    val_free = set()
+    val_splited = set()
+    for atom in p1:
+        if atom.type in ('t', 's'):
+            if atom.val in val_splited:
+                return False
+            val_free.add(atom.val)
+        elif atom.type == 'e':
+            val_splited.update(val_free)
+
+    return True
 
 
 def get_subatom_sets(subs, e_cnt):
@@ -176,14 +202,8 @@ def get_subatom_sets(subs, e_cnt):
         for i in range(e_cnt):
             if sub[i] is None:
                 continue
-
-            e_exist, tf_cnt = False, 0
-            for atom in sub[i]:
-                if atom.type == 'e':
-                    e_exist = True
-                elif atom.type == 'tf':
-                    tf_cnt += 1
-            subatom_set.add(SubAtom('e.' + str(i), (tf_cnt, e_exist)))
+            subatom_set.add(
+                SubAtom('e.'+str(i), sub[i], generate=True))
         subatom_sets.append(subatom_set)
     return subatom_sets
 
@@ -201,8 +221,8 @@ def subatom_simplification(subs_list):
 
     subs_set = set(map(lambda s: frozenset(s), subs_list))
     subs_list = list(map(lambda fs: set(fs), subs_set))
-    removed = set()
 
+    removed = set()
     for i in range(len(subs_list)):
         if i in removed:
             continue
@@ -221,8 +241,8 @@ def subatom_simplification(subs_list):
                 break
 
     subs_list = list(map(lambda fs: set(fs), subs_set))
-    removed = set()
 
+    removed = set()
     for i in range(len(subs_list)):
         if i in removed:
             continue

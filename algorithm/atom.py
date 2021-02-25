@@ -1,11 +1,12 @@
 class Atom:
+    """Элемент образца"""
 
     def __init__(self, val):
         self.val = val
-        self.type = self.get_type(val)
+        self.type = self._get_type(val)
 
     @staticmethod
-    def get_type(val):
+    def _get_type(val):
         if val.startswith('e.'):
             return 'e'
         elif val.startswith('t.'):
@@ -26,11 +27,25 @@ class Atom:
 
 
 class SubAtom:
+    """Атом-подстановка"""
 
-    def __init__(self, val, power):
+    def __init__(self, val, power, generate=False):
         self.val = val
-        self.len = power[0]
-        self.have_plus = power[1]
+        if generate:
+            self.len, self.have_plus = SubAtom._build(power)
+        else:
+            self.len = power[0]
+            self.have_plus = power[1]
+
+    @staticmethod
+    def _build(atoms):
+        e_exist, tf_cnt = False, 0
+        for atom in atoms:
+            if atom.type == 'e':
+                e_exist = True
+            elif atom.type == 'tf':
+                tf_cnt += 1
+        return tf_cnt, e_exist
 
     def __repr__(self):
         return self.val + ':' + str(self.len) + ('+' if self.have_plus else '')
