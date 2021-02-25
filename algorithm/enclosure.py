@@ -80,10 +80,16 @@ def bruteforce_algorithm(p1, p2):
 
     logging.debug('\nSubs of e: ' + str(e_subs))
 
-    subs_list = pf.get_subatom_sets(e_subs, e_cnt)
-
-    # if set() in subs_list:
+    # if set() in e_subs:
     #     return True
+
+    if len(e_subs) == 0:
+        for sub in split_subs:
+            if NePL_method(sub, p2):
+                return True
+        return False
+
+    subs_list = pf.get_subatom_sets(e_subs, e_cnt)
 
     print('Sets of SubAtoms:', subs_list)
 
