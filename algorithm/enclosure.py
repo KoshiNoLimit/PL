@@ -83,11 +83,11 @@ def bruteforce_method(p1, p2):
 
     subs_list = pf.get_subatom_sets(e_subs, e_cnt)
 
-    print('Sets of SubAtoms:', subs_list)
+    logging.debug('Sets of SubAtoms:', subs_list)
 
     fix_point = False
     while not fix_point:
         subs_list, fix_point = pf.subatom_simplification(subs_list)
 
-    print('Simplification: ', subs_list)
+    logging.debug('Simplification: ', subs_list)
     return set() in subs_list

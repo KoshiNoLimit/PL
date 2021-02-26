@@ -2,7 +2,6 @@ from algorithm.atom import Atom
 from collections import Counter
 import algorithm.pattern_format as pf
 from copy import deepcopy
-import logging
 
 
 class SubstitutionException(Exception):
@@ -224,7 +223,8 @@ class SplitSubstitution:
 
         for item in filter(lambda x: x[0].type == 'c', (Counter(self.p2) - Counter(self.p1)).items()):
             const_index_cnt[item[1]].append(item[0])
-
+        if len(repeated_vals) == 0:
+            return [deepcopy(self.p1)]
         consts = self._subs_splited(repeated_vals=repeated_vals, c_i_c=const_index_cnt)
         repeated_vals = [val[0] for val in repeated_vals]  # Отбросили количества повторов
         subs_to_splited_vals = list(map(lambda q: dict(zip(repeated_vals, q)), consts))
