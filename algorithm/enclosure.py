@@ -3,12 +3,13 @@ import algorithm.pattern_format as pf
 from algorithm.substitution import *
 import logging
 
-# logging.basicConfig(level=logging.DEBUG)
+#logging.basicConfig(level=logging.DEBUG)
 
 
 def enclosure_check(p1, p2):
     """Алгоритм проверки вложения образцов"""
     p1, p2 = atomize_sample(p1), atomize_sample(p2)
+    logging.debug('\033[34mTest: ' + str(p1) + str(p2) + '\033[37m')
 
     if not pf.is_linear(p1) or not pf.is_linear(p2):
         return not_linear_method(p1, p2)
@@ -43,7 +44,6 @@ def EPL_method(p1, p2):
 
     N = pf.len_max_t_subword(p1)
     q = ConstSubstitution.build(p2, N)
-    logging.debug(str(p1) + str(q))
 
     subs = ConstSubstitution(q, p1)
     return subs.algorithm()
@@ -62,6 +62,11 @@ def bruteforce_method(p1, p2):
     pf.s_to_c(p2)
     logging.debug('BruteForce: ' + str(p1) + str(p2))
     split_subs = SplitSubstitution(p1, p2, EPL_method).algorithm()
+    # for sub in split_subs:
+    #     if pf.NePL_test(sub, p2):
+    #         if NePL_method(sub, p2):
+    #             return True
+
     logging.debug('SplitSubstitution: ' + str(split_subs))
     if len(split_subs) == 0:
         return False
@@ -70,24 +75,21 @@ def bruteforce_method(p1, p2):
     for sub in split_subs:
         e_subs.extend(TruncatedMap(e_cnt).algorithm(sub, p2))
 
-    logging.debug('\nESubstitution: ' + str(e_subs))
+    logging.debug('\nESubstitution:\n' + '\n'.join(map(str, e_subs)))
 
     # if set() in e_subs:
     #     return True
 
-    if len(e_subs) == 0:
-        for sub in split_subs:
-            if NePL_method(sub, p2):
-                return True
-        return False
+    # if len(e_subs) == 0:
+    #     return False
 
     subs_list = pf.get_subatom_sets(e_subs, e_cnt)
 
-    logging.debug('Sets of SubAtoms:', subs_list)
+    logging.debug('Sets of SubAtoms:' + str(subs_list))
 
     fix_point = False
     while not fix_point:
         subs_list, fix_point = pf.subatom_simplification(subs_list)
 
-    logging.debug('Simplification: ', subs_list)
+    logging.debug('Simplification: ' + str(subs_list))
     return set() in subs_list

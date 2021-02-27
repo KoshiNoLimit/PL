@@ -2,6 +2,7 @@ from algorithm.atom import Atom
 from collections import Counter
 import algorithm.pattern_format as pf
 from copy import deepcopy
+import logging
 
 
 class SubstitutionException(Exception):
@@ -197,6 +198,7 @@ class SplitSubstitution:
         self.p2 = p2
         self.EPL_method = EPL_method
         self.splited_vals = self._find_splits()
+        logging.debug('Splited vals:' + str(self.splited_vals))
 
     def _find_splits(self):
         val_free = set()
@@ -221,7 +223,7 @@ class SplitSubstitution:
         const_index_cnt = [[] for _ in range(len(self.p2))]  # В [i] положим атомы-константы кратности i
         repeated_vals = list(filter(lambda x: x[0] in self.splited_vals, Counter(self.p1).items()))
 
-        for item in filter(lambda x: x[0].type == 'c', (Counter(self.p2) - Counter(self.p1)).items()):
+        for item in filter(lambda x: x[0].type in ('c', 't'), Counter(self.p2).items()):
             const_index_cnt[item[1]].append(item[0])
         if len(repeated_vals) == 0:
             return [deepcopy(self.p1)]
@@ -299,8 +301,8 @@ class TruncatedMap:
             es = [[] for _ in range(self.e_cnt)]
         subs = set()
 
-        if len(p1) - i_p1 == 1 and p1[i_p1].type == 'e':
-            return {tuple(map(lambda l: tuple(l) if l is not None else l, es)), }
+        # if len(p1) - i_p1 == 1 and p1[i_p1].type == 'e':
+        #     return {tuple(map(lambda l: tuple(l) if l is not None else l, es)), }
 
         if i_p1 == len(p1):
             for i in range(i_p2, len(p2)):
@@ -318,8 +320,8 @@ class TruncatedMap:
             if p1[i_p1].type == 'e':
                 subs.update(self._branch_1(p1, p2, i_p1, i_p2, deepcopy(es)))
                 subs.update(self._branch_2(p1, p2, i_p1, i_p2, deepcopy(es)))
-                subs.update(self._branch_3(p1, p2, i_p1, i_p2, deepcopy(es)))
-                subs.update(self._branch_4(p1, p2, i_p1, i_p2, deepcopy(es)))
+                # subs.update(self._branch_3(p1, p2, i_p1, i_p2, deepcopy(es)))
+                # subs.update(self._branch_4(p1, p2, i_p1, i_p2, deepcopy(es)))
 
             elif p1[i_p1].type == 'tf':
                 subs.update(self._branch_1(p1, p2, i_p1, i_p2, deepcopy(es)))

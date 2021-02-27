@@ -47,6 +47,9 @@ class EnclosureTest(unittest.TestCase):
             Example(
                 ('t.1 A t.2 e.1 t.1',
                  'B A e.x t.3 B A'), False),
+            Example(
+                ('e.1 t.x e.2 t.2 t.x e.3',
+                 'e.1 t.1 t.1 e.2 t.2 t.1 e.3'), True),
         ]
         self.work_tests(examples)
 
