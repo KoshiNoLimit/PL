@@ -63,5 +63,5 @@ class SubAtom:
 def atomize_sample(sample):
     if len(sample) == 0:
         return []
-    vals = sample.split(' ')
+    vals = filter(lambda val: val != '', sample.split(' '))
     return [Atom(val) for val in vals]

@@ -1,11 +1,31 @@
 from algorithm.enclosure import enclosure_check
-from tests import EnclosureTest
+from unit_tests import EnclosureTest
+from work_creator import program_to_works
+import logging
 
-en_test = EnclosureTest(enclosure_check)
-en_test.without_t()
-en_test.with_anchor_t()
-en_test.with_float_t()
-en_test.not_linear()
-en_test.with_s()
-en_test.with_repeated_s()
-en_test.with_repeated_t()
+
+logging.basicConfig(level=logging.INFO)
+
+
+def unit_tests_run():
+    en_test = EnclosureTest(enclosure_check)
+    en_test.without_t()
+    en_test.with_anchor_t()
+    en_test.with_float_t()
+    en_test.not_linear()
+    en_test.with_s()
+    en_test.with_repeated_s()
+    en_test.with_repeated_t()
+
+
+def code_tests_run():
+    refal_files = ['refal examples/test{}.ref'.format(i) for i in range(1, 11)]
+
+    for file in refal_files:
+        program_to_works(file)
+
+
+# unit_tests_run()
+code_tests_run()
+
+#print(enclosure_check('t.El e.Rest t.Other e.Next', 't.El e.Rest'))

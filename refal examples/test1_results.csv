@@ -1,0 +1,26 @@
+function,pattern1,pattern2,result
+IterEncode,s.Num s.Num,s.Num1 s.Num2,False
+GenBen,Start 'Insert' e.2,Start e.Other,False
+GenBen,Start 'Insert' e.2,t.Flag '(assert (x (str.++ 'e.LHS')'e.Blanks'(str.++'e.RHS')'e.Rest,False
+GenBen,Start 'Insert' e.2,SkipSmt e.Other,False
+GenBen,Start 'Insert' e.2,Entry e.Other,False
+GenBen,Start e.Other,t.Flag '(assert (x (str.++ 'e.LHS')'e.Blanks'(str.++'e.RHS')'e.Rest,False
+GenBen,Start e.Other,SkipSmt e.Other,False
+GenBen,Start e.Other,Entry e.Other,False
+GenBen,t.Flag '(assert (x (str.++ 'e.LHS')'e.Blanks'(str.++'e.RHS')'e.Rest,SkipSmt e.Other,False
+GenBen,t.Flag '(assert (x (str.++ 'e.LHS')'e.Blanks'(str.++'e.RHS')'e.Rest,Entry e.Other,False
+GenBen,SkipSmt e.Other,Entry e.Other,False
+CopyFile,e.1 0,e.1,False
+Conversion,' ' e.Rest,e.Rest ' ',False
+Conversion,' ' e.Rest,"'""'e.Str'""'e.Rest",False
+Conversion,' ' e.Rest,s.Letter e.Rest,False
+Conversion,' ' e.Rest,,False
+Conversion,e.Rest ' ',"'""'e.Str'""'e.Rest",False
+Conversion,e.Rest ' ',s.Letter e.Rest,False
+Conversion,e.Rest ' ',,False
+Conversion,"'""'e.Str'""'e.Rest",s.Letter e.Rest,False
+Conversion,"'""'e.Str'""'e.Rest",,False
+Conversion,s.Letter e.Rest,,False
+ConvertConst,' 'e.Other,s.Letter e.Other,False
+ConvertConst,' 'e.Other,,False
+ConvertConst,s.Letter e.Other,,False

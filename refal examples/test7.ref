@@ -1,0 +1,90 @@
+Even_0 {
+    <e.x1 '1' e.x2 e.x3 e.x4> = <RHS>;
+    <e.x1 e.x2 '1' e.x3 e.x4> = <RHS>;
+    <e.x1 e.x2 e.x3 '1' e.x4> = <RHS>;
+    <e.x1 'I0' e.x2 e.x3 e.x4> = <RHS>;
+    <e.x1 'I' e.x2 e.x3> = <RHS>;
+    <e.x1 e.x2 'I0' e.x3 e.x4> = <RHS>;
+    <e.x1 e.x2 '0' e.x3> = <RHS>;
+    <e.x1 e.x2 e.x3 'I0' e.x4> = <RHS>;
+    <e.x1 '0' e.x2 e.x3 e.x4> = <RHS>;
+    <e.x1 e.x2 e.x3> = <RHS>;
+}
+
+Even_1_0 {
+    <'II' e.x1 e.x2 e.x3 e.x4> = <RHS>;
+    <'I' 'I' e.x1 e.x2 e.x3> = <RHS>;
+    <'II' e.x1 e.x2 e.x3> = <RHS>;
+}
+
+Even_13_0 {
+    <'II' e.x1 e.x2 e.x3> = <RHS>;
+    <'I' 'I' e.x1 e.x2> = <RHS>;
+    <'I'  e.x1> = <RHS>;
+    <'II' e.x1 e.x2> = <RHS>;
+    <'I' e.x1> = <RHS>;
+    <'I' e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Even_13_1 {
+    <'II' e.x1 e.x2> = <RHS>;
+    <'I' e.x1> = <RHS>;
+    <'I' e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Even_123_0 {
+    <'II' e.x1> = <RHS>;
+    <> = <RHS>;
+    <'I'> = <RHS>;
+}
+
+Even_123_1 {
+    <'II' e.x1> = <RHS>;
+    <> = <RHS>;
+    <'I'> = <RHS>;
+}
+
+Even_123_2 {
+    <'II' e.x1> = <RHS>;
+    <> = <RHS>;
+    <'I'> = <RHS>;
+}
+
+Even_123_3 {
+    <'II' e.x1> = <RHS>;
+    <> = <RHS>;
+    <'I'> = <RHS>;
+}
+
+Even_123_4 {
+    <'II' e.x1> = <RHS>;
+    <> = <RHS>;
+    <'I'> = <RHS>;
+}
+
+Even_123_5 {
+    <'II' e.x1> = <RHS>;
+    <> = <RHS>;
+    <'I'> = <RHS>;
+}
+
+Even_13_2 {
+    <'II' e.x1 e.x2> = <RHS>;
+    <'I' e.x1> = <RHS>;
+    <'I' e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Even_123_6 {
+    <'II' e.x1> = <RHS>;
+    <> = <RHS>;
+    <'I'> = <RHS>;
+}
+
+Even_1 {
+    <e.x1> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+}
+

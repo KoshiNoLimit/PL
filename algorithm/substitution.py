@@ -89,7 +89,10 @@ class ConstSubstitution:
         return False
 
     def _v(self, i_c, i_p):
-        for i in range(len(self.const) - i_c, 0, -1):
+        vi = 0
+        while i_c + vi < len(self.const) and self.const[i_c+vi].startswith('A.'):
+            vi += 1
+        for i in range(len(self.const) - i_c, vi, -1):
             if self.algorithm(i_c + i, i_p + 1):
                 return True
         return False
@@ -216,6 +219,8 @@ class SplitSubstitution:
         return splited_vals
 
     def algorithm(self):
+        if len(self.splited_vals) == 0:
+            return [self.p1.copy(), ]
         p_1 = self._change_p1()
         if not self.EPL_method(p_1, self.p2):
             return []

@@ -1,0 +1,714 @@
+InputFormat_0 {
+    <'AAB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_0 {
+    <e.x1 'AAB' e.x2 e.x3> = <RHS>;
+    <e.x1 'A' 'B' e.x2> = <RHS>;
+    <e.x1  'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2 e.x3> = <RHS>;
+    <e.x1  e.x2> = <RHS>;
+}
+
+Check_1 {
+    <e.x1 e.x2 'AAB' e.x3> = <RHS>;
+    <e.x1 e.x2 s.z1 e.x3> = <RHS>;
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_2 {
+    <e.x1 'AB' e.x2 e.x3> = <RHS>;
+    <e.x1  'B' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2 e.x3> = <RHS>;
+    <e.x1  e.x2> = <RHS>;
+}
+
+Check_3 {
+    <e.x1 'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_0 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_4 {
+    <e.x1 e.x2 'AB' e.x3> = <RHS>;
+    <e.x1 e.x2 s.z1 e.x3> = <RHS>;
+    <e.x1 e.x2> = <RHS>;
+}
+
+Check_12_0 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_1 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_5 {
+    <e.x1 'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_2 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_6 {
+    <s.z1 e.x1 'AB' e.x2 e.x3> = <RHS>;
+    <s.z1 e.x1  'B' e.x2> = <RHS>;
+    <s.z1 e.x1 s.z2 e.x2 e.x3> = <RHS>;
+    <s.z1 e.x1  e.x2> = <RHS>;
+}
+
+Check_7 {
+    <s.z1 e.x1 'AB' e.x2> = <RHS>;
+    <s.z1 e.x1 s.z2 e.x2> = <RHS>;
+    <'A' 'B' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+}
+
+Check_123_3 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_8 {
+    <s.z1 e.x1 e.x2 'AB' e.x3> = <RHS>;
+    <s.z1 e.x1 e.x2 s.z2 e.x3> = <RHS>;
+    <'A' 'B' e.x1 e.x2> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+}
+
+Check_12_1 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_4 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_9 {
+    <e.x1 'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_5 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_10 {
+    <e.x1 'AAB' e.x2 e.x3 e.x4> = <RHS>;
+    <e.x1 'A' 'B' e.x2 e.x3> = <RHS>;
+    <e.x1  'AB' e.x2 e.x3> = <RHS>;
+    <e.x1   'B' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2 e.x3 e.x4> = <RHS>;
+    <e.x1  e.x2 e.x3> = <RHS>;
+}
+
+Check_11 {
+    <e.x1 'AAB' e.x2 e.x3> = <RHS>;
+    <e.x1 'A' 'B' e.x2> = <RHS>;
+    <e.x1  'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2 e.x3> = <RHS>;
+    <e.x1  e.x2> = <RHS>;
+}
+
+Check_12 {
+    <e.x1 e.x2 'AAB' e.x3> = <RHS>;
+    <e.x1 e.x2 s.z1 e.x3> = <RHS>;
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_13 {
+    <e.x1 'AB' e.x2 e.x3> = <RHS>;
+    <e.x1  'B' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2 e.x3> = <RHS>;
+    <e.x1  e.x2> = <RHS>;
+}
+
+Check_14 {
+    <e.x1 'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_6 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_15 {
+    <e.x1 e.x2 'AB' e.x3> = <RHS>;
+    <e.x1 e.x2 s.z1 e.x3> = <RHS>;
+    <e.x1 e.x2> = <RHS>;
+}
+
+Check_12_2 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_7 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_16 {
+    <e.x1 'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_8 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_17 {
+    <s.z1 e.x1 'AB' e.x2 e.x3> = <RHS>;
+    <s.z1 e.x1  'B' e.x2> = <RHS>;
+    <s.z1 e.x1 s.z2 e.x2 e.x3> = <RHS>;
+    <s.z1 e.x1  e.x2> = <RHS>;
+}
+
+Check_18 {
+    <s.z1 e.x1 'AB' e.x2> = <RHS>;
+    <s.z1 e.x1 s.z2 e.x2> = <RHS>;
+    <'A' 'B' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+}
+
+Check_123_9 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_19 {
+    <s.z1 e.x1 e.x2 'AB' e.x3> = <RHS>;
+    <s.z1 e.x1 e.x2 s.z2 e.x3> = <RHS>;
+    <'A' 'B' e.x1 e.x2> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+}
+
+Check_12_3 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_10 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_20 {
+    <e.x1 'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_11 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_21 {
+    <e.x1 e.x2 'AAB' e.x3 e.x4> = <RHS>;
+    <e.x1 e.x2 'A' 'B' e.x3> = <RHS>;
+    <e.x1 e.x2  'AB' e.x3> = <RHS>;
+    <e.x1 e.x2 s.z1 e.x3 e.x4> = <RHS>;
+    <e.x1 e.x2  e.x3> = <RHS>;
+}
+
+Check_22 {
+    <e.x1 e.x2 e.x3 'AAB' e.x4> = <RHS>;
+    <e.x1 e.x2 e.x3 s.z1 e.x4> = <RHS>;
+    <'AB' e.x1 e.x2 e.x3> = <RHS>;
+    <'B' e.x1 e.x2> = <RHS>;
+    <s.z1 e.x1 e.x2 e.x3> = <RHS>;
+    <e.x1 e.x2> = <RHS>;
+}
+
+Check_23 {
+    <e.x1 'AB' e.x2 e.x3 e.x4> = <RHS>;
+    <e.x1  'B' e.x2 e.x3> = <RHS>;
+    <e.x1 s.z1 e.x2 e.x3 e.x4> = <RHS>;
+    <e.x1  e.x2 e.x3> = <RHS>;
+}
+
+Check_24 {
+    <e.x1 'AB' e.x2 e.x3> = <RHS>;
+    <e.x1  'B' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2 e.x3> = <RHS>;
+    <e.x1  e.x2> = <RHS>;
+}
+
+Check_25 {
+    <e.x1 'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_12 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_26 {
+    <e.x1 e.x2 'AB' e.x3> = <RHS>;
+    <e.x1 e.x2 s.z1 e.x3> = <RHS>;
+    <e.x1 e.x2> = <RHS>;
+}
+
+Check_12_4 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_13 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_27 {
+    <e.x1 e.x2 'AB' e.x3 e.x4> = <RHS>;
+    <e.x1 e.x2  'B' e.x3> = <RHS>;
+    <e.x1 e.x2 s.z1 e.x3 e.x4> = <RHS>;
+    <e.x1 e.x2  e.x3> = <RHS>;
+}
+
+Check_28 {
+    <e.x1 e.x2 'AB' e.x3> = <RHS>;
+    <e.x1 e.x2 s.z1 e.x3> = <RHS>;
+    <e.x1 e.x2> = <RHS>;
+}
+
+Check_12_5 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_14 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_29 {
+    <e.x1 e.x2 e.x3 'AB' e.x4> = <RHS>;
+    <e.x1 e.x2 e.x3 s.z1 e.x4> = <RHS>;
+    <e.x1 e.x2 e.x3> = <RHS>;
+}
+
+Check_12_6 {
+    <'AB' e.x1 e.x2 e.x3> = <RHS>;
+    <'B' e.x1 e.x2> = <RHS>;
+    <s.z1 e.x1 e.x2 e.x3> = <RHS>;
+    <e.x1 e.x2> = <RHS>;
+}
+
+Check_12_7 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_15 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_30 {
+    <e.x1 'AB' e.x2 e.x3> = <RHS>;
+    <e.x1  'B' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2 e.x3> = <RHS>;
+    <e.x1  e.x2> = <RHS>;
+}
+
+Check_31 {
+    <e.x1 'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_16 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_32 {
+    <e.x1 e.x2 'AB' e.x3> = <RHS>;
+    <e.x1 e.x2 s.z1 e.x3> = <RHS>;
+    <e.x1 e.x2> = <RHS>;
+}
+
+Check_12_8 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_17 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_33 {
+    <s.z1 e.x1 'AB' e.x2 e.x3 e.x4> = <RHS>;
+    <s.z1 e.x1  'B' e.x2 e.x3> = <RHS>;
+    <s.z1 e.x1 s.z2 e.x2 e.x3 e.x4> = <RHS>;
+    <s.z1 e.x1  e.x2 e.x3> = <RHS>;
+}
+
+Check_34 {
+    <s.z1 e.x1 'AB' e.x2 e.x3> = <RHS>;
+    <s.z1 e.x1  'B' e.x2> = <RHS>;
+    <s.z1 e.x1 s.z2 e.x2 e.x3> = <RHS>;
+    <s.z1 e.x1  e.x2> = <RHS>;
+}
+
+Check_35 {
+    <s.z1 e.x1 'AB' e.x2> = <RHS>;
+    <s.z1 e.x1 s.z2 e.x2> = <RHS>;
+    <'A' 'B' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+}
+
+Check_123_18 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_36 {
+    <s.z1 e.x1 e.x2 'AB' e.x3> = <RHS>;
+    <s.z1 e.x1 e.x2 s.z2 e.x3> = <RHS>;
+    <'A' 'B' e.x1 e.x2> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+}
+
+Check_12_9 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_19 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_37 {
+    <s.z1 e.x1 e.x2 'AB' e.x3 e.x4> = <RHS>;
+    <s.z1 e.x1 e.x2  'B' e.x3> = <RHS>;
+    <s.z1 e.x1 e.x2 s.z2 e.x3 e.x4> = <RHS>;
+    <s.z1 e.x1 e.x2  e.x3> = <RHS>;
+}
+
+Check_38 {
+    <s.z1 e.x1 e.x2 'AB' e.x3> = <RHS>;
+    <s.z1 e.x1 e.x2 s.z2 e.x3> = <RHS>;
+    <'A' 'B' e.x1 e.x2> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+}
+
+Check_12_10 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_20 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_39 {
+    <s.z1 e.x1 e.x2 e.x3 'AB' e.x4> = <RHS>;
+    <s.z1 e.x1 e.x2 e.x3 s.z2 e.x4> = <RHS>;
+    <'A' 'B' e.x1 e.x2 e.x3> = <RHS>;
+    <s.z1 e.x1 e.x2 e.x3> = <RHS>;
+}
+
+Check_12_11 {
+    <'AB' e.x1 e.x2 e.x3> = <RHS>;
+    <'B' e.x1 e.x2> = <RHS>;
+    <s.z1 e.x1 e.x2 e.x3> = <RHS>;
+    <e.x1 e.x2> = <RHS>;
+}
+
+Check_12_12 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_21 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_40 {
+    <e.x1 'AB' e.x2 e.x3> = <RHS>;
+    <e.x1  'B' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2 e.x3> = <RHS>;
+    <e.x1  e.x2> = <RHS>;
+}
+
+Check_41 {
+    <e.x1 'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_22 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_42 {
+    <e.x1 e.x2 'AB' e.x3> = <RHS>;
+    <e.x1 e.x2 s.z1 e.x3> = <RHS>;
+    <'B' e.x1 e.x2> = <RHS>;
+    <e.x1 e.x2> = <RHS>;
+}
+
+Check_12_13 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_23 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_43 {
+    <e.x1 'AAB' e.x2 e.x3> = <RHS>;
+    <e.x1 'A' 'B' e.x2> = <RHS>;
+    <e.x1  'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2 e.x3> = <RHS>;
+    <e.x1  e.x2> = <RHS>;
+}
+
+Check_44 {
+    <e.x1 e.x2 'AAB' e.x3> = <RHS>;
+    <e.x1 e.x2 s.z1 e.x3> = <RHS>;
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_45 {
+    <e.x1 'AB' e.x2 e.x3> = <RHS>;
+    <e.x1  'B' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2 e.x3> = <RHS>;
+    <e.x1  e.x2> = <RHS>;
+}
+
+Check_46 {
+    <e.x1 'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_24 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_47 {
+    <e.x1 e.x2 'AB' e.x3> = <RHS>;
+    <e.x1 e.x2 s.z1 e.x3> = <RHS>;
+    <e.x1 e.x2> = <RHS>;
+}
+
+Check_12_14 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_25 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_48 {
+    <e.x1 'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_26 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_49 {
+    <s.z1 e.x1 'AB' e.x2 e.x3> = <RHS>;
+    <s.z1 e.x1  'B' e.x2> = <RHS>;
+    <s.z1 e.x1 s.z2 e.x2 e.x3> = <RHS>;
+    <s.z1 e.x1  e.x2> = <RHS>;
+}
+
+Check_50 {
+    <s.z1 e.x1 'AB' e.x2> = <RHS>;
+    <s.z1 e.x1 s.z2 e.x2> = <RHS>;
+    <'A' 'B' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+}
+
+Check_123_27 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_51 {
+    <s.z1 e.x1 e.x2 'AB' e.x3> = <RHS>;
+    <s.z1 e.x1 e.x2 s.z2 e.x3> = <RHS>;
+    <'A' 'B' e.x1 e.x2> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+}
+
+Check_123_28 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_52 {
+    <e.x1 'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_29 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_53 {
+    <'A' 'AB' e.x1 e.x2> = <RHS>;
+    <'A'  'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+}
+
+Check_54 {
+    <s.z1 e.x1 'AAB' e.x2 e.x3> = <RHS>;
+    <s.z1 e.x1 'A' 'B' e.x2> = <RHS>;
+    <s.z1 e.x1  'AB' e.x2> = <RHS>;
+    <s.z1 e.x1 s.z2 e.x2 e.x3> = <RHS>;
+    <s.z1 e.x1  e.x2> = <RHS>;
+}
+
+Check_55 {
+    <s.z1 e.x1 'AAB' e.x2> = <RHS>;
+    <s.z1 e.x1 s.z2 e.x2> = <RHS>;
+    <'A' 'B' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+}
+
+Check_56 {
+    <e.x1 'AB' e.x2> = <RHS>;
+    <e.x1 s.z1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_123_30 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+
+Check_12_15 {
+    <'AB' e.x1 e.x2> = <RHS>;
+    <'B' e.x1> = <RHS>;
+    <s.z1 e.x1 e.x2> = <RHS>;
+    <e.x1> = <RHS>;
+}
+
+Check_57 {
+    <s.z1 e.x1 'AB' e.x2> = <RHS>;
+    <s.z1 e.x1 s.z2 e.x2> = <RHS>;
+    <'A' 'B' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+}
+
+Check_123_31 {
+    <'AB' e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <> = <RHS>;
+}
+

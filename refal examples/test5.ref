@@ -1,0 +1,80 @@
+Eval {
+    <e.env Call s.F e.expr1 e.expr t.P> = <RHS>;
+    <e.env Var e.var e.expr t.P> = <RHS>;
+    <e.env '*' e.expr1 e.expr t.P> = <RHS>;
+    <e.env s.x e.expr t.P> = <RHS>;
+    <e.env  t.P> = <RHS>;
+}
+
+Matching {
+    <False t.sent e.p '> = <RHS>;
+    <e.env e.p '> = <RHS>;
+}
+
+RigitMatch {
+    <Var 'e' s.n '> = <RHS>;
+    <Var 's' s.n e.p '> = <RHS>;
+    <Var 't' s.n e.p '> = <RHS>;
+    <'*' e.p1 e.p '> = <RHS>;
+    <s.1 e.p '> = <RHS>;
+    <Var 'e' s.n e.p Var 's' s.n1 '> = <RHS>;
+    <Var 'e' s.n e.p Var 't' s.n1 '> = <RHS>;
+    <Var 'e' s.n e.p '*' e.p1 '> = <RHS>;
+    <Var 'e' s.n e.p s.1 '> = <RHS>;
+    <'> = <RHS>;
+    <e.p '> = <RHS>;
+}
+
+PutVar1 {
+    <Var s.t s.n e.value Var s.t s.n e.value1 e.env> = <RHS>;
+    <t.assign t.assign1 e.env> = <RHS>;
+    <t.assign> = <RHS>;
+}
+
+CheckPut {
+    <e.env True> = <RHS>;
+    <e.trash False> = <RHS>;
+}
+
+Eq {
+    <s.1 e.xpr1 s.1 e.xpr2> = <RHS>;
+    <'*' e.1 e.xpr1 '*' e.2 e.xpr2> = <RHS>;
+    <> = <RHS>;
+    <e.xpr1 e.xpr2> = <RHS>;
+}
+
+ContEq {
+    <False e.ex e.ey> = <RHS>;
+    <True e.ex e.ey> = <RHS>;
+}
+
+LookFor {
+    <s.F s.F e.def e.P> = <RHS>;
+    <s.F s.F1 e.def e.P> = <RHS>;
+}
+
+Subst {
+    <Var s.t s.n e.value e.env  Var s.t s.n> = <RHS>;
+    <t.assign e.env t.var> = <RHS>;
+}
+
+Timing {
+    <> = <RHS>;
+    <Turing_DoublePQ> = <RHS>;
+}
+
+Data {
+    <Plus> = <RHS>;
+    <Replace> = <RHS>;
+    <DoublePQ> = <RHS>;
+    <DoublePQBlanks> = <RHS>;
+    <Mult1> = <RHS>;
+    <Mult2> = <RHS>;
+    <MultBlanks> = <RHS>;
+}
+
+Blanks {
+    <> = <RHS>;
+    <s.1 e.x> = <RHS>;
+}
+

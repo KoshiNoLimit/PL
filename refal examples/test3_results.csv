@@ -1,0 +1,225 @@
+function,pattern1,pattern2,result
+CheckOpen_0,e.1 'ABA' e.2 e.3 e.4,e.1 'BA' e.2 e.3,False
+CheckOpen_0,e.1 'ABA' e.2 e.3 e.4,e.1  e.2,False
+CheckOpen_0,e.1 'ABA' e.2 e.3 e.4,e.1 e.2 'ABA' e.3 e.4,True
+CheckOpen_0,e.1 'ABA' e.2 e.3 e.4,e.1 e.2 'A' e.3,False
+CheckOpen_0,e.1 'ABA' e.2 e.3 e.4,e.1 e.2 e.3 'ABA' e.4,True
+CheckOpen_0,e.1 'ABA' e.2 e.3 e.4,e.1 'ABAC' e.2 e.3 e.4,False
+CheckOpen_0,e.1 'ABA' e.2 e.3 e.4,e.1 'ABA' e.2 e.3,True
+CheckOpen_0,e.1 'ABA' e.2 e.3 e.4,e.1 'BAC' e.2 e.3,False
+CheckOpen_0,e.1 'ABA' e.2 e.3 e.4,e.1 e.2 'ABAC' e.3 e.4,False
+CheckOpen_0,e.1 'ABA' e.2 e.3 e.4,e.1 e.2 e.3,False
+CheckOpen_0,e.1 'BA' e.2 e.3,e.1  e.2,False
+CheckOpen_0,e.1 'BA' e.2 e.3,e.1 e.2 'ABA' e.3 e.4,False
+CheckOpen_0,e.1 'BA' e.2 e.3,e.1 e.2 'A' e.3,False
+CheckOpen_0,e.1 'BA' e.2 e.3,e.1 e.2 e.3 'ABA' e.4,False
+CheckOpen_0,e.1 'BA' e.2 e.3,e.1 'ABAC' e.2 e.3 e.4,False
+CheckOpen_0,e.1 'BA' e.2 e.3,e.1 'ABA' e.2 e.3,False
+CheckOpen_0,e.1 'BA' e.2 e.3,e.1 'BAC' e.2 e.3,False
+CheckOpen_0,e.1 'BA' e.2 e.3,e.1 e.2 'ABAC' e.3 e.4,False
+CheckOpen_0,e.1 'BA' e.2 e.3,e.1 e.2 e.3,False
+CheckOpen_0,e.1  e.2,e.1 e.2 'ABA' e.3 e.4,True
+CheckOpen_0,e.1  e.2,e.1 e.2 'A' e.3,True
+CheckOpen_0,e.1  e.2,e.1 e.2 e.3 'ABA' e.4,True
+CheckOpen_0,e.1  e.2,e.1 'ABAC' e.2 e.3 e.4,True
+CheckOpen_0,e.1  e.2,e.1 'ABA' e.2 e.3,True
+CheckOpen_0,e.1  e.2,e.1 'BAC' e.2 e.3,True
+CheckOpen_0,e.1  e.2,e.1 e.2 'ABAC' e.3 e.4,True
+CheckOpen_0,e.1  e.2,e.1 e.2 e.3,True
+CheckOpen_0,e.1 e.2 'ABA' e.3 e.4,e.1 e.2 'A' e.3,False
+CheckOpen_0,e.1 e.2 'ABA' e.3 e.4,e.1 e.2 e.3 'ABA' e.4,True
+CheckOpen_0,e.1 e.2 'ABA' e.3 e.4,e.1 'ABAC' e.2 e.3 e.4,False
+CheckOpen_0,e.1 e.2 'ABA' e.3 e.4,e.1 'ABA' e.2 e.3,True
+CheckOpen_0,e.1 e.2 'ABA' e.3 e.4,e.1 'BAC' e.2 e.3,False
+CheckOpen_0,e.1 e.2 'ABA' e.3 e.4,e.1 e.2 'ABAC' e.3 e.4,False
+CheckOpen_0,e.1 e.2 'ABA' e.3 e.4,e.1 e.2 e.3,False
+CheckOpen_0,e.1 e.2 'A' e.3,e.1 e.2 e.3 'ABA' e.4,False
+CheckOpen_0,e.1 e.2 'A' e.3,e.1 'ABAC' e.2 e.3 e.4,False
+CheckOpen_0,e.1 e.2 'A' e.3,e.1 'ABA' e.2 e.3,False
+CheckOpen_0,e.1 e.2 'A' e.3,e.1 'BAC' e.2 e.3,False
+CheckOpen_0,e.1 e.2 'A' e.3,e.1 e.2 'ABAC' e.3 e.4,False
+CheckOpen_0,e.1 e.2 'A' e.3,e.1 e.2 e.3,False
+CheckOpen_0,e.1 e.2 e.3 'ABA' e.4,e.1 'ABAC' e.2 e.3 e.4,False
+CheckOpen_0,e.1 e.2 e.3 'ABA' e.4,e.1 'ABA' e.2 e.3,True
+CheckOpen_0,e.1 e.2 e.3 'ABA' e.4,e.1 'BAC' e.2 e.3,False
+CheckOpen_0,e.1 e.2 e.3 'ABA' e.4,e.1 e.2 'ABAC' e.3 e.4,False
+CheckOpen_0,e.1 e.2 e.3 'ABA' e.4,e.1 e.2 e.3,False
+CheckOpen_0,e.1 'ABAC' e.2 e.3 e.4,e.1 'ABA' e.2 e.3,False
+CheckOpen_0,e.1 'ABAC' e.2 e.3 e.4,e.1 'BAC' e.2 e.3,False
+CheckOpen_0,e.1 'ABAC' e.2 e.3 e.4,e.1 e.2 'ABAC' e.3 e.4,True
+CheckOpen_0,e.1 'ABAC' e.2 e.3 e.4,e.1 e.2 e.3,False
+CheckOpen_0,e.1 'ABA' e.2 e.3,e.1 'BAC' e.2 e.3,False
+CheckOpen_0,e.1 'ABA' e.2 e.3,e.1 e.2 'ABAC' e.3 e.4,False
+CheckOpen_0,e.1 'ABA' e.2 e.3,e.1 e.2 e.3,False
+CheckOpen_0,e.1 'BAC' e.2 e.3,e.1 e.2 'ABAC' e.3 e.4,False
+CheckOpen_0,e.1 'BAC' e.2 e.3,e.1 e.2 e.3,False
+CheckOpen_0,e.1 e.2 'ABAC' e.3 e.4,e.1 e.2 e.3,False
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5 e.6,e.1 e.2 'ABA' e.3 e.4 e.5 e.6,True
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5 e.6,e.1 e.2 e.3 'ABA' e.4 e.5 e.6,True
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABA' e.5 e.6,True
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 e.5 'ABA' e.6,True
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5 e.6,e.1 'ABAC' e.2 e.3 e.4 e.5 e.6,False
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5 e.6,e.1 'ABA' e.2 e.3 e.4 e.5,True
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5 e.6,e.1 e.2 'ABAC' e.3 e.4 e.5 e.6,False
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5 e.6,e.1 e.2 'ABA' e.3 e.4 e.5,True
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5 e.6,e.1 e.2 e.3 'ABAC' e.4 e.5 e.6,False
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABAC' e.5 e.6,False
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABA' e.5,True
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 e.5,False
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5 e.6,e.1 e.2 e.3 'ABA' e.4 e.5 e.6,True
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABA' e.5 e.6,True
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 e.5 'ABA' e.6,True
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5 e.6,e.1 'ABAC' e.2 e.3 e.4 e.5 e.6,False
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5 e.6,e.1 'ABA' e.2 e.3 e.4 e.5,True
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5 e.6,e.1 e.2 'ABAC' e.3 e.4 e.5 e.6,False
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5 e.6,e.1 e.2 'ABA' e.3 e.4 e.5,True
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5 e.6,e.1 e.2 e.3 'ABAC' e.4 e.5 e.6,False
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABAC' e.5 e.6,False
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABA' e.5,True
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 e.5,False
+CheckOpen_1,e.1 e.2 e.3 'ABA' e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABA' e.5 e.6,True
+CheckOpen_1,e.1 e.2 e.3 'ABA' e.4 e.5 e.6,e.1 e.2 e.3 e.4 e.5 'ABA' e.6,True
+CheckOpen_1,e.1 e.2 e.3 'ABA' e.4 e.5 e.6,e.1 'ABAC' e.2 e.3 e.4 e.5 e.6,False
+CheckOpen_1,e.1 e.2 e.3 'ABA' e.4 e.5 e.6,e.1 'ABA' e.2 e.3 e.4 e.5,True
+CheckOpen_1,e.1 e.2 e.3 'ABA' e.4 e.5 e.6,e.1 e.2 'ABAC' e.3 e.4 e.5 e.6,False
+CheckOpen_1,e.1 e.2 e.3 'ABA' e.4 e.5 e.6,e.1 e.2 'ABA' e.3 e.4 e.5,True
+CheckOpen_1,e.1 e.2 e.3 'ABA' e.4 e.5 e.6,e.1 e.2 e.3 'ABAC' e.4 e.5 e.6,False
+CheckOpen_1,e.1 e.2 e.3 'ABA' e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABAC' e.5 e.6,False
+CheckOpen_1,e.1 e.2 e.3 'ABA' e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABA' e.5,True
+CheckOpen_1,e.1 e.2 e.3 'ABA' e.4 e.5 e.6,e.1 e.2 e.3 e.4 e.5,False
+CheckOpen_1,e.1 e.2 e.3 e.4 'ABA' e.5 e.6,e.1 e.2 e.3 e.4 e.5 'ABA' e.6,True
+CheckOpen_1,e.1 e.2 e.3 e.4 'ABA' e.5 e.6,e.1 'ABAC' e.2 e.3 e.4 e.5 e.6,False
+CheckOpen_1,e.1 e.2 e.3 e.4 'ABA' e.5 e.6,e.1 'ABA' e.2 e.3 e.4 e.5,True
+CheckOpen_1,e.1 e.2 e.3 e.4 'ABA' e.5 e.6,e.1 e.2 'ABAC' e.3 e.4 e.5 e.6,False
+CheckOpen_1,e.1 e.2 e.3 e.4 'ABA' e.5 e.6,e.1 e.2 'ABA' e.3 e.4 e.5,True
+CheckOpen_1,e.1 e.2 e.3 e.4 'ABA' e.5 e.6,e.1 e.2 e.3 'ABAC' e.4 e.5 e.6,False
+CheckOpen_1,e.1 e.2 e.3 e.4 'ABA' e.5 e.6,e.1 e.2 e.3 e.4 'ABAC' e.5 e.6,False
+CheckOpen_1,e.1 e.2 e.3 e.4 'ABA' e.5 e.6,e.1 e.2 e.3 e.4 'ABA' e.5,True
+CheckOpen_1,e.1 e.2 e.3 e.4 'ABA' e.5 e.6,e.1 e.2 e.3 e.4 e.5,False
+CheckOpen_1,e.1 e.2 e.3 e.4 e.5 'ABA' e.6,e.1 'ABAC' e.2 e.3 e.4 e.5 e.6,False
+CheckOpen_1,e.1 e.2 e.3 e.4 e.5 'ABA' e.6,e.1 'ABA' e.2 e.3 e.4 e.5,True
+CheckOpen_1,e.1 e.2 e.3 e.4 e.5 'ABA' e.6,e.1 e.2 'ABAC' e.3 e.4 e.5 e.6,False
+CheckOpen_1,e.1 e.2 e.3 e.4 e.5 'ABA' e.6,e.1 e.2 'ABA' e.3 e.4 e.5,True
+CheckOpen_1,e.1 e.2 e.3 e.4 e.5 'ABA' e.6,e.1 e.2 e.3 'ABAC' e.4 e.5 e.6,False
+CheckOpen_1,e.1 e.2 e.3 e.4 e.5 'ABA' e.6,e.1 e.2 e.3 e.4 'ABAC' e.5 e.6,False
+CheckOpen_1,e.1 e.2 e.3 e.4 e.5 'ABA' e.6,e.1 e.2 e.3 e.4 'ABA' e.5,True
+CheckOpen_1,e.1 e.2 e.3 e.4 e.5 'ABA' e.6,e.1 e.2 e.3 e.4 e.5,False
+CheckOpen_1,e.1 'ABAC' e.2 e.3 e.4 e.5 e.6,e.1 'ABA' e.2 e.3 e.4 e.5,False
+CheckOpen_1,e.1 'ABAC' e.2 e.3 e.4 e.5 e.6,e.1 e.2 'ABAC' e.3 e.4 e.5 e.6,True
+CheckOpen_1,e.1 'ABAC' e.2 e.3 e.4 e.5 e.6,e.1 e.2 'ABA' e.3 e.4 e.5,False
+CheckOpen_1,e.1 'ABAC' e.2 e.3 e.4 e.5 e.6,e.1 e.2 e.3 'ABAC' e.4 e.5 e.6,True
+CheckOpen_1,e.1 'ABAC' e.2 e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABAC' e.5 e.6,True
+CheckOpen_1,e.1 'ABAC' e.2 e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABA' e.5,False
+CheckOpen_1,e.1 'ABAC' e.2 e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 e.5,False
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 'ABAC' e.3 e.4 e.5 e.6,False
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 'ABA' e.3 e.4 e.5,True
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 e.3 'ABAC' e.4 e.5 e.6,False
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 e.3 e.4 'ABAC' e.5 e.6,False
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 e.3 e.4 'ABA' e.5,True
+CheckOpen_1,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 e.3 e.4 e.5,False
+CheckOpen_1,e.1 e.2 'ABAC' e.3 e.4 e.5 e.6,e.1 e.2 'ABA' e.3 e.4 e.5,False
+CheckOpen_1,e.1 e.2 'ABAC' e.3 e.4 e.5 e.6,e.1 e.2 e.3 'ABAC' e.4 e.5 e.6,True
+CheckOpen_1,e.1 e.2 'ABAC' e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABAC' e.5 e.6,True
+CheckOpen_1,e.1 e.2 'ABAC' e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABA' e.5,False
+CheckOpen_1,e.1 e.2 'ABAC' e.3 e.4 e.5 e.6,e.1 e.2 e.3 e.4 e.5,False
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 e.2 e.3 'ABAC' e.4 e.5 e.6,False
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 e.2 e.3 e.4 'ABAC' e.5 e.6,False
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 e.2 e.3 e.4 'ABA' e.5,True
+CheckOpen_1,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 e.2 e.3 e.4 e.5,False
+CheckOpen_1,e.1 e.2 e.3 'ABAC' e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABAC' e.5 e.6,True
+CheckOpen_1,e.1 e.2 e.3 'ABAC' e.4 e.5 e.6,e.1 e.2 e.3 e.4 'ABA' e.5,False
+CheckOpen_1,e.1 e.2 e.3 'ABAC' e.4 e.5 e.6,e.1 e.2 e.3 e.4 e.5,False
+CheckOpen_1,e.1 e.2 e.3 e.4 'ABAC' e.5 e.6,e.1 e.2 e.3 e.4 'ABA' e.5,False
+CheckOpen_1,e.1 e.2 e.3 e.4 'ABAC' e.5 e.6,e.1 e.2 e.3 e.4 e.5,False
+CheckOpen_1,e.1 e.2 e.3 e.4 'ABA' e.5,e.1 e.2 e.3 e.4 e.5,False
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 'BA' e.2 e.3 e.4,False
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 'ABA' e.3 e.4 e.5,True
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 e.3 'ABA' e.4 e.5,True
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 e.3 e.4 'ABA' e.5,True
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 'ABAC' e.2 e.3 e.4 e.5,False
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 'ABA' e.2 e.3 e.4,True
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 'BAC' e.2 e.3 e.4,False
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 'BA' e.2 e.3,False
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 'ABAC' e.3 e.4 e.5,False
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 'ABA' e.3 e.4,True
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 e.3 'ABAC' e.4 e.5,False
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 e.3 'ABA' e.4,True
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4 e.5,e.1 e.2 e.3 e.4,False
+CheckOpen_2,e.1 'BA' e.2 e.3 e.4,e.1 e.2 'ABA' e.3 e.4 e.5,False
+CheckOpen_2,e.1 'BA' e.2 e.3 e.4,e.1 e.2 e.3 'ABA' e.4 e.5,False
+CheckOpen_2,e.1 'BA' e.2 e.3 e.4,e.1 e.2 e.3 e.4 'ABA' e.5,False
+CheckOpen_2,e.1 'BA' e.2 e.3 e.4,e.1 'ABAC' e.2 e.3 e.4 e.5,False
+CheckOpen_2,e.1 'BA' e.2 e.3 e.4,e.1 'ABA' e.2 e.3 e.4,False
+CheckOpen_2,e.1 'BA' e.2 e.3 e.4,e.1 'BAC' e.2 e.3 e.4,False
+CheckOpen_2,e.1 'BA' e.2 e.3 e.4,e.1 'BA' e.2 e.3,True
+CheckOpen_2,e.1 'BA' e.2 e.3 e.4,e.1 e.2 'ABAC' e.3 e.4 e.5,False
+CheckOpen_2,e.1 'BA' e.2 e.3 e.4,e.1 e.2 'ABA' e.3 e.4,False
+CheckOpen_2,e.1 'BA' e.2 e.3 e.4,e.1 e.2 e.3 'ABAC' e.4 e.5,False
+CheckOpen_2,e.1 'BA' e.2 e.3 e.4,e.1 e.2 e.3 'ABA' e.4,False
+CheckOpen_2,e.1 'BA' e.2 e.3 e.4,e.1 e.2 e.3 e.4,False
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 e.2 e.3 'ABA' e.4 e.5,True
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 e.2 e.3 e.4 'ABA' e.5,True
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 'ABAC' e.2 e.3 e.4 e.5,False
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 'ABA' e.2 e.3 e.4,True
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 'BAC' e.2 e.3 e.4,False
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 'BA' e.2 e.3,False
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 e.2 'ABAC' e.3 e.4 e.5,False
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 e.2 'ABA' e.3 e.4,True
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 e.2 e.3 'ABAC' e.4 e.5,False
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 e.2 e.3 'ABA' e.4,True
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4 e.5,e.1 e.2 e.3 e.4,False
+CheckOpen_2,e.1 e.2 e.3 'ABA' e.4 e.5,e.1 e.2 e.3 e.4 'ABA' e.5,True
+CheckOpen_2,e.1 e.2 e.3 'ABA' e.4 e.5,e.1 'ABAC' e.2 e.3 e.4 e.5,False
+CheckOpen_2,e.1 e.2 e.3 'ABA' e.4 e.5,e.1 'ABA' e.2 e.3 e.4,True
+CheckOpen_2,e.1 e.2 e.3 'ABA' e.4 e.5,e.1 'BAC' e.2 e.3 e.4,False
+CheckOpen_2,e.1 e.2 e.3 'ABA' e.4 e.5,e.1 'BA' e.2 e.3,False
+CheckOpen_2,e.1 e.2 e.3 'ABA' e.4 e.5,e.1 e.2 'ABAC' e.3 e.4 e.5,False
+CheckOpen_2,e.1 e.2 e.3 'ABA' e.4 e.5,e.1 e.2 'ABA' e.3 e.4,True
+CheckOpen_2,e.1 e.2 e.3 'ABA' e.4 e.5,e.1 e.2 e.3 'ABAC' e.4 e.5,False
+CheckOpen_2,e.1 e.2 e.3 'ABA' e.4 e.5,e.1 e.2 e.3 'ABA' e.4,True
+CheckOpen_2,e.1 e.2 e.3 'ABA' e.4 e.5,e.1 e.2 e.3 e.4,False
+CheckOpen_2,e.1 e.2 e.3 e.4 'ABA' e.5,e.1 'ABAC' e.2 e.3 e.4 e.5,False
+CheckOpen_2,e.1 e.2 e.3 e.4 'ABA' e.5,e.1 'ABA' e.2 e.3 e.4,True
+CheckOpen_2,e.1 e.2 e.3 e.4 'ABA' e.5,e.1 'BAC' e.2 e.3 e.4,False
+CheckOpen_2,e.1 e.2 e.3 e.4 'ABA' e.5,e.1 'BA' e.2 e.3,False
+CheckOpen_2,e.1 e.2 e.3 e.4 'ABA' e.5,e.1 e.2 'ABAC' e.3 e.4 e.5,False
+CheckOpen_2,e.1 e.2 e.3 e.4 'ABA' e.5,e.1 e.2 'ABA' e.3 e.4,True
+CheckOpen_2,e.1 e.2 e.3 e.4 'ABA' e.5,e.1 e.2 e.3 'ABAC' e.4 e.5,False
+CheckOpen_2,e.1 e.2 e.3 e.4 'ABA' e.5,e.1 e.2 e.3 'ABA' e.4,True
+CheckOpen_2,e.1 e.2 e.3 e.4 'ABA' e.5,e.1 e.2 e.3 e.4,False
+CheckOpen_2,e.1 'ABAC' e.2 e.3 e.4 e.5,e.1 'ABA' e.2 e.3 e.4,False
+CheckOpen_2,e.1 'ABAC' e.2 e.3 e.4 e.5,e.1 'BAC' e.2 e.3 e.4,False
+CheckOpen_2,e.1 'ABAC' e.2 e.3 e.4 e.5,e.1 'BA' e.2 e.3,False
+CheckOpen_2,e.1 'ABAC' e.2 e.3 e.4 e.5,e.1 e.2 'ABAC' e.3 e.4 e.5,True
+CheckOpen_2,e.1 'ABAC' e.2 e.3 e.4 e.5,e.1 e.2 'ABA' e.3 e.4,False
+CheckOpen_2,e.1 'ABAC' e.2 e.3 e.4 e.5,e.1 e.2 e.3 'ABAC' e.4 e.5,True
+CheckOpen_2,e.1 'ABAC' e.2 e.3 e.4 e.5,e.1 e.2 e.3 'ABA' e.4,False
+CheckOpen_2,e.1 'ABAC' e.2 e.3 e.4 e.5,e.1 e.2 e.3 e.4,False
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4,e.1 'BAC' e.2 e.3 e.4,False
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4,e.1 'BA' e.2 e.3,False
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4,e.1 e.2 'ABAC' e.3 e.4 e.5,False
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4,e.1 e.2 'ABA' e.3 e.4,True
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4,e.1 e.2 e.3 'ABAC' e.4 e.5,False
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4,e.1 e.2 e.3 'ABA' e.4,True
+CheckOpen_2,e.1 'ABA' e.2 e.3 e.4,e.1 e.2 e.3 e.4,False
+CheckOpen_2,e.1 'BAC' e.2 e.3 e.4,e.1 'BA' e.2 e.3,False
+CheckOpen_2,e.1 'BAC' e.2 e.3 e.4,e.1 e.2 'ABAC' e.3 e.4 e.5,False
+CheckOpen_2,e.1 'BAC' e.2 e.3 e.4,e.1 e.2 'ABA' e.3 e.4,False
+CheckOpen_2,e.1 'BAC' e.2 e.3 e.4,e.1 e.2 e.3 'ABAC' e.4 e.5,False
+CheckOpen_2,e.1 'BAC' e.2 e.3 e.4,e.1 e.2 e.3 'ABA' e.4,False
+CheckOpen_2,e.1 'BAC' e.2 e.3 e.4,e.1 e.2 e.3 e.4,False
+CheckOpen_2,e.1 'BA' e.2 e.3,e.1 e.2 'ABAC' e.3 e.4 e.5,False
+CheckOpen_2,e.1 'BA' e.2 e.3,e.1 e.2 'ABA' e.3 e.4,False
+CheckOpen_2,e.1 'BA' e.2 e.3,e.1 e.2 e.3 'ABAC' e.4 e.5,False
+CheckOpen_2,e.1 'BA' e.2 e.3,e.1 e.2 e.3 'ABA' e.4,False
+CheckOpen_2,e.1 'BA' e.2 e.3,e.1 e.2 e.3 e.4,False
+CheckOpen_2,e.1 e.2 'ABAC' e.3 e.4 e.5,e.1 e.2 'ABA' e.3 e.4,False
+CheckOpen_2,e.1 e.2 'ABAC' e.3 e.4 e.5,e.1 e.2 e.3 'ABAC' e.4 e.5,True
+CheckOpen_2,e.1 e.2 'ABAC' e.3 e.4 e.5,e.1 e.2 e.3 'ABA' e.4,False
+CheckOpen_2,e.1 e.2 'ABAC' e.3 e.4 e.5,e.1 e.2 e.3 e.4,False
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4,e.1 e.2 e.3 'ABAC' e.4 e.5,False
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4,e.1 e.2 e.3 'ABA' e.4,True
+CheckOpen_2,e.1 e.2 'ABA' e.3 e.4,e.1 e.2 e.3 e.4,False
+CheckOpen_2,e.1 e.2 e.3 'ABAC' e.4 e.5,e.1 e.2 e.3 'ABA' e.4,False
+CheckOpen_2,e.1 e.2 e.3 'ABAC' e.4 e.5,e.1 e.2 e.3 e.4,False
+CheckOpen_2,e.1 e.2 e.3 'ABA' e.4,e.1 e.2 e.3 e.4,False

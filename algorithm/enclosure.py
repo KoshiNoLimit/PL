@@ -3,8 +3,6 @@ import algorithm.pattern_format as pf
 from algorithm.substitution import *
 import logging
 
-# logging.basicConfig(level=logging.DEBUG)
-
 
 def enclosure_check(p1, p2):
     """Алгоритм проверки вложения образцов"""
@@ -29,11 +27,15 @@ def NePL_method(p1, p2):
     """Метод для нестирающего языка"""
     logging.debug('NePL: ' + str(p1) + str(p2))
     p1 = pf.normalize(p1)
+    logging.debug('NePL: ' + str(p1) + str(p2))
+
 
     N = pf.len_max_t_subword(p1)
     p1 = pf.tfe_to_v(p1)
     q = ConstSubstitution.build(p2, N)
+    logging.debug('NePL: ' + str(p1) + str(q))
     subs = ConstSubstitution(q, p1)
+    #subs = PToPSubstitution(p1, p2)
     return subs.algorithm()
 
 
@@ -52,6 +54,8 @@ def EPL_method(p1, p2):
 def not_linear_method(p1, p2):
     """Метод сопоставления образцов с кратными _e-переменными"""
     logging.debug('NotLinear: ' + str(p1) + str(p2))
+    if pf.t_exist(p1) or pf.t_exist(p2):
+        return 'Have no answer for these patterns'
     subs = PToPSubstitution(p1, p2)
     return subs.algorithm()
 

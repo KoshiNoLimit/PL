@@ -122,24 +122,14 @@ def is_linear(atoms):
 def tfe_to_v(atoms):
     """Замена пар (плавающая t, e) на v"""
     atomsv = []
-    i = 0
-    while i < len(atoms):
-        if atoms[i].type == 'e':
-            if i < len(atoms) - 1:
-                if atoms[i+1].type == 'tf':
-                    atomsv.append(atoms[i])
-                    atomsv[-1].type = 'v'
-                    i += 1
-                if i < len(atoms) - 1 and atoms[i+1].type == 'e':
-                    i += 1
-        if atoms[i].type == 'tf':
-            if i < len(atoms) - 1 and atoms[i + 1].type == 'e':
-                atomsv.append(atoms[i])
-                atomsv[-1].type = 'v'
-                i += 1
-        else:
-            atomsv.append(atoms[i])
-        i += 1
+    for atom in atoms:
+        if atom.type == 'e':
+            continue
+        if atom.type == 'tf':
+            atom.val = 'v' + atom.val[2:]
+            atom.type = 'v'
+
+        atomsv.append(atom)
 
     return atomsv
 

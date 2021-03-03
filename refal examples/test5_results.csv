@@ -1,0 +1,103 @@
+function,pattern1,pattern2,result
+Eval,e.env Call s.F e.expr1 e.expr t.P,e.env Var e.var e.expr t.P,False
+Eval,e.env Call s.F e.expr1 e.expr t.P,e.env '*' e.expr1 e.expr t.P,False
+Eval,e.env Call s.F e.expr1 e.expr t.P,e.env s.x e.expr t.P,False
+Eval,e.env Call s.F e.expr1 e.expr t.P,e.env  t.P,False
+Eval,e.env Var e.var e.expr t.P,e.env '*' e.expr1 e.expr t.P,False
+Eval,e.env Var e.var e.expr t.P,e.env s.x e.expr t.P,False
+Eval,e.env Var e.var e.expr t.P,e.env  t.P,False
+Eval,e.env '*' e.expr1 e.expr t.P,e.env s.x e.expr t.P,False
+Eval,e.env '*' e.expr1 e.expr t.P,e.env  t.P,False
+Eval,e.env s.x e.expr t.P,e.env  t.P,False
+Matching,False t.sent e.p ',e.env e.p ',False
+RigitMatch,Var 'e' s.n ',Var 's' s.n e.p ',False
+RigitMatch,Var 'e' s.n ',Var 't' s.n e.p ',False
+RigitMatch,Var 'e' s.n ','*' e.p1 e.p ',False
+RigitMatch,Var 'e' s.n ',s.1 e.p ',False
+RigitMatch,Var 'e' s.n ',Var 'e' s.n e.p Var 's' s.n1 ',False
+RigitMatch,Var 'e' s.n ',Var 'e' s.n e.p Var 't' s.n1 ',False
+RigitMatch,Var 'e' s.n ',Var 'e' s.n e.p '*' e.p1 ',False
+RigitMatch,Var 'e' s.n ',Var 'e' s.n e.p s.1 ',False
+RigitMatch,Var 'e' s.n ',',False
+RigitMatch,Var 'e' s.n ',e.p ',False
+RigitMatch,Var 's' s.n e.p ',Var 't' s.n e.p ',False
+RigitMatch,Var 's' s.n e.p ','*' e.p1 e.p ',False
+RigitMatch,Var 's' s.n e.p ',s.1 e.p ',False
+RigitMatch,Var 's' s.n e.p ',Var 'e' s.n e.p Var 's' s.n1 ',False
+RigitMatch,Var 's' s.n e.p ',Var 'e' s.n e.p Var 't' s.n1 ',False
+RigitMatch,Var 's' s.n e.p ',Var 'e' s.n e.p '*' e.p1 ',False
+RigitMatch,Var 's' s.n e.p ',Var 'e' s.n e.p s.1 ',False
+RigitMatch,Var 's' s.n e.p ',',False
+RigitMatch,Var 's' s.n e.p ',e.p ',False
+RigitMatch,Var 't' s.n e.p ','*' e.p1 e.p ',False
+RigitMatch,Var 't' s.n e.p ',s.1 e.p ',False
+RigitMatch,Var 't' s.n e.p ',Var 'e' s.n e.p Var 's' s.n1 ',False
+RigitMatch,Var 't' s.n e.p ',Var 'e' s.n e.p Var 't' s.n1 ',False
+RigitMatch,Var 't' s.n e.p ',Var 'e' s.n e.p '*' e.p1 ',False
+RigitMatch,Var 't' s.n e.p ',Var 'e' s.n e.p s.1 ',False
+RigitMatch,Var 't' s.n e.p ',',False
+RigitMatch,Var 't' s.n e.p ',e.p ',False
+RigitMatch,'*' e.p1 e.p ',s.1 e.p ',False
+RigitMatch,'*' e.p1 e.p ',Var 'e' s.n e.p Var 's' s.n1 ',False
+RigitMatch,'*' e.p1 e.p ',Var 'e' s.n e.p Var 't' s.n1 ',False
+RigitMatch,'*' e.p1 e.p ',Var 'e' s.n e.p '*' e.p1 ',False
+RigitMatch,'*' e.p1 e.p ',Var 'e' s.n e.p s.1 ',False
+RigitMatch,'*' e.p1 e.p ',',False
+RigitMatch,'*' e.p1 e.p ',e.p ',False
+RigitMatch,s.1 e.p ',Var 'e' s.n e.p Var 's' s.n1 ',True
+RigitMatch,s.1 e.p ',Var 'e' s.n e.p Var 't' s.n1 ',True
+RigitMatch,s.1 e.p ',Var 'e' s.n e.p '*' e.p1 ',True
+RigitMatch,s.1 e.p ',Var 'e' s.n e.p s.1 ',True
+RigitMatch,s.1 e.p ',',False
+RigitMatch,s.1 e.p ',e.p ',False
+RigitMatch,Var 'e' s.n e.p Var 's' s.n1 ',Var 'e' s.n e.p Var 't' s.n1 ',False
+RigitMatch,Var 'e' s.n e.p Var 's' s.n1 ',Var 'e' s.n e.p '*' e.p1 ',False
+RigitMatch,Var 'e' s.n e.p Var 's' s.n1 ',Var 'e' s.n e.p s.1 ',False
+RigitMatch,Var 'e' s.n e.p Var 's' s.n1 ',',False
+RigitMatch,Var 'e' s.n e.p Var 's' s.n1 ',e.p ',False
+RigitMatch,Var 'e' s.n e.p Var 't' s.n1 ',Var 'e' s.n e.p '*' e.p1 ',False
+RigitMatch,Var 'e' s.n e.p Var 't' s.n1 ',Var 'e' s.n e.p s.1 ',False
+RigitMatch,Var 'e' s.n e.p Var 't' s.n1 ',',False
+RigitMatch,Var 'e' s.n e.p Var 't' s.n1 ',e.p ',False
+RigitMatch,Var 'e' s.n e.p '*' e.p1 ',Var 'e' s.n e.p s.1 ',False
+RigitMatch,Var 'e' s.n e.p '*' e.p1 ',',False
+RigitMatch,Var 'e' s.n e.p '*' e.p1 ',e.p ',False
+RigitMatch,Var 'e' s.n e.p s.1 ',',False
+RigitMatch,Var 'e' s.n e.p s.1 ',e.p ',False
+RigitMatch,',e.p ',False
+PutVar1,Var s.t s.n e.value Var s.t s.n e.value1 e.env,t.assign t.assign1 e.env,False
+PutVar1,Var s.t s.n e.value Var s.t s.n e.value1 e.env,t.assign,False
+PutVar1,t.assign t.assign1 e.env,t.assign,False
+CheckPut,e.env True,e.trash False,False
+Eq,s.1 e.xpr1 s.1 e.xpr2,'*' e.1 e.xpr1 '*' e.2 e.xpr2,True
+Eq,s.1 e.xpr1 s.1 e.xpr2,,False
+Eq,s.1 e.xpr1 s.1 e.xpr2,e.xpr1 e.xpr2,False
+Eq,'*' e.1 e.xpr1 '*' e.2 e.xpr2,,False
+Eq,'*' e.1 e.xpr1 '*' e.2 e.xpr2,e.xpr1 e.xpr2,False
+Eq,,e.xpr1 e.xpr2,False
+ContEq,False e.ex e.ey,True e.ex e.ey,False
+LookFor,s.F s.F e.def e.P,s.F s.F1 e.def e.P,False
+Subst,Var s.t s.n e.value e.env  Var s.t s.n,t.assign e.env t.var,False
+Timing,,Turing_DoublePQ,False
+Data,Plus,Replace,False
+Data,Plus,DoublePQ,False
+Data,Plus,DoublePQBlanks,False
+Data,Plus,Mult1,False
+Data,Plus,Mult2,False
+Data,Plus,MultBlanks,False
+Data,Replace,DoublePQ,False
+Data,Replace,DoublePQBlanks,False
+Data,Replace,Mult1,False
+Data,Replace,Mult2,False
+Data,Replace,MultBlanks,False
+Data,DoublePQ,DoublePQBlanks,False
+Data,DoublePQ,Mult1,False
+Data,DoublePQ,Mult2,False
+Data,DoublePQ,MultBlanks,False
+Data,DoublePQBlanks,Mult1,False
+Data,DoublePQBlanks,Mult2,False
+Data,DoublePQBlanks,MultBlanks,False
+Data,Mult1,Mult2,False
+Data,Mult1,MultBlanks,False
+Data,Mult2,MultBlanks,False
+Blanks,,s.1 e.x,False

@@ -1,0 +1,31 @@
+IterEncode {
+    <s.Num s.Num> = <RHS>;
+    <s.Num1 s.Num2> = <RHS>;
+}
+
+GenBen {
+    <Start 'Insert' e.2> = <RHS>;
+    <Start e.Other> = <RHS>;
+    <t.Flag '(assert (x (str.++ 'e.LHS')'e.Blanks'(str.++'e.RHS')'e.Rest> = <RHS>;
+    <SkipSmt e.Other> = <RHS>;
+    <Entry e.Other> = <RHS>;
+}
+
+CopyFile {
+    <e.1 0> = <RHS>;
+    <e.1> = <RHS>;
+}
+
+Conversion {
+    <' ' e.Rest> = <RHS>;
+    <e.Rest ' '> = <RHS>;
+    <'"'e.Str'"'e.Rest> = <RHS>;
+    <s.Letter e.Rest> = <RHS>;
+    <> = <RHS>;
+}
+
+ConvertConst {
+    <' 'e.Other> = <RHS>;
+    <s.Letter e.Other> = <RHS>;
+    <> = <RHS>;
+}

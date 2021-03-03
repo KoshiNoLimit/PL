@@ -1,38 +1,57 @@
 import re
 from sys import argv
 from algorithm.enclosure import enclosure_check
+import csv
+import logging
 
 
-FUNC = re.compile('[a-zA-Z]+ \\{[^\\}]+\\}')
+FUNC = re.compile('\S+ \\{[^\\}]+\\}')
 ATOM = re.compile('\'[^\']*\'')
 
 
-def program_to_works(program_path):
-    funcs = funcs_from_file(program_path)
-    pattern_groups = [patters_from_func(f) for f in funcs]
-    work_pairs = []
-    for group in pattern_groups:
-        for i in range(len(group)):
-            for j in range(i+1, len(group)):
-                work_pairs.append((group[i], group[j]))
-    return work_pairs
+class Function:
+    def __init__(self, text):
+        self.name, self.body = text.split(' ', 1)
+        self.patterns = self._find_patterns()
+
+    def _find_patterns(self):
+        sentences = list(filter(lambda s: '=' in s, self.body.split('\n')))
+        return [s.split(' = ')[0].strip()[1:-1] for s in sentences]
+
+    @property
+    def work_pairs(self):
+        pairs = []
+        for i in range(len(self.patterns)):
+            for j in range(i+1, len(self.patterns)):
+                pairs.append((self.patterns[i], self.patterns[j]))
+        return pairs
+
+    def __str__(self):
+        return self.name + ' ' + self.body
+
+    def __repr__(self):
+        return self.name
 
 
-def patters_from_func(func):
-    sentences = list(filter(lambda s: '=' in s, func.split('\n')))
+def program_to_works(path):
+    logging.info('\033[34mStart with ' + path + '\033[37m')
+    funcs = funcs_from_file(path)
 
-    samples = [s.split(' = ')[0].strip() for s in sentences]
-    if not(2 <= len(samples) <= 10):
-        raise Exception('Неподходящее кол-во предложений')
-    return samples
+    with open(path[:-4] + '_results.csv', 'w') as f:
+        writer = csv.writer(f, delimiter=',')
+        writer.writerow(['function', 'pattern1', 'pattern2', 'result'])
+        for f in funcs:
+            logging.info('Work function' + f.name)
+            for pair in f.work_pairs:
+                writer.writerow([f.name, pair[0], pair[1], enclosure_check(pair[0], pair[1])])
 
 
 def funcs_from_file(path):
     with open(path) as f:
-        return FUNC.findall(f.read())
+        return tuple(map(
+            lambda x: Function(x),
+            FUNC.findall(f.read())))
 
 
 if __name__ == '__main__':
-    works = program_to_works(argv[1])
-    for work in works:
-        print('[' + str(work[0]) + '] [' + str(work[1]) + '] : ' + str(enclosure_check(work[0], work[1])))
+    program_to_works(argv[1])

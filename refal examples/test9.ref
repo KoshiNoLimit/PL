@@ -1,0 +1,46 @@
+$ENTRY Go {
+    <'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Bs -> empty' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Bs -> empty' 'Fs -> a Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Bs -> empty' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> empty'> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Bs -> empty' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Bs -> empty' 'Fs -> a Fs' 'Fs -> c Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Bs -> empty' 'Fs -> a Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Bs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Bs -> Fs Bs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Fs -> Bs Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Fs -> Bs Fs' 'Fs -> a Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Fs -> Bs Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> empty'> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Fs -> Bs Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> empty' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Fs -> Bs Fs' 'Fs -> a Fs' 'Fs -> c Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Fs -> Bs Fs' 'Fs -> a Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' 'Fs -> Bs Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> b Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> b Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> a Fs' 'Fs -> a Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs'    'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> a Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' 'Fs -> c Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' 'Fs -> c Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' 'Fs -> c Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> a Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' 'Fs -> a Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' 'Fs -> b Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' 'Fs -> a Fs' e.101> = <RHS>;
+    <'Fs -> b Fs' e.101> = <RHS>;
+    <e.101> = <RHS>;
+}
+

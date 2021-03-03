@@ -1,0 +1,1455 @@
+function,pattern1,pattern2,result
+AlphabetT,,s.Term,False
+AlphabetT,,s.Term s.OtherTerm e.Rest,False
+AlphabetT,s.Term,s.Term s.OtherTerm e.Rest,False
+IfInSetMultiple,s.Value e.ToSearch e.List,s.Value e.ToSearch e.List 'T',True
+IfInSetMultiple,s.Value e.ToSearch e.List,s.Value e.ToSearch e.List 'F',True
+IfInSetMultiple,s.Value e.ToSearch e.List,e.List 'T',False
+IfInSetMultiple,s.Value e.ToSearch e.List 'T',s.Value e.ToSearch e.List 'F',False
+IfInSetMultiple,s.Value e.ToSearch e.List 'T',e.List 'T',False
+IfInSetMultiple,s.Value e.ToSearch e.List 'F',e.List 'T',False
+Translate,,' 'e.x,False
+Translate,,e.x' ',False
+Translate,,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't',False
+Translate,,Started e.Result 'TFF' e.variables e.alphabet s.Name's',False
+Translate,,Started e.Result 'FTF' e.variables e.alphabet s.Name,False
+Translate,,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest,False
+Translate,,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest,False
+Translate,,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest,False
+Translate,,s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest,False
+Translate,,s.Term e.Rest,False
+Translate,' 'e.x,e.x' ',False
+Translate,' 'e.x,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't',False
+Translate,' 'e.x,Started e.Result 'TFF' e.variables e.alphabet s.Name's',False
+Translate,' 'e.x,Started e.Result 'FTF' e.variables e.alphabet s.Name,False
+Translate,' 'e.x,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,' 'e.x,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest,False
+Translate,' 'e.x,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,' 'e.x,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest,False
+Translate,' 'e.x,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,' 'e.x,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest,False
+Translate,' 'e.x,s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest,False
+Translate,' 'e.x,s.Term e.Rest,False
+Translate,e.x' ',Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't',False
+Translate,e.x' ',Started e.Result 'TFF' e.variables e.alphabet s.Name's',False
+Translate,e.x' ',Started e.Result 'FTF' e.variables e.alphabet s.Name,False
+Translate,e.x' ',Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,e.x' ',Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest,False
+Translate,e.x' ',Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,e.x' ',Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest,False
+Translate,e.x' ',Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,e.x' ',Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest,False
+Translate,e.x' ',s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest,False
+Translate,e.x' ',s.Term e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't',Started e.Result 'TFF' e.variables e.alphabet s.Name's',False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't',Started e.Result 'FTF' e.variables e.alphabet s.Name,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't',Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't',Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't',Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't',Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't',Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't',Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't',s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't',s.Term e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's',Started e.Result 'FTF' e.variables e.alphabet s.Name,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's',Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's',Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's',Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's',Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's',Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's',Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's',s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's',s.Term e.Rest,False
+Translate,Started e.Result 'FTF' e.variables e.alphabet s.Name,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'FTF' e.variables e.alphabet s.Name,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest,False
+Translate,Started e.Result 'FTF' e.variables e.alphabet s.Name,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'FTF' e.variables e.alphabet s.Name,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest,False
+Translate,Started e.Result 'FTF' e.variables e.alphabet s.Name,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'FTF' e.variables e.alphabet s.Name,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest,False
+Translate,Started e.Result 'FTF' e.variables e.alphabet s.Name,s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest,False
+Translate,Started e.Result 'FTF' e.variables e.alphabet s.Name,s.Term e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,s.Term e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest,s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest,False
+Translate,Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest,s.Term e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,s.Term e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest,s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest,False
+Translate,Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest,s.Term e.Rest,False
+Translate,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest,False
+Translate,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest,False
+Translate,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest,s.Term e.Rest,False
+Translate,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest,s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest,False
+Translate,Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest,s.Term e.Rest,False
+Translate,s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest,s.Term e.Rest,False
+Eq,e.Rules e.System,Solved e.Rules False,True
+Eq,e.Rules e.System,Solved e.Rules e.System,True
+Eq,Solved e.Rules False,Solved e.Rules e.System,False
+FindMaxNameT,e.Max var 't' e.name e.LHS e.RHS e.Other,e.Max e.LHS var 't' e.name e.RHS e.Other,True
+FindMaxNameT,e.Max var 't' e.name e.LHS e.RHS e.Other,e.Max t.Any e.LHS t.Any2 e.RHS e.Other,False
+FindMaxNameT,e.Max var 't' e.name e.LHS e.RHS e.Other,e.Max t.Any e.LHS e.Other,False
+FindMaxNameT,e.Max var 't' e.name e.LHS e.RHS e.Other,e.Max t.Any e.RHS e.Other,False
+FindMaxNameT,e.Max var 't' e.name e.LHS e.RHS e.Other,e.Max e.Other,False
+FindMaxNameT,e.Max var 't' e.name e.LHS e.RHS e.Other,e.Max,False
+FindMaxNameT,e.Max e.LHS var 't' e.name e.RHS e.Other,e.Max t.Any e.LHS t.Any2 e.RHS e.Other,False
+FindMaxNameT,e.Max e.LHS var 't' e.name e.RHS e.Other,e.Max t.Any e.LHS e.Other,False
+FindMaxNameT,e.Max e.LHS var 't' e.name e.RHS e.Other,e.Max t.Any e.RHS e.Other,False
+FindMaxNameT,e.Max e.LHS var 't' e.name e.RHS e.Other,e.Max e.Other,False
+FindMaxNameT,e.Max e.LHS var 't' e.name e.RHS e.Other,e.Max,False
+FindMaxNameT,e.Max t.Any e.LHS t.Any2 e.RHS e.Other,e.Max t.Any e.LHS e.Other,False
+FindMaxNameT,e.Max t.Any e.LHS t.Any2 e.RHS e.Other,e.Max t.Any e.RHS e.Other,False
+FindMaxNameT,e.Max t.Any e.LHS t.Any2 e.RHS e.Other,e.Max e.Other,False
+FindMaxNameT,e.Max t.Any e.LHS t.Any2 e.RHS e.Other,e.Max,False
+FindMaxNameT,e.Max t.Any e.LHS e.Other,e.Max t.Any e.RHS e.Other,True
+FindMaxNameT,e.Max t.Any e.LHS e.Other,e.Max e.Other,False
+FindMaxNameT,e.Max t.Any e.LHS e.Other,e.Max,False
+FindMaxNameT,e.Max t.Any e.RHS e.Other,e.Max e.Other,False
+FindMaxNameT,e.Max t.Any e.RHS e.Other,e.Max,False
+FindMaxNameT,e.Max e.Other,e.Max,True
+SelectMax,e.Current e.Next e.Other 'G' e.Max,e.Current e.Next e.Other s.Log e.Max,False
+SelectMax,e.Current e.Next e.Other 'G' e.Max,e.Current 'G' e.Max,True
+SelectMax,e.Current e.Next e.Other 'G' e.Max,e.Current s.Log e.Max,False
+SelectMax,e.Current e.Next e.Other s.Log e.Max,e.Current 'G' e.Max,True
+SelectMax,e.Current e.Next e.Other s.Log e.Max,e.Current s.Log e.Max,True
+SelectMax,e.Current 'G' e.Max,e.Current s.Log e.Max,False
+CompareNamesT,s.Sym e.x s.Sym e.y 'E',s.Sym e.x s.Sym2 e.y 'E',False
+CompareNamesT,s.Sym e.x s.Sym e.y 'E',s.Sym e.x s.Sym2 e.y s.Log,False
+CompareNamesT,s.Sym e.x s.Sym e.y 'E',e.x  s.Log,False
+CompareNamesT,s.Sym e.x s.Sym e.y 'E',e.y s.Log,False
+CompareNamesT,s.Sym e.x s.Sym e.y 'E',s.Log,False
+CompareNamesT,s.Sym e.x s.Sym e.y 'E',s.Sym e.x s.Sym e.y,False
+CompareNamesT,s.Sym e.x s.Sym e.y 'E',s.Sym e.x s.Sym2 e.y,False
+CompareNamesT,s.Sym e.x s.Sym e.y 'E',e.x,False
+CompareNamesT,s.Sym e.x s.Sym e.y 'E',e.x,False
+CompareNamesT,s.Sym e.x s.Sym e.y 'E',,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y 'E',s.Sym e.x s.Sym2 e.y s.Log,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y 'E',e.x  s.Log,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y 'E',e.y s.Log,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y 'E',s.Log,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y 'E',s.Sym e.x s.Sym e.y,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y 'E',s.Sym e.x s.Sym2 e.y,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y 'E',e.x,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y 'E',e.x,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y 'E',,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y s.Log,e.x  s.Log,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y s.Log,e.y s.Log,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y s.Log,s.Log,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y s.Log,s.Sym e.x s.Sym e.y,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y s.Log,s.Sym e.x s.Sym2 e.y,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y s.Log,e.x,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y s.Log,e.x,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y s.Log,,False
+CompareNamesT,e.x  s.Log,e.y s.Log,True
+CompareNamesT,e.x  s.Log,s.Log,True
+CompareNamesT,e.x  s.Log,s.Sym e.x s.Sym e.y,False
+CompareNamesT,e.x  s.Log,s.Sym e.x s.Sym2 e.y,False
+CompareNamesT,e.x  s.Log,e.x,False
+CompareNamesT,e.x  s.Log,e.x,False
+CompareNamesT,e.x  s.Log,,False
+CompareNamesT,e.y s.Log,s.Log,True
+CompareNamesT,e.y s.Log,s.Sym e.x s.Sym e.y,False
+CompareNamesT,e.y s.Log,s.Sym e.x s.Sym2 e.y,False
+CompareNamesT,e.y s.Log,e.x,False
+CompareNamesT,e.y s.Log,e.x,False
+CompareNamesT,e.y s.Log,,False
+CompareNamesT,s.Log,s.Sym e.x s.Sym e.y,False
+CompareNamesT,s.Log,s.Sym e.x s.Sym2 e.y,False
+CompareNamesT,s.Log,e.x,False
+CompareNamesT,s.Log,e.x,False
+CompareNamesT,s.Log,,False
+CompareNamesT,s.Sym e.x s.Sym e.y,s.Sym e.x s.Sym2 e.y,False
+CompareNamesT,s.Sym e.x s.Sym e.y,e.x,False
+CompareNamesT,s.Sym e.x s.Sym e.y,e.x,False
+CompareNamesT,s.Sym e.x s.Sym e.y,,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y,e.x,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y,e.x,False
+CompareNamesT,s.Sym e.x s.Sym2 e.y,,False
+CompareNamesT,e.x,e.x,True
+CompareNamesT,e.x,,True
+CompareNamesT,e.x,,True
+NextNameT,e.x'Z' e.Counter,e.x s.Sym e.Counter,True
+NextNameT,e.x'Z' e.Counter,,True
+NextNameT,e.x'Z' e.Counter,e.Name,True
+NextNameT,e.x s.Sym e.Counter,,False
+NextNameT,e.x s.Sym e.Counter,e.Name,False
+NextNameT,,e.Name,False
+BuildNameA,e.Result,e.Result e.X'I',True
+BuildNameA,e.Result,e.X,True
+BuildNameA,e.Result,'B' 'A',True
+BuildNameA,e.Result,'C' 'A',True
+BuildNameA,e.Result,'D' 'A',True
+BuildNameA,e.Result,'E' 'A',True
+BuildNameA,e.Result,'F' 'A',True
+BuildNameA,e.Result,'G' 'A',True
+BuildNameA,e.Result,'H' 'A',True
+BuildNameA,e.Result,'I' 'A',True
+BuildNameA,e.Result,'J' 'A',True
+BuildNameA,e.Result,'K' 'A',True
+BuildNameA,e.Result,'L' 'A',True
+BuildNameA,e.Result,'M' 'A',True
+BuildNameA,e.Result,'N' 'A',True
+BuildNameA,e.Result,'O' 'A',True
+BuildNameA,e.Result,'P' 'A',True
+BuildNameA,e.Result,'Q' 'A',True
+BuildNameA,e.Result,'R' 'A',True
+BuildNameA,e.Result,'S' 'A',True
+BuildNameA,e.Result,'T' 'A',True
+BuildNameA,e.Result,'U' 'A',True
+BuildNameA,e.Result,'V' 'A',True
+BuildNameA,e.Result,'W' 'A',True
+BuildNameA,e.Result,'X' 'A',True
+BuildNameA,e.Result,'Y' 'A',True
+BuildNameA,e.Result,'Z' 'A',True
+BuildNameA,e.Result,s.Sym s.Sym2,True
+BuildNameA,e.Result e.X'I',e.X,True
+BuildNameA,e.Result e.X'I','B' 'A',True
+BuildNameA,e.Result e.X'I','C' 'A',True
+BuildNameA,e.Result e.X'I','D' 'A',True
+BuildNameA,e.Result e.X'I','E' 'A',True
+BuildNameA,e.Result e.X'I','F' 'A',True
+BuildNameA,e.Result e.X'I','G' 'A',True
+BuildNameA,e.Result e.X'I','H' 'A',True
+BuildNameA,e.Result e.X'I','I' 'A',True
+BuildNameA,e.Result e.X'I','J' 'A',True
+BuildNameA,e.Result e.X'I','K' 'A',True
+BuildNameA,e.Result e.X'I','L' 'A',True
+BuildNameA,e.Result e.X'I','M' 'A',True
+BuildNameA,e.Result e.X'I','N' 'A',True
+BuildNameA,e.Result e.X'I','O' 'A',True
+BuildNameA,e.Result e.X'I','P' 'A',True
+BuildNameA,e.Result e.X'I','Q' 'A',True
+BuildNameA,e.Result e.X'I','R' 'A',True
+BuildNameA,e.Result e.X'I','S' 'A',True
+BuildNameA,e.Result e.X'I','T' 'A',True
+BuildNameA,e.Result e.X'I','U' 'A',True
+BuildNameA,e.Result e.X'I','V' 'A',True
+BuildNameA,e.Result e.X'I','W' 'A',True
+BuildNameA,e.Result e.X'I','X' 'A',True
+BuildNameA,e.Result e.X'I','Y' 'A',True
+BuildNameA,e.Result e.X'I','Z' 'A',True
+BuildNameA,e.Result e.X'I',s.Sym s.Sym2,True
+BuildNameA,e.X,'B' 'A',True
+BuildNameA,e.X,'C' 'A',True
+BuildNameA,e.X,'D' 'A',True
+BuildNameA,e.X,'E' 'A',True
+BuildNameA,e.X,'F' 'A',True
+BuildNameA,e.X,'G' 'A',True
+BuildNameA,e.X,'H' 'A',True
+BuildNameA,e.X,'I' 'A',True
+BuildNameA,e.X,'J' 'A',True
+BuildNameA,e.X,'K' 'A',True
+BuildNameA,e.X,'L' 'A',True
+BuildNameA,e.X,'M' 'A',True
+BuildNameA,e.X,'N' 'A',True
+BuildNameA,e.X,'O' 'A',True
+BuildNameA,e.X,'P' 'A',True
+BuildNameA,e.X,'Q' 'A',True
+BuildNameA,e.X,'R' 'A',True
+BuildNameA,e.X,'S' 'A',True
+BuildNameA,e.X,'T' 'A',True
+BuildNameA,e.X,'U' 'A',True
+BuildNameA,e.X,'V' 'A',True
+BuildNameA,e.X,'W' 'A',True
+BuildNameA,e.X,'X' 'A',True
+BuildNameA,e.X,'Y' 'A',True
+BuildNameA,e.X,'Z' 'A',True
+BuildNameA,e.X,s.Sym s.Sym2,True
+BuildNameA,'B' 'A','C' 'A',False
+BuildNameA,'B' 'A','D' 'A',False
+BuildNameA,'B' 'A','E' 'A',False
+BuildNameA,'B' 'A','F' 'A',False
+BuildNameA,'B' 'A','G' 'A',False
+BuildNameA,'B' 'A','H' 'A',False
+BuildNameA,'B' 'A','I' 'A',False
+BuildNameA,'B' 'A','J' 'A',False
+BuildNameA,'B' 'A','K' 'A',False
+BuildNameA,'B' 'A','L' 'A',False
+BuildNameA,'B' 'A','M' 'A',False
+BuildNameA,'B' 'A','N' 'A',False
+BuildNameA,'B' 'A','O' 'A',False
+BuildNameA,'B' 'A','P' 'A',False
+BuildNameA,'B' 'A','Q' 'A',False
+BuildNameA,'B' 'A','R' 'A',False
+BuildNameA,'B' 'A','S' 'A',False
+BuildNameA,'B' 'A','T' 'A',False
+BuildNameA,'B' 'A','U' 'A',False
+BuildNameA,'B' 'A','V' 'A',False
+BuildNameA,'B' 'A','W' 'A',False
+BuildNameA,'B' 'A','X' 'A',False
+BuildNameA,'B' 'A','Y' 'A',False
+BuildNameA,'B' 'A','Z' 'A',False
+BuildNameA,'B' 'A',s.Sym s.Sym2,False
+BuildNameA,'C' 'A','D' 'A',False
+BuildNameA,'C' 'A','E' 'A',False
+BuildNameA,'C' 'A','F' 'A',False
+BuildNameA,'C' 'A','G' 'A',False
+BuildNameA,'C' 'A','H' 'A',False
+BuildNameA,'C' 'A','I' 'A',False
+BuildNameA,'C' 'A','J' 'A',False
+BuildNameA,'C' 'A','K' 'A',False
+BuildNameA,'C' 'A','L' 'A',False
+BuildNameA,'C' 'A','M' 'A',False
+BuildNameA,'C' 'A','N' 'A',False
+BuildNameA,'C' 'A','O' 'A',False
+BuildNameA,'C' 'A','P' 'A',False
+BuildNameA,'C' 'A','Q' 'A',False
+BuildNameA,'C' 'A','R' 'A',False
+BuildNameA,'C' 'A','S' 'A',False
+BuildNameA,'C' 'A','T' 'A',False
+BuildNameA,'C' 'A','U' 'A',False
+BuildNameA,'C' 'A','V' 'A',False
+BuildNameA,'C' 'A','W' 'A',False
+BuildNameA,'C' 'A','X' 'A',False
+BuildNameA,'C' 'A','Y' 'A',False
+BuildNameA,'C' 'A','Z' 'A',False
+BuildNameA,'C' 'A',s.Sym s.Sym2,False
+BuildNameA,'D' 'A','E' 'A',False
+BuildNameA,'D' 'A','F' 'A',False
+BuildNameA,'D' 'A','G' 'A',False
+BuildNameA,'D' 'A','H' 'A',False
+BuildNameA,'D' 'A','I' 'A',False
+BuildNameA,'D' 'A','J' 'A',False
+BuildNameA,'D' 'A','K' 'A',False
+BuildNameA,'D' 'A','L' 'A',False
+BuildNameA,'D' 'A','M' 'A',False
+BuildNameA,'D' 'A','N' 'A',False
+BuildNameA,'D' 'A','O' 'A',False
+BuildNameA,'D' 'A','P' 'A',False
+BuildNameA,'D' 'A','Q' 'A',False
+BuildNameA,'D' 'A','R' 'A',False
+BuildNameA,'D' 'A','S' 'A',False
+BuildNameA,'D' 'A','T' 'A',False
+BuildNameA,'D' 'A','U' 'A',False
+BuildNameA,'D' 'A','V' 'A',False
+BuildNameA,'D' 'A','W' 'A',False
+BuildNameA,'D' 'A','X' 'A',False
+BuildNameA,'D' 'A','Y' 'A',False
+BuildNameA,'D' 'A','Z' 'A',False
+BuildNameA,'D' 'A',s.Sym s.Sym2,False
+BuildNameA,'E' 'A','F' 'A',False
+BuildNameA,'E' 'A','G' 'A',False
+BuildNameA,'E' 'A','H' 'A',False
+BuildNameA,'E' 'A','I' 'A',False
+BuildNameA,'E' 'A','J' 'A',False
+BuildNameA,'E' 'A','K' 'A',False
+BuildNameA,'E' 'A','L' 'A',False
+BuildNameA,'E' 'A','M' 'A',False
+BuildNameA,'E' 'A','N' 'A',False
+BuildNameA,'E' 'A','O' 'A',False
+BuildNameA,'E' 'A','P' 'A',False
+BuildNameA,'E' 'A','Q' 'A',False
+BuildNameA,'E' 'A','R' 'A',False
+BuildNameA,'E' 'A','S' 'A',False
+BuildNameA,'E' 'A','T' 'A',False
+BuildNameA,'E' 'A','U' 'A',False
+BuildNameA,'E' 'A','V' 'A',False
+BuildNameA,'E' 'A','W' 'A',False
+BuildNameA,'E' 'A','X' 'A',False
+BuildNameA,'E' 'A','Y' 'A',False
+BuildNameA,'E' 'A','Z' 'A',False
+BuildNameA,'E' 'A',s.Sym s.Sym2,False
+BuildNameA,'F' 'A','G' 'A',False
+BuildNameA,'F' 'A','H' 'A',False
+BuildNameA,'F' 'A','I' 'A',False
+BuildNameA,'F' 'A','J' 'A',False
+BuildNameA,'F' 'A','K' 'A',False
+BuildNameA,'F' 'A','L' 'A',False
+BuildNameA,'F' 'A','M' 'A',False
+BuildNameA,'F' 'A','N' 'A',False
+BuildNameA,'F' 'A','O' 'A',False
+BuildNameA,'F' 'A','P' 'A',False
+BuildNameA,'F' 'A','Q' 'A',False
+BuildNameA,'F' 'A','R' 'A',False
+BuildNameA,'F' 'A','S' 'A',False
+BuildNameA,'F' 'A','T' 'A',False
+BuildNameA,'F' 'A','U' 'A',False
+BuildNameA,'F' 'A','V' 'A',False
+BuildNameA,'F' 'A','W' 'A',False
+BuildNameA,'F' 'A','X' 'A',False
+BuildNameA,'F' 'A','Y' 'A',False
+BuildNameA,'F' 'A','Z' 'A',False
+BuildNameA,'F' 'A',s.Sym s.Sym2,False
+BuildNameA,'G' 'A','H' 'A',False
+BuildNameA,'G' 'A','I' 'A',False
+BuildNameA,'G' 'A','J' 'A',False
+BuildNameA,'G' 'A','K' 'A',False
+BuildNameA,'G' 'A','L' 'A',False
+BuildNameA,'G' 'A','M' 'A',False
+BuildNameA,'G' 'A','N' 'A',False
+BuildNameA,'G' 'A','O' 'A',False
+BuildNameA,'G' 'A','P' 'A',False
+BuildNameA,'G' 'A','Q' 'A',False
+BuildNameA,'G' 'A','R' 'A',False
+BuildNameA,'G' 'A','S' 'A',False
+BuildNameA,'G' 'A','T' 'A',False
+BuildNameA,'G' 'A','U' 'A',False
+BuildNameA,'G' 'A','V' 'A',False
+BuildNameA,'G' 'A','W' 'A',False
+BuildNameA,'G' 'A','X' 'A',False
+BuildNameA,'G' 'A','Y' 'A',False
+BuildNameA,'G' 'A','Z' 'A',False
+BuildNameA,'G' 'A',s.Sym s.Sym2,False
+BuildNameA,'H' 'A','I' 'A',False
+BuildNameA,'H' 'A','J' 'A',False
+BuildNameA,'H' 'A','K' 'A',False
+BuildNameA,'H' 'A','L' 'A',False
+BuildNameA,'H' 'A','M' 'A',False
+BuildNameA,'H' 'A','N' 'A',False
+BuildNameA,'H' 'A','O' 'A',False
+BuildNameA,'H' 'A','P' 'A',False
+BuildNameA,'H' 'A','Q' 'A',False
+BuildNameA,'H' 'A','R' 'A',False
+BuildNameA,'H' 'A','S' 'A',False
+BuildNameA,'H' 'A','T' 'A',False
+BuildNameA,'H' 'A','U' 'A',False
+BuildNameA,'H' 'A','V' 'A',False
+BuildNameA,'H' 'A','W' 'A',False
+BuildNameA,'H' 'A','X' 'A',False
+BuildNameA,'H' 'A','Y' 'A',False
+BuildNameA,'H' 'A','Z' 'A',False
+BuildNameA,'H' 'A',s.Sym s.Sym2,False
+BuildNameA,'I' 'A','J' 'A',False
+BuildNameA,'I' 'A','K' 'A',False
+BuildNameA,'I' 'A','L' 'A',False
+BuildNameA,'I' 'A','M' 'A',False
+BuildNameA,'I' 'A','N' 'A',False
+BuildNameA,'I' 'A','O' 'A',False
+BuildNameA,'I' 'A','P' 'A',False
+BuildNameA,'I' 'A','Q' 'A',False
+BuildNameA,'I' 'A','R' 'A',False
+BuildNameA,'I' 'A','S' 'A',False
+BuildNameA,'I' 'A','T' 'A',False
+BuildNameA,'I' 'A','U' 'A',False
+BuildNameA,'I' 'A','V' 'A',False
+BuildNameA,'I' 'A','W' 'A',False
+BuildNameA,'I' 'A','X' 'A',False
+BuildNameA,'I' 'A','Y' 'A',False
+BuildNameA,'I' 'A','Z' 'A',False
+BuildNameA,'I' 'A',s.Sym s.Sym2,False
+BuildNameA,'J' 'A','K' 'A',False
+BuildNameA,'J' 'A','L' 'A',False
+BuildNameA,'J' 'A','M' 'A',False
+BuildNameA,'J' 'A','N' 'A',False
+BuildNameA,'J' 'A','O' 'A',False
+BuildNameA,'J' 'A','P' 'A',False
+BuildNameA,'J' 'A','Q' 'A',False
+BuildNameA,'J' 'A','R' 'A',False
+BuildNameA,'J' 'A','S' 'A',False
+BuildNameA,'J' 'A','T' 'A',False
+BuildNameA,'J' 'A','U' 'A',False
+BuildNameA,'J' 'A','V' 'A',False
+BuildNameA,'J' 'A','W' 'A',False
+BuildNameA,'J' 'A','X' 'A',False
+BuildNameA,'J' 'A','Y' 'A',False
+BuildNameA,'J' 'A','Z' 'A',False
+BuildNameA,'J' 'A',s.Sym s.Sym2,False
+BuildNameA,'K' 'A','L' 'A',False
+BuildNameA,'K' 'A','M' 'A',False
+BuildNameA,'K' 'A','N' 'A',False
+BuildNameA,'K' 'A','O' 'A',False
+BuildNameA,'K' 'A','P' 'A',False
+BuildNameA,'K' 'A','Q' 'A',False
+BuildNameA,'K' 'A','R' 'A',False
+BuildNameA,'K' 'A','S' 'A',False
+BuildNameA,'K' 'A','T' 'A',False
+BuildNameA,'K' 'A','U' 'A',False
+BuildNameA,'K' 'A','V' 'A',False
+BuildNameA,'K' 'A','W' 'A',False
+BuildNameA,'K' 'A','X' 'A',False
+BuildNameA,'K' 'A','Y' 'A',False
+BuildNameA,'K' 'A','Z' 'A',False
+BuildNameA,'K' 'A',s.Sym s.Sym2,False
+BuildNameA,'L' 'A','M' 'A',False
+BuildNameA,'L' 'A','N' 'A',False
+BuildNameA,'L' 'A','O' 'A',False
+BuildNameA,'L' 'A','P' 'A',False
+BuildNameA,'L' 'A','Q' 'A',False
+BuildNameA,'L' 'A','R' 'A',False
+BuildNameA,'L' 'A','S' 'A',False
+BuildNameA,'L' 'A','T' 'A',False
+BuildNameA,'L' 'A','U' 'A',False
+BuildNameA,'L' 'A','V' 'A',False
+BuildNameA,'L' 'A','W' 'A',False
+BuildNameA,'L' 'A','X' 'A',False
+BuildNameA,'L' 'A','Y' 'A',False
+BuildNameA,'L' 'A','Z' 'A',False
+BuildNameA,'L' 'A',s.Sym s.Sym2,False
+BuildNameA,'M' 'A','N' 'A',False
+BuildNameA,'M' 'A','O' 'A',False
+BuildNameA,'M' 'A','P' 'A',False
+BuildNameA,'M' 'A','Q' 'A',False
+BuildNameA,'M' 'A','R' 'A',False
+BuildNameA,'M' 'A','S' 'A',False
+BuildNameA,'M' 'A','T' 'A',False
+BuildNameA,'M' 'A','U' 'A',False
+BuildNameA,'M' 'A','V' 'A',False
+BuildNameA,'M' 'A','W' 'A',False
+BuildNameA,'M' 'A','X' 'A',False
+BuildNameA,'M' 'A','Y' 'A',False
+BuildNameA,'M' 'A','Z' 'A',False
+BuildNameA,'M' 'A',s.Sym s.Sym2,False
+BuildNameA,'N' 'A','O' 'A',False
+BuildNameA,'N' 'A','P' 'A',False
+BuildNameA,'N' 'A','Q' 'A',False
+BuildNameA,'N' 'A','R' 'A',False
+BuildNameA,'N' 'A','S' 'A',False
+BuildNameA,'N' 'A','T' 'A',False
+BuildNameA,'N' 'A','U' 'A',False
+BuildNameA,'N' 'A','V' 'A',False
+BuildNameA,'N' 'A','W' 'A',False
+BuildNameA,'N' 'A','X' 'A',False
+BuildNameA,'N' 'A','Y' 'A',False
+BuildNameA,'N' 'A','Z' 'A',False
+BuildNameA,'N' 'A',s.Sym s.Sym2,False
+BuildNameA,'O' 'A','P' 'A',False
+BuildNameA,'O' 'A','Q' 'A',False
+BuildNameA,'O' 'A','R' 'A',False
+BuildNameA,'O' 'A','S' 'A',False
+BuildNameA,'O' 'A','T' 'A',False
+BuildNameA,'O' 'A','U' 'A',False
+BuildNameA,'O' 'A','V' 'A',False
+BuildNameA,'O' 'A','W' 'A',False
+BuildNameA,'O' 'A','X' 'A',False
+BuildNameA,'O' 'A','Y' 'A',False
+BuildNameA,'O' 'A','Z' 'A',False
+BuildNameA,'O' 'A',s.Sym s.Sym2,False
+BuildNameA,'P' 'A','Q' 'A',False
+BuildNameA,'P' 'A','R' 'A',False
+BuildNameA,'P' 'A','S' 'A',False
+BuildNameA,'P' 'A','T' 'A',False
+BuildNameA,'P' 'A','U' 'A',False
+BuildNameA,'P' 'A','V' 'A',False
+BuildNameA,'P' 'A','W' 'A',False
+BuildNameA,'P' 'A','X' 'A',False
+BuildNameA,'P' 'A','Y' 'A',False
+BuildNameA,'P' 'A','Z' 'A',False
+BuildNameA,'P' 'A',s.Sym s.Sym2,False
+BuildNameA,'Q' 'A','R' 'A',False
+BuildNameA,'Q' 'A','S' 'A',False
+BuildNameA,'Q' 'A','T' 'A',False
+BuildNameA,'Q' 'A','U' 'A',False
+BuildNameA,'Q' 'A','V' 'A',False
+BuildNameA,'Q' 'A','W' 'A',False
+BuildNameA,'Q' 'A','X' 'A',False
+BuildNameA,'Q' 'A','Y' 'A',False
+BuildNameA,'Q' 'A','Z' 'A',False
+BuildNameA,'Q' 'A',s.Sym s.Sym2,False
+BuildNameA,'R' 'A','S' 'A',False
+BuildNameA,'R' 'A','T' 'A',False
+BuildNameA,'R' 'A','U' 'A',False
+BuildNameA,'R' 'A','V' 'A',False
+BuildNameA,'R' 'A','W' 'A',False
+BuildNameA,'R' 'A','X' 'A',False
+BuildNameA,'R' 'A','Y' 'A',False
+BuildNameA,'R' 'A','Z' 'A',False
+BuildNameA,'R' 'A',s.Sym s.Sym2,False
+BuildNameA,'S' 'A','T' 'A',False
+BuildNameA,'S' 'A','U' 'A',False
+BuildNameA,'S' 'A','V' 'A',False
+BuildNameA,'S' 'A','W' 'A',False
+BuildNameA,'S' 'A','X' 'A',False
+BuildNameA,'S' 'A','Y' 'A',False
+BuildNameA,'S' 'A','Z' 'A',False
+BuildNameA,'S' 'A',s.Sym s.Sym2,False
+BuildNameA,'T' 'A','U' 'A',False
+BuildNameA,'T' 'A','V' 'A',False
+BuildNameA,'T' 'A','W' 'A',False
+BuildNameA,'T' 'A','X' 'A',False
+BuildNameA,'T' 'A','Y' 'A',False
+BuildNameA,'T' 'A','Z' 'A',False
+BuildNameA,'T' 'A',s.Sym s.Sym2,False
+BuildNameA,'U' 'A','V' 'A',False
+BuildNameA,'U' 'A','W' 'A',False
+BuildNameA,'U' 'A','X' 'A',False
+BuildNameA,'U' 'A','Y' 'A',False
+BuildNameA,'U' 'A','Z' 'A',False
+BuildNameA,'U' 'A',s.Sym s.Sym2,False
+BuildNameA,'V' 'A','W' 'A',False
+BuildNameA,'V' 'A','X' 'A',False
+BuildNameA,'V' 'A','Y' 'A',False
+BuildNameA,'V' 'A','Z' 'A',False
+BuildNameA,'V' 'A',s.Sym s.Sym2,False
+BuildNameA,'W' 'A','X' 'A',False
+BuildNameA,'W' 'A','Y' 'A',False
+BuildNameA,'W' 'A','Z' 'A',False
+BuildNameA,'W' 'A',s.Sym s.Sym2,False
+BuildNameA,'X' 'A','Y' 'A',False
+BuildNameA,'X' 'A','Z' 'A',False
+BuildNameA,'X' 'A',s.Sym s.Sym2,False
+BuildNameA,'Y' 'A','Z' 'A',False
+BuildNameA,'Y' 'A',s.Sym s.Sym2,False
+BuildNameA,'Z' 'A',s.Sym s.Sym2,False
+IncSym,'A','B',False
+IncSym,'A','C',False
+IncSym,'A','D',False
+IncSym,'A','E',False
+IncSym,'A','F',False
+IncSym,'A','G',False
+IncSym,'A','H',False
+IncSym,'A','I',False
+IncSym,'A','J',False
+IncSym,'A','K',False
+IncSym,'A','L',False
+IncSym,'A','M',False
+IncSym,'A','N',False
+IncSym,'A','O',False
+IncSym,'A','P',False
+IncSym,'A','Q',False
+IncSym,'A','R',False
+IncSym,'A','S',False
+IncSym,'A','T',False
+IncSym,'A','U',False
+IncSym,'A','V',False
+IncSym,'A','W',False
+IncSym,'A','X',False
+IncSym,'A','Y',False
+IncSym,'B','C',False
+IncSym,'B','D',False
+IncSym,'B','E',False
+IncSym,'B','F',False
+IncSym,'B','G',False
+IncSym,'B','H',False
+IncSym,'B','I',False
+IncSym,'B','J',False
+IncSym,'B','K',False
+IncSym,'B','L',False
+IncSym,'B','M',False
+IncSym,'B','N',False
+IncSym,'B','O',False
+IncSym,'B','P',False
+IncSym,'B','Q',False
+IncSym,'B','R',False
+IncSym,'B','S',False
+IncSym,'B','T',False
+IncSym,'B','U',False
+IncSym,'B','V',False
+IncSym,'B','W',False
+IncSym,'B','X',False
+IncSym,'B','Y',False
+IncSym,'C','D',False
+IncSym,'C','E',False
+IncSym,'C','F',False
+IncSym,'C','G',False
+IncSym,'C','H',False
+IncSym,'C','I',False
+IncSym,'C','J',False
+IncSym,'C','K',False
+IncSym,'C','L',False
+IncSym,'C','M',False
+IncSym,'C','N',False
+IncSym,'C','O',False
+IncSym,'C','P',False
+IncSym,'C','Q',False
+IncSym,'C','R',False
+IncSym,'C','S',False
+IncSym,'C','T',False
+IncSym,'C','U',False
+IncSym,'C','V',False
+IncSym,'C','W',False
+IncSym,'C','X',False
+IncSym,'C','Y',False
+IncSym,'D','E',False
+IncSym,'D','F',False
+IncSym,'D','G',False
+IncSym,'D','H',False
+IncSym,'D','I',False
+IncSym,'D','J',False
+IncSym,'D','K',False
+IncSym,'D','L',False
+IncSym,'D','M',False
+IncSym,'D','N',False
+IncSym,'D','O',False
+IncSym,'D','P',False
+IncSym,'D','Q',False
+IncSym,'D','R',False
+IncSym,'D','S',False
+IncSym,'D','T',False
+IncSym,'D','U',False
+IncSym,'D','V',False
+IncSym,'D','W',False
+IncSym,'D','X',False
+IncSym,'D','Y',False
+IncSym,'E','F',False
+IncSym,'E','G',False
+IncSym,'E','H',False
+IncSym,'E','I',False
+IncSym,'E','J',False
+IncSym,'E','K',False
+IncSym,'E','L',False
+IncSym,'E','M',False
+IncSym,'E','N',False
+IncSym,'E','O',False
+IncSym,'E','P',False
+IncSym,'E','Q',False
+IncSym,'E','R',False
+IncSym,'E','S',False
+IncSym,'E','T',False
+IncSym,'E','U',False
+IncSym,'E','V',False
+IncSym,'E','W',False
+IncSym,'E','X',False
+IncSym,'E','Y',False
+IncSym,'F','G',False
+IncSym,'F','H',False
+IncSym,'F','I',False
+IncSym,'F','J',False
+IncSym,'F','K',False
+IncSym,'F','L',False
+IncSym,'F','M',False
+IncSym,'F','N',False
+IncSym,'F','O',False
+IncSym,'F','P',False
+IncSym,'F','Q',False
+IncSym,'F','R',False
+IncSym,'F','S',False
+IncSym,'F','T',False
+IncSym,'F','U',False
+IncSym,'F','V',False
+IncSym,'F','W',False
+IncSym,'F','X',False
+IncSym,'F','Y',False
+IncSym,'G','H',False
+IncSym,'G','I',False
+IncSym,'G','J',False
+IncSym,'G','K',False
+IncSym,'G','L',False
+IncSym,'G','M',False
+IncSym,'G','N',False
+IncSym,'G','O',False
+IncSym,'G','P',False
+IncSym,'G','Q',False
+IncSym,'G','R',False
+IncSym,'G','S',False
+IncSym,'G','T',False
+IncSym,'G','U',False
+IncSym,'G','V',False
+IncSym,'G','W',False
+IncSym,'G','X',False
+IncSym,'G','Y',False
+IncSym,'H','I',False
+IncSym,'H','J',False
+IncSym,'H','K',False
+IncSym,'H','L',False
+IncSym,'H','M',False
+IncSym,'H','N',False
+IncSym,'H','O',False
+IncSym,'H','P',False
+IncSym,'H','Q',False
+IncSym,'H','R',False
+IncSym,'H','S',False
+IncSym,'H','T',False
+IncSym,'H','U',False
+IncSym,'H','V',False
+IncSym,'H','W',False
+IncSym,'H','X',False
+IncSym,'H','Y',False
+IncSym,'I','J',False
+IncSym,'I','K',False
+IncSym,'I','L',False
+IncSym,'I','M',False
+IncSym,'I','N',False
+IncSym,'I','O',False
+IncSym,'I','P',False
+IncSym,'I','Q',False
+IncSym,'I','R',False
+IncSym,'I','S',False
+IncSym,'I','T',False
+IncSym,'I','U',False
+IncSym,'I','V',False
+IncSym,'I','W',False
+IncSym,'I','X',False
+IncSym,'I','Y',False
+IncSym,'J','K',False
+IncSym,'J','L',False
+IncSym,'J','M',False
+IncSym,'J','N',False
+IncSym,'J','O',False
+IncSym,'J','P',False
+IncSym,'J','Q',False
+IncSym,'J','R',False
+IncSym,'J','S',False
+IncSym,'J','T',False
+IncSym,'J','U',False
+IncSym,'J','V',False
+IncSym,'J','W',False
+IncSym,'J','X',False
+IncSym,'J','Y',False
+IncSym,'K','L',False
+IncSym,'K','M',False
+IncSym,'K','N',False
+IncSym,'K','O',False
+IncSym,'K','P',False
+IncSym,'K','Q',False
+IncSym,'K','R',False
+IncSym,'K','S',False
+IncSym,'K','T',False
+IncSym,'K','U',False
+IncSym,'K','V',False
+IncSym,'K','W',False
+IncSym,'K','X',False
+IncSym,'K','Y',False
+IncSym,'L','M',False
+IncSym,'L','N',False
+IncSym,'L','O',False
+IncSym,'L','P',False
+IncSym,'L','Q',False
+IncSym,'L','R',False
+IncSym,'L','S',False
+IncSym,'L','T',False
+IncSym,'L','U',False
+IncSym,'L','V',False
+IncSym,'L','W',False
+IncSym,'L','X',False
+IncSym,'L','Y',False
+IncSym,'M','N',False
+IncSym,'M','O',False
+IncSym,'M','P',False
+IncSym,'M','Q',False
+IncSym,'M','R',False
+IncSym,'M','S',False
+IncSym,'M','T',False
+IncSym,'M','U',False
+IncSym,'M','V',False
+IncSym,'M','W',False
+IncSym,'M','X',False
+IncSym,'M','Y',False
+IncSym,'N','O',False
+IncSym,'N','P',False
+IncSym,'N','Q',False
+IncSym,'N','R',False
+IncSym,'N','S',False
+IncSym,'N','T',False
+IncSym,'N','U',False
+IncSym,'N','V',False
+IncSym,'N','W',False
+IncSym,'N','X',False
+IncSym,'N','Y',False
+IncSym,'O','P',False
+IncSym,'O','Q',False
+IncSym,'O','R',False
+IncSym,'O','S',False
+IncSym,'O','T',False
+IncSym,'O','U',False
+IncSym,'O','V',False
+IncSym,'O','W',False
+IncSym,'O','X',False
+IncSym,'O','Y',False
+IncSym,'P','Q',False
+IncSym,'P','R',False
+IncSym,'P','S',False
+IncSym,'P','T',False
+IncSym,'P','U',False
+IncSym,'P','V',False
+IncSym,'P','W',False
+IncSym,'P','X',False
+IncSym,'P','Y',False
+IncSym,'Q','R',False
+IncSym,'Q','S',False
+IncSym,'Q','T',False
+IncSym,'Q','U',False
+IncSym,'Q','V',False
+IncSym,'Q','W',False
+IncSym,'Q','X',False
+IncSym,'Q','Y',False
+IncSym,'R','S',False
+IncSym,'R','T',False
+IncSym,'R','U',False
+IncSym,'R','V',False
+IncSym,'R','W',False
+IncSym,'R','X',False
+IncSym,'R','Y',False
+IncSym,'S','T',False
+IncSym,'S','U',False
+IncSym,'S','V',False
+IncSym,'S','W',False
+IncSym,'S','X',False
+IncSym,'S','Y',False
+IncSym,'T','U',False
+IncSym,'T','V',False
+IncSym,'T','W',False
+IncSym,'T','X',False
+IncSym,'T','Y',False
+IncSym,'U','V',False
+IncSym,'U','W',False
+IncSym,'U','X',False
+IncSym,'U','Y',False
+IncSym,'V','W',False
+IncSym,'V','X',False
+IncSym,'V','Y',False
+IncSym,'W','X',False
+IncSym,'W','Y',False
+IncSym,'X','Y',False
+DiophantineSolve,e.System,BuildSet e.System e.Decoded,True
+DiophantineSolve,e.System,FillSystem e.System e.Decoded e.AllSet t.Size,True
+DiophantineSolve,e.System,RE e.System e.AllSet e.Filled e.Matrix,True
+DiophantineSolve,e.System,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,True
+DiophantineSolve,e.System,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,True
+DiophantineSolve,e.System,X e.System e.AllSet e.Matrix False,True
+DiophantineSolve,e.System,X e.System e.AllSet e.Matrix e.K,True
+DiophantineSolve,e.System,Assign e.System e.AllSet e.Matrix e.K False,True
+DiophantineSolve,e.System,Assign e.System e.AllSet e.Matrix e.K e.Result,True
+DiophantineSolve,e.System,Apply e.System e.Solution,True
+DiophantineSolve,BuildSet e.System e.Decoded,FillSystem e.System e.Decoded e.AllSet t.Size,False
+DiophantineSolve,BuildSet e.System e.Decoded,RE e.System e.AllSet e.Filled e.Matrix,False
+DiophantineSolve,BuildSet e.System e.Decoded,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,False
+DiophantineSolve,BuildSet e.System e.Decoded,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,False
+DiophantineSolve,BuildSet e.System e.Decoded,X e.System e.AllSet e.Matrix False,False
+DiophantineSolve,BuildSet e.System e.Decoded,X e.System e.AllSet e.Matrix e.K,False
+DiophantineSolve,BuildSet e.System e.Decoded,Assign e.System e.AllSet e.Matrix e.K False,False
+DiophantineSolve,BuildSet e.System e.Decoded,Assign e.System e.AllSet e.Matrix e.K e.Result,False
+DiophantineSolve,BuildSet e.System e.Decoded,Apply e.System e.Solution,False
+DiophantineSolve,FillSystem e.System e.Decoded e.AllSet t.Size,RE e.System e.AllSet e.Filled e.Matrix,False
+DiophantineSolve,FillSystem e.System e.Decoded e.AllSet t.Size,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,False
+DiophantineSolve,FillSystem e.System e.Decoded e.AllSet t.Size,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,False
+DiophantineSolve,FillSystem e.System e.Decoded e.AllSet t.Size,X e.System e.AllSet e.Matrix False,False
+DiophantineSolve,FillSystem e.System e.Decoded e.AllSet t.Size,X e.System e.AllSet e.Matrix e.K,False
+DiophantineSolve,FillSystem e.System e.Decoded e.AllSet t.Size,Assign e.System e.AllSet e.Matrix e.K False,False
+DiophantineSolve,FillSystem e.System e.Decoded e.AllSet t.Size,Assign e.System e.AllSet e.Matrix e.K e.Result,False
+DiophantineSolve,FillSystem e.System e.Decoded e.AllSet t.Size,Apply e.System e.Solution,False
+DiophantineSolve,RE e.System e.AllSet e.Filled e.Matrix,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,False
+DiophantineSolve,RE e.System e.AllSet e.Filled e.Matrix,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,False
+DiophantineSolve,RE e.System e.AllSet e.Filled e.Matrix,X e.System e.AllSet e.Matrix False,False
+DiophantineSolve,RE e.System e.AllSet e.Filled e.Matrix,X e.System e.AllSet e.Matrix e.K,False
+DiophantineSolve,RE e.System e.AllSet e.Filled e.Matrix,Assign e.System e.AllSet e.Matrix e.K False,False
+DiophantineSolve,RE e.System e.AllSet e.Filled e.Matrix,Assign e.System e.AllSet e.Matrix e.K e.Result,False
+DiophantineSolve,RE e.System e.AllSet e.Filled e.Matrix,Apply e.System e.Solution,False
+DiophantineSolve,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,True
+DiophantineSolve,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,X e.System e.AllSet e.Matrix False,False
+DiophantineSolve,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,X e.System e.AllSet e.Matrix e.K,False
+DiophantineSolve,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,Assign e.System e.AllSet e.Matrix e.K False,False
+DiophantineSolve,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,Assign e.System e.AllSet e.Matrix e.K e.Result,False
+DiophantineSolve,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,Apply e.System e.Solution,False
+DiophantineSolve,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,X e.System e.AllSet e.Matrix False,False
+DiophantineSolve,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,X e.System e.AllSet e.Matrix e.K,False
+DiophantineSolve,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,Assign e.System e.AllSet e.Matrix e.K False,False
+DiophantineSolve,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,Assign e.System e.AllSet e.Matrix e.K e.Result,False
+DiophantineSolve,K e.System e.AllSet e.RowEchelon e.Matrix e.RHS,Apply e.System e.Solution,False
+DiophantineSolve,X e.System e.AllSet e.Matrix False,X e.System e.AllSet e.Matrix e.K,False
+DiophantineSolve,X e.System e.AllSet e.Matrix False,Assign e.System e.AllSet e.Matrix e.K False,False
+DiophantineSolve,X e.System e.AllSet e.Matrix False,Assign e.System e.AllSet e.Matrix e.K e.Result,False
+DiophantineSolve,X e.System e.AllSet e.Matrix False,Apply e.System e.Solution,False
+DiophantineSolve,X e.System e.AllSet e.Matrix e.K,Assign e.System e.AllSet e.Matrix e.K False,False
+DiophantineSolve,X e.System e.AllSet e.Matrix e.K,Assign e.System e.AllSet e.Matrix e.K e.Result,False
+DiophantineSolve,X e.System e.AllSet e.Matrix e.K,Apply e.System e.Solution,False
+DiophantineSolve,Assign e.System e.AllSet e.Matrix e.K False,Assign e.System e.AllSet e.Matrix e.K e.Result,False
+DiophantineSolve,Assign e.System e.AllSet e.Matrix e.K False,Apply e.System e.Solution,False
+DiophantineSolve,Assign e.System e.AllSet e.Matrix e.K e.Result,Apply e.System e.Solution,False
+BuildMap,e.Result,t.Any e.Rest e.Result,True
+AddToMap,s.Sym e.Prev e.MS Const t.Counter,var 'e' s.name e.Prev var 'e' s.name  t.Counter e.Rest,False
+AddToMap,s.Sym e.Prev e.MS Const t.Counter,var 'e' s.name e.Prev t.Other e.MS,False
+AddToMap,s.Sym e.Prev e.MS Const t.Counter,var 'e' s.name e.Prev,False
+AddToMap,s.Sym e.Prev e.MS Const t.Counter,var 't' s.x1 s.x2 s.x3 s.x4 s.x5 e.Prev e.MS Const t.Counter,True
+AddToMap,var 'e' s.name e.Prev var 'e' s.name  t.Counter e.Rest,var 'e' s.name e.Prev t.Other e.MS,False
+AddToMap,var 'e' s.name e.Prev var 'e' s.name  t.Counter e.Rest,var 'e' s.name e.Prev,False
+AddToMap,var 'e' s.name e.Prev var 'e' s.name  t.Counter e.Rest,var 't' s.x1 s.x2 s.x3 s.x4 s.x5 e.Prev e.MS Const t.Counter,False
+AddToMap,var 'e' s.name e.Prev t.Other e.MS,var 'e' s.name e.Prev,False
+AddToMap,var 'e' s.name e.Prev t.Other e.MS,var 't' s.x1 s.x2 s.x3 s.x4 s.x5 e.Prev e.MS Const t.Counter,False
+AddToMap,var 'e' s.name e.Prev,var 't' s.x1 s.x2 s.x3 s.x4 s.x5 e.Prev e.MS Const t.Counter,False
+SubElement,Const t.Counter e.Rest Const t.Counter2,var 'e' s.name t.Counter e.Rest var 'e' s.name t.Counter2 e.Next,False
+SubElement,Const t.Counter e.Rest Const t.Counter2,t.El e.Rest t.Other e.Next,False
+SubElement,Const t.Counter e.Rest Const t.Counter2,var 'e' s.name t.Counter e.Rest,False
+SubElement,var 'e' s.name t.Counter e.Rest var 'e' s.name t.Counter2 e.Next,t.El e.Rest t.Other e.Next,False
+SubElement,var 'e' s.name t.Counter e.Rest var 'e' s.name t.Counter2 e.Next,var 'e' s.name t.Counter e.Rest,False
+SubElement,t.El e.Rest t.Other e.Next,var 'e' s.name t.Counter e.Rest,True
+SubMaps,e.First t.Any e.Second,e.First,False
+ToLengthSystemEquation,e.Result e.LHS e.RHS e.Rest,e.Result,True
+FillMissingVar,var 'e' s.Name t.Counter e.Processed var 'e' s.Name t.Counter2 e.Left,var 'e' s.Name '-' t.Counter e.Processed var 'e' s.Name t.Counter2 e.Left,True
+FillMissingVar,var 'e' s.Name t.Counter e.Processed var 'e' s.Name t.Counter2 e.Left,var 'e' s.Name t.Counter e.Processed t.Var e.Left,False
+FillMissingVar,var 'e' s.Name t.Counter e.Processed var 'e' s.Name t.Counter2 e.Left,var 'e' s.Name t.Counter e.Processed,False
+FillMissingVar,var 'e' s.Name '-' t.Counter e.Processed var 'e' s.Name t.Counter2 e.Left,var 'e' s.Name t.Counter e.Processed t.Var e.Left,False
+FillMissingVar,var 'e' s.Name '-' t.Counter e.Processed var 'e' s.Name t.Counter2 e.Left,var 'e' s.Name t.Counter e.Processed,False
+FillMissingVar,var 'e' s.Name t.Counter e.Processed t.Var e.Left,var 'e' s.Name t.Counter e.Processed,False
+FillMissing,e.Eq var 'e' s.Name t.Counter e.Left,e.Eq,False
+FillAll,e.Result e.Current e.Left e.Set,e.Result  e.Set,True
+BuildAllMap2,var 'e' s.Name e.Any e.Current e.VarSet,e.VarSet,False
+BuildAllMap,e.Current Const e.Any e.Left e.VarSet,e.VarSet,False
+FindMinVar,e.Set Const e.Any,var 'e' s.Name t.Counter e.Left,False
+FindMinVar,e.Set Const e.Any,var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2 e.Left,False
+FindMinVar,e.Set Const e.Any,var 'e' s.Name t.Counter,False
+FindMinVar,e.Set Const e.Any,var 'e' s.Name '-' t.Counter,False
+FindMinVar,var 'e' s.Name t.Counter e.Left,var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2 e.Left,True
+FindMinVar,var 'e' s.Name t.Counter e.Left,var 'e' s.Name t.Counter,True
+FindMinVar,var 'e' s.Name t.Counter e.Left,var 'e' s.Name '-' t.Counter,True
+FindMinVar,var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2 e.Left,var 'e' s.Name t.Counter,False
+FindMinVar,var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2 e.Left,var 'e' s.Name '-' t.Counter,False
+FindMinVar,var 'e' s.Name t.Counter,var 'e' s.Name '-' t.Counter,False
+SelectMinLetter,var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2,var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2 'L',False
+SelectMinLetter,var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2,var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2 s.Log,False
+SelectMinLetter,var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2 'L',var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2 s.Log,False
+ExtractMaxVar,var 'e' s.Name t.Counter e.Processed var 'e' s.Name t.Counter e.Next,var 'e' s.Name t.Counter e.Processed t.Var e.Next,False
+SortVars,,e.Vars,False
+SortVars,,e.Processed Const t.Counter,False
+SortVars,,e.Processed e.Left,False
+SortVars,,var 'e' s.Name t.Counter e.Processed var 'e' s.Name t.Counter2,False
+SortVars,,var 'e' s.Name t.Counter e.Processed e.Left,False
+SortVars,e.Vars,e.Processed Const t.Counter,True
+SortVars,e.Vars,e.Processed e.Left,True
+SortVars,e.Vars,var 'e' s.Name t.Counter e.Processed var 'e' s.Name t.Counter2,True
+SortVars,e.Vars,var 'e' s.Name t.Counter e.Processed e.Left,True
+SortVars,e.Processed Const t.Counter,e.Processed e.Left,False
+SortVars,e.Processed Const t.Counter,var 'e' s.Name t.Counter e.Processed var 'e' s.Name t.Counter2,False
+SortVars,e.Processed Const t.Counter,var 'e' s.Name t.Counter e.Processed e.Left,False
+SortVars,e.Processed e.Left,var 'e' s.Name t.Counter e.Processed var 'e' s.Name t.Counter2,True
+SortVars,e.Processed e.Left,var 'e' s.Name t.Counter e.Processed e.Left,True
+SortVars,var 'e' s.Name t.Counter e.Processed var 'e' s.Name t.Counter2,var 'e' s.Name t.Counter e.Processed e.Left,False
+SetSize,t.Count,t.Any e.AllSet t.Count,False
+BuildERow,t.Number t.Size,t.Number t.Size t.Current 0 e.Result,False
+BuildERow,t.Number t.Size,t.Number t.Size t.Number t.Left e.Result,False
+BuildERow,t.Number t.Size,t.Number t.Size t.Current t.Left e.Result,False
+BuildERow,t.Number t.Size t.Current 0 e.Result,t.Number t.Size t.Number t.Left e.Result,False
+BuildERow,t.Number t.Size t.Current 0 e.Result,t.Number t.Size t.Current t.Left e.Result,False
+BuildERow,t.Number t.Size t.Number t.Left e.Result,t.Number t.Size t.Current t.Left e.Result,False
+BuildEMatrix,t.Size,t.Counter 0 t.Size e.Result,False
+BuildEMatrix,t.Size,t.Counter t.Left t.Size e.Result,False
+BuildEMatrix,t.Counter 0 t.Size e.Result,t.Counter t.Left t.Size e.Result,False
+GetRHS,e.Result,e.Any Const t.Count2 e.Rest e.Result,True
+MakeTransponentRow,e.Truncated e.Result Const t.Count2 e.Rest,e.Truncated e.Result var 'e' s.Name t.Count Const t.Count2 e.Rest,False
+MakeTransponentRow,e.Truncated e.Result Const t.Count2 e.Rest,e.Truncated e.Result var 'e' s.Name t.Count e.Eq e.Rest,False
+MakeTransponentRow,e.Truncated e.Result Const t.Count2 e.Rest,e.Truncated e.Result,False
+MakeTransponentRow,e.Truncated e.Result var 'e' s.Name t.Count Const t.Count2 e.Rest,e.Truncated e.Result var 'e' s.Name t.Count e.Eq e.Rest,False
+MakeTransponentRow,e.Truncated e.Result var 'e' s.Name t.Count Const t.Count2 e.Rest,e.Truncated e.Result,False
+MakeTransponentRow,e.Truncated e.Result var 'e' s.Name t.Count e.Eq e.Rest,e.Truncated e.Result,False
+MatrixFromMaps,,e.Result e.System,False
+MatrixFromMaps,,e.Result  e.Row,False
+MatrixFromMaps,,e.Result e.System e.Row,False
+MatrixFromMaps,e.Result e.System,e.Result  e.Row,True
+MatrixFromMaps,e.Result e.System,e.Result e.System e.Row,True
+MatrixFromMaps,e.Result  e.Row,e.Result e.System e.Row,True
+GetByIndex,e.List t.Ind,e.List t.Ind,True
+GetByIndex,e.List t.Ind,t.Current e.List t.Ind t.Ind,True
+GetByIndex,e.List t.Ind,t.Current e.List t.Ind t.CurrentInd,True
+GetByIndex,e.List t.Ind,t.Current e.List t.Ind t.Ind,True
+GetByIndex,e.List t.Ind,t.Current e.List t.Ind t.CurrentInd,True
+GetByIndex,t.Current e.List t.Ind t.Ind,t.Current e.List t.Ind t.CurrentInd,False
+GetByIndexIfNotZero,e.Row t.Ind,0,True
+GetByIndexIfNotZero,e.Row t.Ind,0,True
+GetByIndexIfNotZero,e.Row t.Ind,t.Result,True
+GetByIndexIfNotZero,0,0,True
+GetByIndexIfNotZero,0,t.Result,False
+GetByIndexIfNotZero,0,t.Result,False
+Min,t.Ind1 t.Ind2,t.Ind1 t.Second t.Ind2,False
+Min,t.Ind1 t.Ind2,t.First t.Ind1  t.Ind2,False
+Min,t.Ind1 t.Ind2,t.First t.Ind1 t.Second t.Ind2 '+',False
+Min,t.Ind1 t.Ind2,'-' t.First t.Ind1 t.Second t.Ind2 '+',False
+Min,t.Ind1 t.Ind2,t.First t.Ind1 '-' t.Second t.Ind2 '+',False
+Min,t.Ind1 t.Ind2,'-' t.First t.Ind1 '-' t.Second t.Ind2 '+',False
+Min,t.Ind1 t.Ind2,t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,t.Ind1 t.Ind2,'-' t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,t.Ind1 t.Ind2,t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,t.Ind1 t.Ind2,'-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,t.Ind1 t.Ind2,t.First t.Ind1 t.Second t.Ind2,False
+Min,t.Ind1 t.Ind2,'-' t.First t.Ind1 t.Second t.Ind2,False
+Min,t.Ind1 t.Ind2,t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.Ind1 t.Ind2,'-' t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.Ind1 t.Second t.Ind2,t.First t.Ind1  t.Ind2,True
+Min,t.Ind1 t.Second t.Ind2,t.First t.Ind1 t.Second t.Ind2 '+',False
+Min,t.Ind1 t.Second t.Ind2,'-' t.First t.Ind1 t.Second t.Ind2 '+',False
+Min,t.Ind1 t.Second t.Ind2,t.First t.Ind1 '-' t.Second t.Ind2 '+',False
+Min,t.Ind1 t.Second t.Ind2,'-' t.First t.Ind1 '-' t.Second t.Ind2 '+',False
+Min,t.Ind1 t.Second t.Ind2,t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,t.Ind1 t.Second t.Ind2,'-' t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,t.Ind1 t.Second t.Ind2,t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,t.Ind1 t.Second t.Ind2,'-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,t.Ind1 t.Second t.Ind2,t.First t.Ind1 t.Second t.Ind2,False
+Min,t.Ind1 t.Second t.Ind2,'-' t.First t.Ind1 t.Second t.Ind2,False
+Min,t.Ind1 t.Second t.Ind2,t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.Ind1 t.Second t.Ind2,'-' t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.First t.Ind1  t.Ind2,t.First t.Ind1 t.Second t.Ind2 '+',False
+Min,t.First t.Ind1  t.Ind2,'-' t.First t.Ind1 t.Second t.Ind2 '+',False
+Min,t.First t.Ind1  t.Ind2,t.First t.Ind1 '-' t.Second t.Ind2 '+',False
+Min,t.First t.Ind1  t.Ind2,'-' t.First t.Ind1 '-' t.Second t.Ind2 '+',False
+Min,t.First t.Ind1  t.Ind2,t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1  t.Ind2,'-' t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1  t.Ind2,t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1  t.Ind2,'-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1  t.Ind2,t.First t.Ind1 t.Second t.Ind2,False
+Min,t.First t.Ind1  t.Ind2,'-' t.First t.Ind1 t.Second t.Ind2,False
+Min,t.First t.Ind1  t.Ind2,t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.First t.Ind1  t.Ind2,'-' t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.First t.Ind1 t.Second t.Ind2 '+','-' t.First t.Ind1 t.Second t.Ind2 '+',False
+Min,t.First t.Ind1 t.Second t.Ind2 '+',t.First t.Ind1 '-' t.Second t.Ind2 '+',False
+Min,t.First t.Ind1 t.Second t.Ind2 '+','-' t.First t.Ind1 '-' t.Second t.Ind2 '+',False
+Min,t.First t.Ind1 t.Second t.Ind2 '+',t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1 t.Second t.Ind2 '+','-' t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1 t.Second t.Ind2 '+',t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1 t.Second t.Ind2 '+','-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1 t.Second t.Ind2 '+',t.First t.Ind1 t.Second t.Ind2,False
+Min,t.First t.Ind1 t.Second t.Ind2 '+','-' t.First t.Ind1 t.Second t.Ind2,False
+Min,t.First t.Ind1 t.Second t.Ind2 '+',t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.First t.Ind1 t.Second t.Ind2 '+','-' t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 '+',t.First t.Ind1 '-' t.Second t.Ind2 '+',False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 '+','-' t.First t.Ind1 '-' t.Second t.Ind2 '+',False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 '+',t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 '+','-' t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 '+',t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 '+','-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 '+',t.First t.Ind1 t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 '+','-' t.First t.Ind1 t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 '+',t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 '+','-' t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 '+','-' t.First t.Ind1 '-' t.Second t.Ind2 '+',False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 '+',t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 '+','-' t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 '+',t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 '+','-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 '+',t.First t.Ind1 t.Second t.Ind2,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 '+','-' t.First t.Ind1 t.Second t.Ind2,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 '+',t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 '+','-' t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 '-' t.Second t.Ind2 '+',t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,'-' t.First t.Ind1 '-' t.Second t.Ind2 '+','-' t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,'-' t.First t.Ind1 '-' t.Second t.Ind2 '+',t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,'-' t.First t.Ind1 '-' t.Second t.Ind2 '+','-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,'-' t.First t.Ind1 '-' t.Second t.Ind2 '+',t.First t.Ind1 t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 '-' t.Second t.Ind2 '+','-' t.First t.Ind1 t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 '-' t.Second t.Ind2 '+',t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 '-' t.Second t.Ind2 '+','-' t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.First t.Ind1 t.Second t.Ind2 s.Log,'-' t.First t.Ind1 t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1 t.Second t.Ind2 s.Log,t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1 t.Second t.Ind2 s.Log,'-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1 t.Second t.Ind2 s.Log,t.First t.Ind1 t.Second t.Ind2,False
+Min,t.First t.Ind1 t.Second t.Ind2 s.Log,'-' t.First t.Ind1 t.Second t.Ind2,False
+Min,t.First t.Ind1 t.Second t.Ind2 s.Log,t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.First t.Ind1 t.Second t.Ind2 s.Log,'-' t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 s.Log,t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 s.Log,'-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 s.Log,t.First t.Ind1 t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 s.Log,'-' t.First t.Ind1 t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 s.Log,t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2 s.Log,'-' t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 s.Log,'-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 s.Log,t.First t.Ind1 t.Second t.Ind2,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 s.Log,'-' t.First t.Ind1 t.Second t.Ind2,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 s.Log,t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2 s.Log,'-' t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,t.First t.Ind1 t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,'-' t.First t.Ind1 t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log,'-' t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.First t.Ind1 t.Second t.Ind2,'-' t.First t.Ind1 t.Second t.Ind2,False
+Min,t.First t.Ind1 t.Second t.Ind2,t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.First t.Ind1 t.Second t.Ind2,'-' t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2,t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,'-' t.First t.Ind1 t.Second t.Ind2,'-' t.First t.Ind1 '-' t.Second t.Ind2,False
+Min,t.First t.Ind1 '-' t.Second t.Ind2,'-' t.First t.Ind1 '-' t.Second t.Ind2,False
+FindMin,e.System t.CurrentRow t.CurrentColumn,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '-',True
+FindMin,e.System t.CurrentRow t.CurrentColumn,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '0',True
+FindMin,e.System t.CurrentRow t.CurrentColumn,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex,True
+FindMin,e.System t.CurrentRow t.CurrentColumn,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex,True
+FindMin,e.System t.CurrentRow t.CurrentColumn,t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex,True
+FindMin,e.System t.CurrentRow t.CurrentColumn,t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex,True
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '-',e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '0',False
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '-',e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex,False
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '-',e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex,False
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '-',t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex,False
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '-',t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex,False
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '0',e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex,False
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '0',e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex,False
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '0',t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex,False
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '0',t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex,False
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex,False
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex,t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex,False
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex,t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex,True
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex,t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex,True
+FindMin,e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex,t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex,False
+FindMin,t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex,t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex,False
+CalcMultiplier,t.Value t.ToSubValue,'-' t.Value,True
+CalcMultiplier,t.Value t.ToSubValue,t.Value,False
+CalcMultiplier,'-' t.Value,t.Value,False
+AddUnwrap,t.First t.Second,'-' t.First t.Second,False
+AddUnwrap,t.First t.Second,t.First '-' t.Second,False
+AddUnwrap,t.First t.Second,'-' t.First '-' t.Second,False
+AddUnwrap,'-' t.First t.Second,t.First '-' t.Second,False
+AddUnwrap,'-' t.First t.Second,'-' t.First '-' t.Second,False
+AddUnwrap,t.First '-' t.Second,'-' t.First '-' t.Second,False
+SubUnwrap,t.First t.Second,'-' t.First t.Second,False
+SubUnwrap,t.First t.Second,t.First '-' t.Second,False
+SubUnwrap,t.First t.Second,'-' t.First '-' t.Second,False
+SubUnwrap,'-' t.First t.Second,t.First '-' t.Second,False
+SubUnwrap,'-' t.First t.Second,'-' t.First '-' t.Second,False
+SubUnwrap,t.First '-' t.Second,'-' t.First '-' t.Second,False
+MulUnwrap,0 t.Any,t.Any 0,False
+MulUnwrap,0 t.Any,t.First t.Second,False
+MulUnwrap,0 t.Any,'-' t.First t.Second,False
+MulUnwrap,0 t.Any,t.First '-' t.Second,False
+MulUnwrap,0 t.Any,'-' t.First '-' t.Second,False
+MulUnwrap,t.Any 0,t.First t.Second,False
+MulUnwrap,t.Any 0,'-' t.First t.Second,False
+MulUnwrap,t.Any 0,t.First '-' t.Second,False
+MulUnwrap,t.Any 0,'-' t.First '-' t.Second,False
+MulUnwrap,t.First t.Second,'-' t.First t.Second,False
+MulUnwrap,t.First t.Second,t.First '-' t.Second,False
+MulUnwrap,t.First t.Second,'-' t.First '-' t.Second,False
+MulUnwrap,'-' t.First t.Second,t.First '-' t.Second,False
+MulUnwrap,'-' t.First t.Second,'-' t.First '-' t.Second,False
+MulUnwrap,t.First '-' t.Second,'-' t.First '-' t.Second,False
+ModUnwrap,0 t.Any,t.First t.Second,False
+ModUnwrap,0 t.Any,'-' t.First t.Second,False
+ModUnwrap,0 t.Any,t.First '-' t.Second,False
+ModUnwrap,0 t.Any,'-' t.First '-' t.Second,False
+ModUnwrap,t.First t.Second,'-' t.First t.Second,False
+ModUnwrap,t.First t.Second,t.First '-' t.Second,False
+ModUnwrap,t.First t.Second,'-' t.First '-' t.Second,False
+ModUnwrap,'-' t.First t.Second,t.First '-' t.Second,False
+ModUnwrap,'-' t.First t.Second,'-' t.First '-' t.Second,False
+ModUnwrap,t.First '-' t.Second,'-' t.First '-' t.Second,False
+DivUnwrap,0 t.Any,t.Value t.ToSubValue,False
+DivUnwrap,0 t.Any,'-' t.Value t.ToSubValue,False
+DivUnwrap,0 t.Any,t.Value '-' t.ToSubValue,False
+DivUnwrap,0 t.Any,'-' t.Value '-' t.ToSubValue,False
+DivUnwrap,t.Value t.ToSubValue,'-' t.Value t.ToSubValue,False
+DivUnwrap,t.Value t.ToSubValue,t.Value '-' t.ToSubValue,False
+DivUnwrap,t.Value t.ToSubValue,'-' t.Value '-' t.ToSubValue,False
+DivUnwrap,'-' t.Value t.ToSubValue,t.Value '-' t.ToSubValue,False
+DivUnwrap,'-' t.Value t.ToSubValue,'-' t.Value '-' t.ToSubValue,False
+DivUnwrap,t.Value '-' t.ToSubValue,'-' t.Value '-' t.ToSubValue,False
+CmpUnwrap,t.First t.Second,'-' t.First t.Second,False
+CmpUnwrap,t.First t.Second,t.First '-' t.Second,False
+CmpUnwrap,t.First t.Second,'-' t.First '-' t.Second,False
+CmpUnwrap,'-' t.First t.Second,t.First '-' t.Second,False
+CmpUnwrap,'-' t.First t.Second,'-' t.First '-' t.Second,False
+CmpUnwrap,t.First '-' t.Second,'-' t.First '-' t.Second,False
+MyCompare,0 0,0 t.1,False
+MyCompare,0 0,t.1 0,False
+MyCompare,0 0,t.1 t.2,False
+MyCompare,0 t.1,t.1 0,False
+MyCompare,0 t.1,t.1 t.2,False
+MyCompare,t.1 0,t.1 t.2,False
+ReplaceElement,e.List t.Value t.Index,e.List t.Value t.Index,True
+ReplaceElement,e.List t.Value t.Index,e.Processed t.Any e.List t.Value t.Index t.Current '-',True
+ReplaceElement,e.List t.Value t.Index,e.Processed t.Any e.List t.Value t.Index t.Current '0',True
+ReplaceElement,e.List t.Value t.Index,e.Processed t.Any e.List t.Value t.Index t.Current '-',True
+ReplaceElement,e.List t.Value t.Index,e.Processed t.Any e.List t.Value t.Index t.Current '0',True
+ReplaceElement,e.Processed t.Any e.List t.Value t.Index t.Current '-',e.Processed t.Any e.List t.Value t.Index t.Current '0',False
+SubRow,e.Row e.RowToSub t.Multiplier,Started e.Result t.Element e.Row t.ToSubElement e.RowToSub t.Multiplier,False
+SubRow,e.Row e.RowToSub t.Multiplier,Started e.Result   t.Multiplier,True
+SubRow,Started e.Result t.Element e.Row t.ToSubElement e.RowToSub t.Multiplier,Started e.Result   t.Multiplier,False
+SubRowWrapper,e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Value t.CurrentRow t.CurrentColumn t.Ind,e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Value t.CurrentRow t.CurrentColumn t.Ind '-',False
+SubRowWrapper,e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Value t.CurrentRow t.CurrentColumn t.Ind,e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Value t.CurrentRow t.CurrentColumn t.Ind s.Log,False
+SubRowWrapper,e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Value t.CurrentRow t.CurrentColumn t.Ind,e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Multiplier,False
+SubRowWrapper,e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Value t.CurrentRow t.CurrentColumn t.Ind '-',e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Value t.CurrentRow t.CurrentColumn t.Ind s.Log,False
+SubRowWrapper,e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Value t.CurrentRow t.CurrentColumn t.Ind '-',e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Multiplier,False
+SubRowWrapper,e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Value t.CurrentRow t.CurrentColumn t.Ind s.Log,e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Multiplier,False
+SubRows,e.System e.Matrix  t.CurrentRow t.CurrentColumn,e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn,False
+SubRows,e.System e.Matrix  t.CurrentRow t.CurrentColumn,e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn,False
+SubRows,e.System e.Matrix  t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Index t.CurrentRow t.CurrentColumn,False
+SubRows,e.System e.Matrix  t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn,False
+SubRows,e.System e.Matrix  t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix   t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn,False
+SubRows,e.System e.Matrix  t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix t.CurrentRow t.CurrentColumn,True
+SubRows,e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn,e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn,True
+SubRows,e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Index t.CurrentRow t.CurrentColumn,False
+SubRows,e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn,False
+SubRows,e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix   t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn,False
+SubRows,e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix t.CurrentRow t.CurrentColumn,False
+SubRows,e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Index t.CurrentRow t.CurrentColumn,False
+SubRows,e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn,False
+SubRows,e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix   t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn,False
+SubRows,e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix t.CurrentRow t.CurrentColumn,False
+SubRows,e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Index t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn,True
+SubRows,e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Index t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix   t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn,False
+SubRows,e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Index t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix t.CurrentRow t.CurrentColumn,False
+SubRows,e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix   t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn,False
+SubRows,e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix t.CurrentRow t.CurrentColumn,False
+SubRows,e.ProcessedSystem e.ProcessedMatrix   t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn,e.ProcessedSystem e.ProcessedMatrix t.CurrentRow t.CurrentColumn,False
+MakeRowEchelonForColumn,e.System e.Matrix t.CurrentRow t.CurrentColumn,e.System e.Matrix 'T' t.CurrentRow t.CurrentColumn,False
+MakeRowEchelonForColumn,e.System e.Matrix t.CurrentRow t.CurrentColumn,e.System e.Matrix 'N' t.CurrentRow t.CurrentColumn,False
+MakeRowEchelonForColumn,e.System e.Matrix t.CurrentRow t.CurrentColumn,e.System e.Matrix 'F' t.CurrentRow t.CurrentColumn,False
+MakeRowEchelonForColumn,e.System e.Matrix 'T' t.CurrentRow t.CurrentColumn,e.System e.Matrix 'N' t.CurrentRow t.CurrentColumn,False
+MakeRowEchelonForColumn,e.System e.Matrix 'T' t.CurrentRow t.CurrentColumn,e.System e.Matrix 'F' t.CurrentRow t.CurrentColumn,False
+MakeRowEchelonForColumn,e.System e.Matrix 'N' t.CurrentRow t.CurrentColumn,e.System e.Matrix 'F' t.CurrentRow t.CurrentColumn,False
+AddIfNotZero,t.First 0,t.First 0,True
+AddIfNotZero,t.First 0,t.First t.Second,False
+AddIfNotZero,t.First 0,t.First t.Second,False
+CheckComplete,0,0,True
+CheckComplete,0,1,False
+CheckComplete,0,1,False
+CheckComplete,0,t.Count,False
+CheckComplete,0,1,False
+CheckComplete,0,1,False
+CheckComplete,0,t.Count,False
+CheckComplete,1,1,True
+CheckComplete,1,t.Count,False
+CheckComplete,1,t.Count,False
+SkipRows,e.Eq t.CurrentRow,e.Eq t.CurrentRow,True
+SkipRows,e.Eq t.CurrentRow,e.Eq t.CurrentRow t.CurrentRow,True
+SkipRows,e.Eq t.CurrentRow,t.Any e.Eq t.CurrentRow t.Count,True
+SkipRows,e.Eq t.CurrentRow,e.Eq t.CurrentRow t.CurrentRow,True
+SkipRows,e.Eq t.CurrentRow,t.Any e.Eq t.CurrentRow t.Count,True
+SkipRows,e.Eq t.CurrentRow t.CurrentRow,t.Any e.Eq t.CurrentRow t.Count,False
+IsComplete,e.Eq t.CurrentRow t.CurrentColumn,Started t.Any e.Eq t.CurrentColumn t.Count,True
+IsComplete,e.Eq t.CurrentRow t.CurrentColumn,Started  t.CurrentColumn t.Count,True
+IsComplete,Started t.Any e.Eq t.CurrentColumn t.Count,Started  t.CurrentColumn t.Count,False
+MakeRowEchelon,,e.System e.Matrix,False
+MakeRowEchelon,,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.CurrentColumn,False
+MakeRowEchelon,,e.System e.Matrix t.CurrentRow t.CurrentColumn t.CurrentRow t.Columns,False
+MakeRowEchelon,,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns,False
+MakeRowEchelon,,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns Zero e.NewSystem e.NewMatrix,False
+MakeRowEchelon,,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns NonZero e.NewSystem e.NewMatrix,False
+MakeRowEchelon,e.System e.Matrix,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.CurrentColumn,True
+MakeRowEchelon,e.System e.Matrix,e.System e.Matrix t.CurrentRow t.CurrentColumn t.CurrentRow t.Columns,True
+MakeRowEchelon,e.System e.Matrix,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns,True
+MakeRowEchelon,e.System e.Matrix,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns Zero e.NewSystem e.NewMatrix,True
+MakeRowEchelon,e.System e.Matrix,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns NonZero e.NewSystem e.NewMatrix,True
+MakeRowEchelon,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.CurrentColumn,e.System e.Matrix t.CurrentRow t.CurrentColumn t.CurrentRow t.Columns,True
+MakeRowEchelon,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.CurrentColumn,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns,True
+MakeRowEchelon,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.CurrentColumn,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns Zero e.NewSystem e.NewMatrix,False
+MakeRowEchelon,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.CurrentColumn,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns NonZero e.NewSystem e.NewMatrix,False
+MakeRowEchelon,e.System e.Matrix t.CurrentRow t.CurrentColumn t.CurrentRow t.Columns,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns,False
+MakeRowEchelon,e.System e.Matrix t.CurrentRow t.CurrentColumn t.CurrentRow t.Columns,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns Zero e.NewSystem e.NewMatrix,False
+MakeRowEchelon,e.System e.Matrix t.CurrentRow t.CurrentColumn t.CurrentRow t.Columns,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns NonZero e.NewSystem e.NewMatrix,False
+MakeRowEchelon,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns Zero e.NewSystem e.NewMatrix,False
+MakeRowEchelon,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns NonZero e.NewSystem e.NewMatrix,False
+MakeRowEchelon,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns Zero e.NewSystem e.NewMatrix,e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns NonZero e.NewSystem e.NewMatrix,False
+RowsQty,e.System,Started e.Eq e.System t.Count,True
+RowsQty,e.System,Started  t.Count,True
+RowsQty,Started e.Eq e.System t.Count,Started  t.Count,True
+ColumnsQty,e.Eq e.System,Started t.Any e.Rest t.Count,True
+ColumnsQty,e.Eq e.System,Started  t.Count,True
+ColumnsQty,Started t.Any e.Rest t.Count,Started  t.Count,False
+MakeTransponentRowMatrix,e.Truncated e.Result t.Count e.Rest,e.Truncated e.Result t.Count e.Eq e.Rest,False
+MakeTransponentRowMatrix,e.Truncated e.Result t.Count e.Rest,e.Truncated e.Result,False
+MakeTransponentRowMatrix,e.Truncated e.Result t.Count e.Eq e.Rest,e.Truncated e.Result,False
+TransposeMatrix,,e.Result e.System,False
+TransposeMatrix,,e.Result  e.Row,False
+TransposeMatrix,,e.Result e.System e.Row,False
+TransposeMatrix,e.Result e.System,e.Result  e.Row,True
+TransposeMatrix,e.Result e.System,e.Result e.System e.Row,True
+TransposeMatrix,e.Result  e.Row,e.Result e.System e.Row,True
+LetterByInd,e.List t.Count,e.List t.Count,True
+LetterByInd,e.List t.Count,s.A e.Rest t.Count t.Count,True
+LetterByInd,e.List t.Count,s.A e.Rest t.Count t.Current,True
+LetterByInd,e.List t.Count,s.A e.Rest t.Count t.Count,True
+LetterByInd,e.List t.Count,s.A e.Rest t.Count t.Current,True
+LetterByInd,s.A e.Rest t.Count t.Count,s.A e.Rest t.Count t.Current,False
+BuildK,t.Size,t.Size,True
+BuildK,t.Size,e.Result t.Size t.Size,False
+BuildK,t.Size,e.Result t.Count t.Size,False
+BuildK,t.Size,e.Result t.Size t.Size,False
+BuildK,t.Size,e.Result t.Count t.Size,False
+BuildK,e.Result t.Size t.Size,e.Result t.Count t.Size,False
+AddToKOrStop,e.Processed e.Left s.Var 0 t.Value,e.Processed e.Left s.Var 0 t.Value,True
+AddToKOrStop,e.Processed e.Left s.Var 0 t.Value,e.Processed e.Left s.Var t.C t.Value,False
+AddToKOrStop,e.Processed e.Left s.Var 0 t.Value,e.Processed e.Left s.Var t.C t.Value 0,False
+AddToKOrStop,e.Processed e.Left s.Var 0 t.Value,e.Processed e.Left s.Var t.C t.Value 0,False
+AddToKOrStop,e.Processed e.Left s.Var 0 t.Value,e.Processed e.Left s.Var t.C t.Value t.Any,False
+AddToKOrStop,e.Processed e.Left s.Var 0 t.Value,e.Processed e.Left s.Var t.C t.Value,False
+AddToKOrStop,e.Processed e.Left s.Var 0 t.Value,e.Processed e.Left s.Var t.C t.Value 0,False
+AddToKOrStop,e.Processed e.Left s.Var 0 t.Value,e.Processed e.Left s.Var t.C t.Value 0,False
+AddToKOrStop,e.Processed e.Left s.Var 0 t.Value,e.Processed e.Left s.Var t.C t.Value t.Any,False
+AddToKOrStop,e.Processed e.Left s.Var t.C t.Value,e.Processed e.Left s.Var t.C t.Value 0,False
+AddToKOrStop,e.Processed e.Left s.Var t.C t.Value,e.Processed e.Left s.Var t.C t.Value 0,False
+AddToKOrStop,e.Processed e.Left s.Var t.C t.Value,e.Processed e.Left s.Var t.C t.Value t.Any,False
+AddToKOrStop,e.Processed e.Left s.Var t.C t.Value 0,e.Processed e.Left s.Var t.C t.Value 0,True
+AddToKOrStop,e.Processed e.Left s.Var t.C t.Value 0,e.Processed e.Left s.Var t.C t.Value t.Any,False
+AddToKOrStop,e.Processed e.Left s.Var t.C t.Value 0,e.Processed e.Left s.Var t.C t.Value t.Any,False
+CalculateK,t.C e.Row e.Processed s.Var t.C2 e.K t.Value,t.C e.Row e.Processed s.Var e.K t.Value,False
+FindK,e.RHS,e.Matrix e.RHS,True
+FindK,e.RHS,e.Row e.Matrix t.Value e.RHS e.K,True
+FindK,e.RHS,e.Matrix e.RHS False,True
+FindK,e.RHS,e.RHS e.K,True
+FindK,e.Matrix e.RHS,e.Row e.Matrix t.Value e.RHS e.K,True
+FindK,e.Matrix e.RHS,e.Matrix e.RHS False,True
+FindK,e.Matrix e.RHS,e.RHS e.K,True
+FindK,e.Row e.Matrix t.Value e.RHS e.K,e.Matrix e.RHS False,True
+FindK,e.Row e.Matrix t.Value e.RHS e.K,e.RHS e.K,False
+FindK,e.Matrix e.RHS False,e.RHS e.K,False
+ChooseK,e.Matrix False,e.Matrix e.K,False
+IsNegative,'-' t.Value,t.Value,False
+MultiplyRowColumn,e.Row e.K,t.Value,True
+MultiplyRowColumn,e.Row e.K,0 e.Row s.Name e.Any e.K t.Value,True
+MultiplyRowColumn,e.Row e.K,t.A e.Row s.Name e.K t.Value,True
+MultiplyRowColumn,e.Row e.K,t.A e.Row s.Name t.K e.K t.Value,True
+MultiplyRowColumn,t.Value,0 e.Row s.Name e.Any e.K t.Value,False
+MultiplyRowColumn,t.Value,t.A e.Row s.Name e.K t.Value,False
+MultiplyRowColumn,t.Value,t.A e.Row s.Name t.K e.K t.Value,False
+MultiplyRowColumn,0 e.Row s.Name e.Any e.K t.Value,t.A e.Row s.Name e.K t.Value,False
+MultiplyRowColumn,0 e.Row s.Name e.Any e.K t.Value,t.A e.Row s.Name t.K e.K t.Value,False
+MultiplyRowColumn,t.A e.Row s.Name e.K t.Value,t.A e.Row s.Name t.K e.K t.Value,True
+FilterSolutions,e.List,e.Result s.Name 'U' e.Rest,True
+FilterSolutions,e.List,e.Result s.Name t.Value '-' e.Rest,True
+FilterSolutions,e.List,e.Result s.Name t.Value s.Log e.Rest,True
+FilterSolutions,e.List,e.Result,True
+FilterSolutions,e.Result s.Name 'U' e.Rest,e.Result s.Name t.Value '-' e.Rest,False
+FilterSolutions,e.Result s.Name 'U' e.Rest,e.Result s.Name t.Value s.Log e.Rest,False
+FilterSolutions,e.Result s.Name 'U' e.Rest,e.Result,False
+FilterSolutions,e.Result s.Name t.Value '-' e.Rest,e.Result s.Name t.Value s.Log e.Rest,False
+FilterSolutions,e.Result s.Name t.Value '-' e.Rest,e.Result,False
+FilterSolutions,e.Result s.Name t.Value s.Log e.Rest,e.Result,False
+CalcSolution,,e.Row e.Matrix var 'e' s.Name e.Any e.AllVars e.K,False
+CalcSolution,,e.Result e.Row e.Matrix var 'e' s.Name2 e.Any e.AllVars e.K s.Name t.Value,False
+CalcSolution,,e.Result   e.K s.Name t.Value,False
+CalcSolution,e.Row e.Matrix var 'e' s.Name e.Any e.AllVars e.K,e.Result e.Row e.Matrix var 'e' s.Name2 e.Any e.AllVars e.K s.Name t.Value,True
+CalcSolution,e.Row e.Matrix var 'e' s.Name e.Any e.AllVars e.K,e.Result   e.K s.Name t.Value,False
+CalcSolution,e.Result e.Row e.Matrix var 'e' s.Name2 e.Any e.AllVars e.K s.Name t.Value,e.Result   e.K s.Name t.Value,False
+FindInSolution,s.Name t.Any e.Solution s.Name,s.Name2 t.Any e.Solution s.Name,False
+FindInSolution,s.Name t.Any e.Solution s.Name,s.Name,False
+FindInSolution,s.Name2 t.Any e.Solution s.Name,s.Name,False
+GenerateLetterVars,t.Count s.x1 s.x2 s.x3 s.x4 s.x5,t.Count s.x1 s.x2 s.x3 s.x4 s.x5,True
+GenerateLetterVars,t.Count s.x1 s.x2 s.x3 s.x4 s.x5,e.Result s.x1 s.x2 s.x3 s.x4 s.x5 t.Count t.Current,False
+GenerateLetterVars,t.Count s.x1 s.x2 s.x3 s.x4 s.x5,e.Result s.x1 s.x2 s.x3 s.x4 s.x5 t.Count t.Count,False
+GenerateLetterVars,t.Count s.x1 s.x2 s.x3 s.x4 s.x5,e.Result s.x1 s.x2 s.x3 s.x4 s.x5 t.Count t.Current,False
+GenerateLetterVars,t.Count s.x1 s.x2 s.x3 s.x4 s.x5,e.Result s.x1 s.x2 s.x3 s.x4 s.x5 t.Count t.Count,False
+GenerateLetterVars,e.Result s.x1 s.x2 s.x3 s.x4 s.x5 t.Count t.Current,e.Result s.x1 s.x2 s.x3 s.x4 s.x5 t.Count t.Count,True
+TryFirstReplaceDifferent,e.System s.Name s.Name2 t.Diff s.x1 s.x2 s.x3 s.x4 s.x5,RE e.System s.Name s.Name2 e.List s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 t.Count1 t.Count2 s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 t.Count  s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 t.Count1 t.Count2 s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2  t.Count s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 t.Count1 t.Count2 s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2   s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 t.Count1 t.Count2 s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 '-' t.Diff '-' s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 t.Count1 t.Count2 s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 t.Diff '0' s.x1 s.x2 s.x3 s.x4 s.x5,True
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 t.Count1 t.Count2 s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 t.Diff '+' s.x1 s.x2 s.x3 s.x4 s.x5,True
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 t.Count  s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2  t.Count s.x1 s.x2 s.x3 s.x4 s.x5,True
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 t.Count  s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2   s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 t.Count  s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 '-' t.Diff '-' s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 t.Count  s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 t.Diff '0' s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 t.Count  s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 t.Diff '+' s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2  t.Count s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2   s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2  t.Count s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 '-' t.Diff '-' s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2  t.Count s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 t.Diff '0' s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2  t.Count s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 t.Diff '+' s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2   s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 '-' t.Diff '-' s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2   s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 t.Diff '0' s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2   s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 t.Diff '+' s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 '-' t.Diff '-' s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 t.Diff '0' s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 '-' t.Diff '-' s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 t.Diff '+' s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplaceIfHasSolution,e.System s.Name s.Name2 t.Diff '0' s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name s.Name2 t.Diff '+' s.x1 s.x2 s.x3 s.x4 s.x5,False
+TryFirstReplace,e.First e.System e.Solution s.x1 s.x2 s.x3 s.x4 s.x5,Started e.System var 'e' s.Name e.LHS var 'e' s.Name2 e.RHS e.Solution s.x1 s.x2 s.x3 s.x4 s.x5,True
+TryFirstReplace,e.First e.System e.Solution s.x1 s.x2 s.x3 s.x4 s.x5,Started e.System e.LHS e.RHS e.Solution s.x1 s.x2 s.x3 s.x4 s.x5,True
+TryFirstReplace,Started e.System var 'e' s.Name e.LHS var 'e' s.Name2 e.RHS e.Solution s.x1 s.x2 s.x3 s.x4 s.x5,Started e.System e.LHS e.RHS e.Solution s.x1 s.x2 s.x3 s.x4 s.x5,False
+ReplaceSingle,e.System s.Name 0 s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name 0 s.x1 s.x2 s.x3 s.x4 s.x5,True
+ReplaceSingle,e.System s.Name 0 s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name t.Count s.x1 s.x2 s.x3 s.x4 s.x5,False
+ReplaceSingle,e.System s.Name 0 s.x1 s.x2 s.x3 s.x4 s.x5,RE e.System s.Name e.List s.x1 s.x2 s.x3 s.x4 s.x5,False
+ReplaceSingle,e.System s.Name 0 s.x1 s.x2 s.x3 s.x4 s.x5,e.System s.Name t.Count s.x1 s.x2 s.x3 s.x4 s.x5,False
+ReplaceSingle,e.System s.Name 0 s.x1 s.x2 s.x3 s.x4 s.x5,RE e.System s.Name e.List s.x1 s.x2 s.x3 s.x4 s.x5,False
+ReplaceSingle,e.System s.Name t.Count s.x1 s.x2 s.x3 s.x4 s.x5,RE e.System s.Name e.List s.x1 s.x2 s.x3 s.x4 s.x5,False
+ApplySolution,e.System,e.System e.Solution,True
+ApplySolution,e.System,e.Solution e.System,True
+ApplySolution,e.System,e.Solution e.System s.x1 s.x2 s.x3 s.x4 s.x5,True
+ApplySolution,e.System,Replace s.Name t.Count e.Solution e.System s.x1 s.x2 s.x3 s.x4 s.x5,True
+ApplySolution,e.System,Replace  e.System s.x1 s.x2 s.x3 s.x4 s.x5,True
+ApplySolution,e.System e.Solution,e.Solution e.System,True
+ApplySolution,e.System e.Solution,e.Solution e.System s.x1 s.x2 s.x3 s.x4 s.x5,True
+ApplySolution,e.System e.Solution,Replace s.Name t.Count e.Solution e.System s.x1 s.x2 s.x3 s.x4 s.x5,True
+ApplySolution,e.System e.Solution,Replace  e.System s.x1 s.x2 s.x3 s.x4 s.x5,True
+ApplySolution,e.Solution e.System,e.Solution e.System s.x1 s.x2 s.x3 s.x4 s.x5,True
+ApplySolution,e.Solution e.System,Replace s.Name t.Count e.Solution e.System s.x1 s.x2 s.x3 s.x4 s.x5,True
+ApplySolution,e.Solution e.System,Replace  e.System s.x1 s.x2 s.x3 s.x4 s.x5,True
+ApplySolution,e.Solution e.System s.x1 s.x2 s.x3 s.x4 s.x5,Replace s.Name t.Count e.Solution e.System s.x1 s.x2 s.x3 s.x4 s.x5,True
+ApplySolution,e.Solution e.System s.x1 s.x2 s.x3 s.x4 s.x5,Replace  e.System s.x1 s.x2 s.x3 s.x4 s.x5,True
+ApplySolution,Replace s.Name t.Count e.Solution e.System s.x1 s.x2 s.x3 s.x4 s.x5,Replace  e.System s.x1 s.x2 s.x3 s.x4 s.x5,False

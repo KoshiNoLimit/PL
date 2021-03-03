@@ -1,0 +1,148 @@
+function,pattern1,pattern2,result
+Weq,,e.Rules s.1 e.1 s.1 e.2,False
+Weq,,e.Rules s.name e.1 s.name e.2,False
+Weq,,s.name TO s.1 s.name e.Rules s.1 e.1 s.name e.2,False
+Weq,,s.name EMPTY e.Rules s.1 e.1 s.name e.2,False
+Weq,,s.name TO s.1 s.name e.Rules s.name e.1 s.1 e.2,False
+Weq,,s.name EMPTY e.Rules s.name e.1 s.1 e.2,False
+Weq,,s.name EQUALS s.name2 e.Rules s.name e.1 s.name2 e.2,False
+Weq,,s.name TO s.name2 s.name e.Rules s.name e.1 s.name2 e.2,False
+Weq,,s.name2 TO s.name s.name2 e.Rules s.name e.1 s.name2 e.2,False
+Weq,,s.name EMPTY e.Rules s.name e.1,False
+Weq,,s.name EMPTY e.Rules s.name e.1,False
+Weq,,e.Rules e.1 e.2,False
+Weq,e.Rules s.1 e.1 s.1 e.2,e.Rules s.name e.1 s.name e.2,True
+Weq,e.Rules s.1 e.1 s.1 e.2,s.name TO s.1 s.name e.Rules s.1 e.1 s.name e.2,True
+Weq,e.Rules s.1 e.1 s.1 e.2,s.name EMPTY e.Rules s.1 e.1 s.name e.2,True
+Weq,e.Rules s.1 e.1 s.1 e.2,s.name TO s.1 s.name e.Rules s.name e.1 s.1 e.2,True
+Weq,e.Rules s.1 e.1 s.1 e.2,s.name EMPTY e.Rules s.name e.1 s.1 e.2,True
+Weq,e.Rules s.1 e.1 s.1 e.2,s.name EQUALS s.name2 e.Rules s.name e.1 s.name2 e.2,True
+Weq,e.Rules s.1 e.1 s.1 e.2,s.name TO s.name2 s.name e.Rules s.name e.1 s.name2 e.2,True
+Weq,e.Rules s.1 e.1 s.1 e.2,s.name2 TO s.name s.name2 e.Rules s.name e.1 s.name2 e.2,True
+Weq,e.Rules s.1 e.1 s.1 e.2,s.name EMPTY e.Rules s.name e.1,True
+Weq,e.Rules s.1 e.1 s.1 e.2,s.name EMPTY e.Rules s.name e.1,True
+Weq,e.Rules s.1 e.1 s.1 e.2,e.Rules e.1 e.2,False
+Weq,e.Rules s.name e.1 s.name e.2,s.name TO s.1 s.name e.Rules s.1 e.1 s.name e.2,True
+Weq,e.Rules s.name e.1 s.name e.2,s.name EMPTY e.Rules s.1 e.1 s.name e.2,True
+Weq,e.Rules s.name e.1 s.name e.2,s.name TO s.1 s.name e.Rules s.name e.1 s.1 e.2,True
+Weq,e.Rules s.name e.1 s.name e.2,s.name EMPTY e.Rules s.name e.1 s.1 e.2,True
+Weq,e.Rules s.name e.1 s.name e.2,s.name EQUALS s.name2 e.Rules s.name e.1 s.name2 e.2,True
+Weq,e.Rules s.name e.1 s.name e.2,s.name TO s.name2 s.name e.Rules s.name e.1 s.name2 e.2,True
+Weq,e.Rules s.name e.1 s.name e.2,s.name2 TO s.name s.name2 e.Rules s.name e.1 s.name2 e.2,True
+Weq,e.Rules s.name e.1 s.name e.2,s.name EMPTY e.Rules s.name e.1,True
+Weq,e.Rules s.name e.1 s.name e.2,s.name EMPTY e.Rules s.name e.1,True
+Weq,e.Rules s.name e.1 s.name e.2,e.Rules e.1 e.2,False
+Weq,s.name TO s.1 s.name e.Rules s.1 e.1 s.name e.2,s.name EMPTY e.Rules s.1 e.1 s.name e.2,False
+Weq,s.name TO s.1 s.name e.Rules s.1 e.1 s.name e.2,s.name TO s.1 s.name e.Rules s.name e.1 s.1 e.2,False
+Weq,s.name TO s.1 s.name e.Rules s.1 e.1 s.name e.2,s.name EMPTY e.Rules s.name e.1 s.1 e.2,False
+Weq,s.name TO s.1 s.name e.Rules s.1 e.1 s.name e.2,s.name EQUALS s.name2 e.Rules s.name e.1 s.name2 e.2,False
+Weq,s.name TO s.1 s.name e.Rules s.1 e.1 s.name e.2,s.name TO s.name2 s.name e.Rules s.name e.1 s.name2 e.2,False
+Weq,s.name TO s.1 s.name e.Rules s.1 e.1 s.name e.2,s.name2 TO s.name s.name2 e.Rules s.name e.1 s.name2 e.2,True
+Weq,s.name TO s.1 s.name e.Rules s.1 e.1 s.name e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name TO s.1 s.name e.Rules s.1 e.1 s.name e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name TO s.1 s.name e.Rules s.1 e.1 s.name e.2,e.Rules e.1 e.2,False
+Weq,s.name EMPTY e.Rules s.1 e.1 s.name e.2,s.name TO s.1 s.name e.Rules s.name e.1 s.1 e.2,False
+Weq,s.name EMPTY e.Rules s.1 e.1 s.name e.2,s.name EMPTY e.Rules s.name e.1 s.1 e.2,False
+Weq,s.name EMPTY e.Rules s.1 e.1 s.name e.2,s.name EQUALS s.name2 e.Rules s.name e.1 s.name2 e.2,False
+Weq,s.name EMPTY e.Rules s.1 e.1 s.name e.2,s.name TO s.name2 s.name e.Rules s.name e.1 s.name2 e.2,False
+Weq,s.name EMPTY e.Rules s.1 e.1 s.name e.2,s.name2 TO s.name s.name2 e.Rules s.name e.1 s.name2 e.2,False
+Weq,s.name EMPTY e.Rules s.1 e.1 s.name e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name EMPTY e.Rules s.1 e.1 s.name e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name EMPTY e.Rules s.1 e.1 s.name e.2,e.Rules e.1 e.2,False
+Weq,s.name TO s.1 s.name e.Rules s.name e.1 s.1 e.2,s.name EMPTY e.Rules s.name e.1 s.1 e.2,False
+Weq,s.name TO s.1 s.name e.Rules s.name e.1 s.1 e.2,s.name EQUALS s.name2 e.Rules s.name e.1 s.name2 e.2,False
+Weq,s.name TO s.1 s.name e.Rules s.name e.1 s.1 e.2,s.name TO s.name2 s.name e.Rules s.name e.1 s.name2 e.2,True
+Weq,s.name TO s.1 s.name e.Rules s.name e.1 s.1 e.2,s.name2 TO s.name s.name2 e.Rules s.name e.1 s.name2 e.2,False
+Weq,s.name TO s.1 s.name e.Rules s.name e.1 s.1 e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name TO s.1 s.name e.Rules s.name e.1 s.1 e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name TO s.1 s.name e.Rules s.name e.1 s.1 e.2,e.Rules e.1 e.2,False
+Weq,s.name EMPTY e.Rules s.name e.1 s.1 e.2,s.name EQUALS s.name2 e.Rules s.name e.1 s.name2 e.2,False
+Weq,s.name EMPTY e.Rules s.name e.1 s.1 e.2,s.name TO s.name2 s.name e.Rules s.name e.1 s.name2 e.2,False
+Weq,s.name EMPTY e.Rules s.name e.1 s.1 e.2,s.name2 TO s.name s.name2 e.Rules s.name e.1 s.name2 e.2,False
+Weq,s.name EMPTY e.Rules s.name e.1 s.1 e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name EMPTY e.Rules s.name e.1 s.1 e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name EMPTY e.Rules s.name e.1 s.1 e.2,e.Rules e.1 e.2,False
+Weq,s.name EQUALS s.name2 e.Rules s.name e.1 s.name2 e.2,s.name TO s.name2 s.name e.Rules s.name e.1 s.name2 e.2,False
+Weq,s.name EQUALS s.name2 e.Rules s.name e.1 s.name2 e.2,s.name2 TO s.name s.name2 e.Rules s.name e.1 s.name2 e.2,False
+Weq,s.name EQUALS s.name2 e.Rules s.name e.1 s.name2 e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name EQUALS s.name2 e.Rules s.name e.1 s.name2 e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name EQUALS s.name2 e.Rules s.name e.1 s.name2 e.2,e.Rules e.1 e.2,False
+Weq,s.name TO s.name2 s.name e.Rules s.name e.1 s.name2 e.2,s.name2 TO s.name s.name2 e.Rules s.name e.1 s.name2 e.2,False
+Weq,s.name TO s.name2 s.name e.Rules s.name e.1 s.name2 e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name TO s.name2 s.name e.Rules s.name e.1 s.name2 e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name TO s.name2 s.name e.Rules s.name e.1 s.name2 e.2,e.Rules e.1 e.2,False
+Weq,s.name2 TO s.name s.name2 e.Rules s.name e.1 s.name2 e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name2 TO s.name s.name2 e.Rules s.name e.1 s.name2 e.2,s.name EMPTY e.Rules s.name e.1,False
+Weq,s.name2 TO s.name s.name2 e.Rules s.name e.1 s.name2 e.2,e.Rules e.1 e.2,False
+Weq,s.name EMPTY e.Rules s.name e.1,s.name EMPTY e.Rules s.name e.1,True
+Weq,s.name EMPTY e.Rules s.name e.1,e.Rules e.1 e.2,False
+Weq,s.name EMPTY e.Rules s.name e.1,e.Rules e.1 e.2,False
+Subst,e.Result s.name e.ToSub s.name e.Expr,e.Result e.Subst,False
+Subst,e.Result s.name e.ToSub s.name e.Expr,e.Result e.Subst t.Other e.Expr,False
+Subst,e.Result e.Subst,e.Result e.Subst t.Other e.Expr,True
+Or,False False False,e.1 False False,False
+Or,False False False,e.1 False e.2,False
+Or,False False False,False False e.1,False
+Or,False False False,False e.1 False,False
+Or,False False False,False e.1 e.2,False
+Or,False False False,e.1 e.2 False,False
+Or,False False False,e.1 e.2 e.3,False
+Or,False False False,False False,False
+Or,False False False,False e.1,False
+Or,False False False,e.1 False,False
+Or,False False False,e.1 e.2,False
+Or,e.1 False False,e.1 False e.2,False
+Or,e.1 False False,False False e.1,False
+Or,e.1 False False,False e.1 False,False
+Or,e.1 False False,False e.1 e.2,False
+Or,e.1 False False,e.1 e.2 False,False
+Or,e.1 False False,e.1 e.2 e.3,False
+Or,e.1 False False,False False,True
+Or,e.1 False False,False e.1,False
+Or,e.1 False False,e.1 False,False
+Or,e.1 False False,e.1 e.2,False
+Or,e.1 False e.2,False False e.1,True
+Or,e.1 False e.2,False e.1 False,True
+Or,e.1 False e.2,False e.1 e.2,True
+Or,e.1 False e.2,e.1 e.2 False,True
+Or,e.1 False e.2,e.1 e.2 e.3,False
+Or,e.1 False e.2,False False,True
+Or,e.1 False e.2,False e.1,True
+Or,e.1 False e.2,e.1 False,True
+Or,e.1 False e.2,e.1 e.2,False
+Or,False False e.1,False e.1 False,False
+Or,False False e.1,False e.1 e.2,False
+Or,False False e.1,e.1 e.2 False,False
+Or,False False e.1,e.1 e.2 e.3,False
+Or,False False e.1,False False,True
+Or,False False e.1,False e.1,False
+Or,False False e.1,e.1 False,False
+Or,False False e.1,e.1 e.2,False
+Or,False e.1 False,False e.1 e.2,False
+Or,False e.1 False,e.1 e.2 False,False
+Or,False e.1 False,e.1 e.2 e.3,False
+Or,False e.1 False,False False,True
+Or,False e.1 False,False e.1,False
+Or,False e.1 False,e.1 False,False
+Or,False e.1 False,e.1 e.2,False
+Or,False e.1 e.2,e.1 e.2 False,False
+Or,False e.1 e.2,e.1 e.2 e.3,False
+Or,False e.1 e.2,False False,True
+Or,False e.1 e.2,False e.1,True
+Or,False e.1 e.2,e.1 False,False
+Or,False e.1 e.2,e.1 e.2,False
+Or,e.1 e.2 False,e.1 e.2 e.3,False
+Or,e.1 e.2 False,False False,True
+Or,e.1 e.2 False,False e.1,False
+Or,e.1 e.2 False,e.1 False,True
+Or,e.1 e.2 False,e.1 e.2,False
+Or,e.1 e.2 e.3,False False,True
+Or,e.1 e.2 e.3,False e.1,True
+Or,e.1 e.2 e.3,e.1 False,True
+Or,e.1 e.2 e.3,e.1 e.2,True
+Or,False False,False e.1,False
+Or,False False,e.1 False,False
+Or,False False,e.1 e.2,False
+Or,False e.1,e.1 False,False
+Or,False e.1,e.1 e.2,False
+Or,e.1 False,e.1 e.2,False

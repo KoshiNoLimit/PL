@@ -1,0 +1,558 @@
+function,pattern1,pattern2,result
+InputFormat_0,'AAB' e.x1,s.z1 e.x1,False
+InputFormat_0,'AAB' e.x1,,False
+InputFormat_0,s.z1 e.x1,,False
+Check_0,e.x1 'AAB' e.x2 e.x3,e.x1 'A' 'B' e.x2,False
+Check_0,e.x1 'AAB' e.x2 e.x3,e.x1  'AB' e.x2,False
+Check_0,e.x1 'AAB' e.x2 e.x3,e.x1 s.z1 e.x2 e.x3,False
+Check_0,e.x1 'AAB' e.x2 e.x3,e.x1  e.x2,False
+Check_0,e.x1 'A' 'B' e.x2,e.x1  'AB' e.x2,False
+Check_0,e.x1 'A' 'B' e.x2,e.x1 s.z1 e.x2 e.x3,False
+Check_0,e.x1 'A' 'B' e.x2,e.x1  e.x2,False
+Check_0,e.x1  'AB' e.x2,e.x1 s.z1 e.x2 e.x3,False
+Check_0,e.x1  'AB' e.x2,e.x1  e.x2,False
+Check_0,e.x1 s.z1 e.x2 e.x3,e.x1  e.x2,False
+Check_1,e.x1 e.x2 'AAB' e.x3,e.x1 e.x2 s.z1 e.x3,False
+Check_1,e.x1 e.x2 'AAB' e.x3,'AB' e.x1 e.x2,False
+Check_1,e.x1 e.x2 'AAB' e.x3,'B' e.x1,False
+Check_1,e.x1 e.x2 'AAB' e.x3,s.z1 e.x1 e.x2,False
+Check_1,e.x1 e.x2 'AAB' e.x3,e.x1,False
+Check_1,e.x1 e.x2 s.z1 e.x3,'AB' e.x1 e.x2,True
+Check_1,e.x1 e.x2 s.z1 e.x3,'B' e.x1,True
+Check_1,e.x1 e.x2 s.z1 e.x3,s.z1 e.x1 e.x2,True
+Check_1,e.x1 e.x2 s.z1 e.x3,e.x1,False
+Check_1,'AB' e.x1 e.x2,'B' e.x1,False
+Check_1,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_1,'AB' e.x1 e.x2,e.x1,False
+Check_1,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_1,'B' e.x1,e.x1,False
+Check_1,s.z1 e.x1 e.x2,e.x1,False
+Check_2,e.x1 'AB' e.x2 e.x3,e.x1  'B' e.x2,False
+Check_2,e.x1 'AB' e.x2 e.x3,e.x1 s.z1 e.x2 e.x3,False
+Check_2,e.x1 'AB' e.x2 e.x3,e.x1  e.x2,False
+Check_2,e.x1  'B' e.x2,e.x1 s.z1 e.x2 e.x3,False
+Check_2,e.x1  'B' e.x2,e.x1  e.x2,False
+Check_2,e.x1 s.z1 e.x2 e.x3,e.x1  e.x2,False
+Check_3,e.x1 'AB' e.x2,e.x1 s.z1 e.x2,False
+Check_3,e.x1 'AB' e.x2,e.x1,False
+Check_3,e.x1 s.z1 e.x2,e.x1,False
+Check_123_0,'AB' e.x1,s.z1 e.x1,False
+Check_123_0,'AB' e.x1,,False
+Check_123_0,s.z1 e.x1,,False
+Check_4,e.x1 e.x2 'AB' e.x3,e.x1 e.x2 s.z1 e.x3,False
+Check_4,e.x1 e.x2 'AB' e.x3,e.x1 e.x2,False
+Check_4,e.x1 e.x2 s.z1 e.x3,e.x1 e.x2,False
+Check_12_0,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_0,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_0,'AB' e.x1 e.x2,e.x1,False
+Check_12_0,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_0,'B' e.x1,e.x1,False
+Check_12_0,s.z1 e.x1 e.x2,e.x1,False
+Check_123_1,'AB' e.x1,s.z1 e.x1,False
+Check_123_1,'AB' e.x1,,False
+Check_123_1,s.z1 e.x1,,False
+Check_5,e.x1 'AB' e.x2,e.x1 s.z1 e.x2,False
+Check_5,e.x1 'AB' e.x2,e.x1,False
+Check_5,e.x1 s.z1 e.x2,e.x1,False
+Check_123_2,'AB' e.x1,s.z1 e.x1,False
+Check_123_2,'AB' e.x1,,False
+Check_123_2,s.z1 e.x1,,False
+Check_6,s.z1 e.x1 'AB' e.x2 e.x3,s.z1 e.x1  'B' e.x2,False
+Check_6,s.z1 e.x1 'AB' e.x2 e.x3,s.z1 e.x1 s.z2 e.x2 e.x3,False
+Check_6,s.z1 e.x1 'AB' e.x2 e.x3,s.z1 e.x1  e.x2,False
+Check_6,s.z1 e.x1  'B' e.x2,s.z1 e.x1 s.z2 e.x2 e.x3,False
+Check_6,s.z1 e.x1  'B' e.x2,s.z1 e.x1  e.x2,False
+Check_6,s.z1 e.x1 s.z2 e.x2 e.x3,s.z1 e.x1  e.x2,False
+Check_7,s.z1 e.x1 'AB' e.x2,s.z1 e.x1 s.z2 e.x2,False
+Check_7,s.z1 e.x1 'AB' e.x2,'A' 'B' e.x1,False
+Check_7,s.z1 e.x1 'AB' e.x2,s.z1 e.x1,False
+Check_7,s.z1 e.x1 s.z2 e.x2,'A' 'B' e.x1,True
+Check_7,s.z1 e.x1 s.z2 e.x2,s.z1 e.x1,False
+Check_7,'A' 'B' e.x1,s.z1 e.x1,False
+Check_123_3,'AB' e.x1,s.z1 e.x1,False
+Check_123_3,'AB' e.x1,,False
+Check_123_3,s.z1 e.x1,,False
+Check_8,s.z1 e.x1 e.x2 'AB' e.x3,s.z1 e.x1 e.x2 s.z2 e.x3,False
+Check_8,s.z1 e.x1 e.x2 'AB' e.x3,'A' 'B' e.x1 e.x2,False
+Check_8,s.z1 e.x1 e.x2 'AB' e.x3,s.z1 e.x1 e.x2,False
+Check_8,s.z1 e.x1 e.x2 s.z2 e.x3,'A' 'B' e.x1 e.x2,True
+Check_8,s.z1 e.x1 e.x2 s.z2 e.x3,s.z1 e.x1 e.x2,False
+Check_8,'A' 'B' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_1,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_1,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_1,'AB' e.x1 e.x2,e.x1,False
+Check_12_1,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_1,'B' e.x1,e.x1,False
+Check_12_1,s.z1 e.x1 e.x2,e.x1,False
+Check_123_4,'AB' e.x1,s.z1 e.x1,False
+Check_123_4,'AB' e.x1,,False
+Check_123_4,s.z1 e.x1,,False
+Check_9,e.x1 'AB' e.x2,e.x1 s.z1 e.x2,False
+Check_9,e.x1 'AB' e.x2,'B' e.x1,False
+Check_9,e.x1 'AB' e.x2,e.x1,False
+Check_9,e.x1 s.z1 e.x2,'B' e.x1,True
+Check_9,e.x1 s.z1 e.x2,e.x1,False
+Check_9,'B' e.x1,e.x1,False
+Check_123_5,'AB' e.x1,s.z1 e.x1,False
+Check_123_5,'AB' e.x1,,False
+Check_123_5,s.z1 e.x1,,False
+Check_10,e.x1 'AAB' e.x2 e.x3 e.x4,e.x1 'A' 'B' e.x2 e.x3,False
+Check_10,e.x1 'AAB' e.x2 e.x3 e.x4,e.x1  'AB' e.x2 e.x3,False
+Check_10,e.x1 'AAB' e.x2 e.x3 e.x4,e.x1   'B' e.x2,False
+Check_10,e.x1 'AAB' e.x2 e.x3 e.x4,e.x1 s.z1 e.x2 e.x3 e.x4,False
+Check_10,e.x1 'AAB' e.x2 e.x3 e.x4,e.x1  e.x2 e.x3,False
+Check_10,e.x1 'A' 'B' e.x2 e.x3,e.x1  'AB' e.x2 e.x3,False
+Check_10,e.x1 'A' 'B' e.x2 e.x3,e.x1   'B' e.x2,False
+Check_10,e.x1 'A' 'B' e.x2 e.x3,e.x1 s.z1 e.x2 e.x3 e.x4,False
+Check_10,e.x1 'A' 'B' e.x2 e.x3,e.x1  e.x2 e.x3,False
+Check_10,e.x1  'AB' e.x2 e.x3,e.x1   'B' e.x2,False
+Check_10,e.x1  'AB' e.x2 e.x3,e.x1 s.z1 e.x2 e.x3 e.x4,False
+Check_10,e.x1  'AB' e.x2 e.x3,e.x1  e.x2 e.x3,False
+Check_10,e.x1   'B' e.x2,e.x1 s.z1 e.x2 e.x3 e.x4,False
+Check_10,e.x1   'B' e.x2,e.x1  e.x2 e.x3,False
+Check_10,e.x1 s.z1 e.x2 e.x3 e.x4,e.x1  e.x2 e.x3,False
+Check_11,e.x1 'AAB' e.x2 e.x3,e.x1 'A' 'B' e.x2,False
+Check_11,e.x1 'AAB' e.x2 e.x3,e.x1  'AB' e.x2,False
+Check_11,e.x1 'AAB' e.x2 e.x3,e.x1 s.z1 e.x2 e.x3,False
+Check_11,e.x1 'AAB' e.x2 e.x3,e.x1  e.x2,False
+Check_11,e.x1 'A' 'B' e.x2,e.x1  'AB' e.x2,False
+Check_11,e.x1 'A' 'B' e.x2,e.x1 s.z1 e.x2 e.x3,False
+Check_11,e.x1 'A' 'B' e.x2,e.x1  e.x2,False
+Check_11,e.x1  'AB' e.x2,e.x1 s.z1 e.x2 e.x3,False
+Check_11,e.x1  'AB' e.x2,e.x1  e.x2,False
+Check_11,e.x1 s.z1 e.x2 e.x3,e.x1  e.x2,False
+Check_12,e.x1 e.x2 'AAB' e.x3,e.x1 e.x2 s.z1 e.x3,False
+Check_12,e.x1 e.x2 'AAB' e.x3,'AB' e.x1 e.x2,False
+Check_12,e.x1 e.x2 'AAB' e.x3,'B' e.x1,False
+Check_12,e.x1 e.x2 'AAB' e.x3,s.z1 e.x1 e.x2,False
+Check_12,e.x1 e.x2 'AAB' e.x3,e.x1,False
+Check_12,e.x1 e.x2 s.z1 e.x3,'AB' e.x1 e.x2,True
+Check_12,e.x1 e.x2 s.z1 e.x3,'B' e.x1,True
+Check_12,e.x1 e.x2 s.z1 e.x3,s.z1 e.x1 e.x2,True
+Check_12,e.x1 e.x2 s.z1 e.x3,e.x1,False
+Check_12,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12,'AB' e.x1 e.x2,e.x1,False
+Check_12,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12,'B' e.x1,e.x1,False
+Check_12,s.z1 e.x1 e.x2,e.x1,False
+Check_13,e.x1 'AB' e.x2 e.x3,e.x1  'B' e.x2,False
+Check_13,e.x1 'AB' e.x2 e.x3,e.x1 s.z1 e.x2 e.x3,False
+Check_13,e.x1 'AB' e.x2 e.x3,e.x1  e.x2,False
+Check_13,e.x1  'B' e.x2,e.x1 s.z1 e.x2 e.x3,False
+Check_13,e.x1  'B' e.x2,e.x1  e.x2,False
+Check_13,e.x1 s.z1 e.x2 e.x3,e.x1  e.x2,False
+Check_14,e.x1 'AB' e.x2,e.x1 s.z1 e.x2,False
+Check_14,e.x1 'AB' e.x2,e.x1,False
+Check_14,e.x1 s.z1 e.x2,e.x1,False
+Check_123_6,'AB' e.x1,s.z1 e.x1,False
+Check_123_6,'AB' e.x1,,False
+Check_123_6,s.z1 e.x1,,False
+Check_15,e.x1 e.x2 'AB' e.x3,e.x1 e.x2 s.z1 e.x3,False
+Check_15,e.x1 e.x2 'AB' e.x3,e.x1 e.x2,False
+Check_15,e.x1 e.x2 s.z1 e.x3,e.x1 e.x2,False
+Check_12_2,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_2,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_2,'AB' e.x1 e.x2,e.x1,False
+Check_12_2,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_2,'B' e.x1,e.x1,False
+Check_12_2,s.z1 e.x1 e.x2,e.x1,False
+Check_123_7,'AB' e.x1,s.z1 e.x1,False
+Check_123_7,'AB' e.x1,,False
+Check_123_7,s.z1 e.x1,,False
+Check_16,e.x1 'AB' e.x2,e.x1 s.z1 e.x2,False
+Check_16,e.x1 'AB' e.x2,e.x1,False
+Check_16,e.x1 s.z1 e.x2,e.x1,False
+Check_123_8,'AB' e.x1,s.z1 e.x1,False
+Check_123_8,'AB' e.x1,,False
+Check_123_8,s.z1 e.x1,,False
+Check_17,s.z1 e.x1 'AB' e.x2 e.x3,s.z1 e.x1  'B' e.x2,False
+Check_17,s.z1 e.x1 'AB' e.x2 e.x3,s.z1 e.x1 s.z2 e.x2 e.x3,False
+Check_17,s.z1 e.x1 'AB' e.x2 e.x3,s.z1 e.x1  e.x2,False
+Check_17,s.z1 e.x1  'B' e.x2,s.z1 e.x1 s.z2 e.x2 e.x3,False
+Check_17,s.z1 e.x1  'B' e.x2,s.z1 e.x1  e.x2,False
+Check_17,s.z1 e.x1 s.z2 e.x2 e.x3,s.z1 e.x1  e.x2,False
+Check_18,s.z1 e.x1 'AB' e.x2,s.z1 e.x1 s.z2 e.x2,False
+Check_18,s.z1 e.x1 'AB' e.x2,'A' 'B' e.x1,False
+Check_18,s.z1 e.x1 'AB' e.x2,s.z1 e.x1,False
+Check_18,s.z1 e.x1 s.z2 e.x2,'A' 'B' e.x1,True
+Check_18,s.z1 e.x1 s.z2 e.x2,s.z1 e.x1,False
+Check_18,'A' 'B' e.x1,s.z1 e.x1,False
+Check_123_9,'AB' e.x1,s.z1 e.x1,False
+Check_123_9,'AB' e.x1,,False
+Check_123_9,s.z1 e.x1,,False
+Check_19,s.z1 e.x1 e.x2 'AB' e.x3,s.z1 e.x1 e.x2 s.z2 e.x3,False
+Check_19,s.z1 e.x1 e.x2 'AB' e.x3,'A' 'B' e.x1 e.x2,False
+Check_19,s.z1 e.x1 e.x2 'AB' e.x3,s.z1 e.x1 e.x2,False
+Check_19,s.z1 e.x1 e.x2 s.z2 e.x3,'A' 'B' e.x1 e.x2,True
+Check_19,s.z1 e.x1 e.x2 s.z2 e.x3,s.z1 e.x1 e.x2,False
+Check_19,'A' 'B' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_3,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_3,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_3,'AB' e.x1 e.x2,e.x1,False
+Check_12_3,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_3,'B' e.x1,e.x1,False
+Check_12_3,s.z1 e.x1 e.x2,e.x1,False
+Check_123_10,'AB' e.x1,s.z1 e.x1,False
+Check_123_10,'AB' e.x1,,False
+Check_123_10,s.z1 e.x1,,False
+Check_20,e.x1 'AB' e.x2,e.x1 s.z1 e.x2,False
+Check_20,e.x1 'AB' e.x2,'B' e.x1,False
+Check_20,e.x1 'AB' e.x2,e.x1,False
+Check_20,e.x1 s.z1 e.x2,'B' e.x1,True
+Check_20,e.x1 s.z1 e.x2,e.x1,False
+Check_20,'B' e.x1,e.x1,False
+Check_123_11,'AB' e.x1,s.z1 e.x1,False
+Check_123_11,'AB' e.x1,,False
+Check_123_11,s.z1 e.x1,,False
+Check_21,e.x1 e.x2 'AAB' e.x3 e.x4,e.x1 e.x2 'A' 'B' e.x3,False
+Check_21,e.x1 e.x2 'AAB' e.x3 e.x4,e.x1 e.x2  'AB' e.x3,False
+Check_21,e.x1 e.x2 'AAB' e.x3 e.x4,e.x1 e.x2 s.z1 e.x3 e.x4,False
+Check_21,e.x1 e.x2 'AAB' e.x3 e.x4,e.x1 e.x2  e.x3,False
+Check_21,e.x1 e.x2 'A' 'B' e.x3,e.x1 e.x2  'AB' e.x3,False
+Check_21,e.x1 e.x2 'A' 'B' e.x3,e.x1 e.x2 s.z1 e.x3 e.x4,False
+Check_21,e.x1 e.x2 'A' 'B' e.x3,e.x1 e.x2  e.x3,False
+Check_21,e.x1 e.x2  'AB' e.x3,e.x1 e.x2 s.z1 e.x3 e.x4,False
+Check_21,e.x1 e.x2  'AB' e.x3,e.x1 e.x2  e.x3,False
+Check_21,e.x1 e.x2 s.z1 e.x3 e.x4,e.x1 e.x2  e.x3,False
+Check_22,e.x1 e.x2 e.x3 'AAB' e.x4,e.x1 e.x2 e.x3 s.z1 e.x4,False
+Check_22,e.x1 e.x2 e.x3 'AAB' e.x4,'AB' e.x1 e.x2 e.x3,False
+Check_22,e.x1 e.x2 e.x3 'AAB' e.x4,'B' e.x1 e.x2,False
+Check_22,e.x1 e.x2 e.x3 'AAB' e.x4,s.z1 e.x1 e.x2 e.x3,False
+Check_22,e.x1 e.x2 e.x3 'AAB' e.x4,e.x1 e.x2,False
+Check_22,e.x1 e.x2 e.x3 s.z1 e.x4,'AB' e.x1 e.x2 e.x3,True
+Check_22,e.x1 e.x2 e.x3 s.z1 e.x4,'B' e.x1 e.x2,True
+Check_22,e.x1 e.x2 e.x3 s.z1 e.x4,s.z1 e.x1 e.x2 e.x3,True
+Check_22,e.x1 e.x2 e.x3 s.z1 e.x4,e.x1 e.x2,False
+Check_22,'AB' e.x1 e.x2 e.x3,'B' e.x1 e.x2,False
+Check_22,'AB' e.x1 e.x2 e.x3,s.z1 e.x1 e.x2 e.x3,False
+Check_22,'AB' e.x1 e.x2 e.x3,e.x1 e.x2,False
+Check_22,'B' e.x1 e.x2,s.z1 e.x1 e.x2 e.x3,False
+Check_22,'B' e.x1 e.x2,e.x1 e.x2,False
+Check_22,s.z1 e.x1 e.x2 e.x3,e.x1 e.x2,False
+Check_23,e.x1 'AB' e.x2 e.x3 e.x4,e.x1  'B' e.x2 e.x3,False
+Check_23,e.x1 'AB' e.x2 e.x3 e.x4,e.x1 s.z1 e.x2 e.x3 e.x4,False
+Check_23,e.x1 'AB' e.x2 e.x3 e.x4,e.x1  e.x2 e.x3,False
+Check_23,e.x1  'B' e.x2 e.x3,e.x1 s.z1 e.x2 e.x3 e.x4,False
+Check_23,e.x1  'B' e.x2 e.x3,e.x1  e.x2 e.x3,False
+Check_23,e.x1 s.z1 e.x2 e.x3 e.x4,e.x1  e.x2 e.x3,False
+Check_24,e.x1 'AB' e.x2 e.x3,e.x1  'B' e.x2,False
+Check_24,e.x1 'AB' e.x2 e.x3,e.x1 s.z1 e.x2 e.x3,False
+Check_24,e.x1 'AB' e.x2 e.x3,e.x1  e.x2,False
+Check_24,e.x1  'B' e.x2,e.x1 s.z1 e.x2 e.x3,False
+Check_24,e.x1  'B' e.x2,e.x1  e.x2,False
+Check_24,e.x1 s.z1 e.x2 e.x3,e.x1  e.x2,False
+Check_25,e.x1 'AB' e.x2,e.x1 s.z1 e.x2,False
+Check_25,e.x1 'AB' e.x2,e.x1,False
+Check_25,e.x1 s.z1 e.x2,e.x1,False
+Check_123_12,'AB' e.x1,s.z1 e.x1,False
+Check_123_12,'AB' e.x1,,False
+Check_123_12,s.z1 e.x1,,False
+Check_26,e.x1 e.x2 'AB' e.x3,e.x1 e.x2 s.z1 e.x3,False
+Check_26,e.x1 e.x2 'AB' e.x3,e.x1 e.x2,False
+Check_26,e.x1 e.x2 s.z1 e.x3,e.x1 e.x2,False
+Check_12_4,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_4,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_4,'AB' e.x1 e.x2,e.x1,False
+Check_12_4,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_4,'B' e.x1,e.x1,False
+Check_12_4,s.z1 e.x1 e.x2,e.x1,False
+Check_123_13,'AB' e.x1,s.z1 e.x1,False
+Check_123_13,'AB' e.x1,,False
+Check_123_13,s.z1 e.x1,,False
+Check_27,e.x1 e.x2 'AB' e.x3 e.x4,e.x1 e.x2  'B' e.x3,False
+Check_27,e.x1 e.x2 'AB' e.x3 e.x4,e.x1 e.x2 s.z1 e.x3 e.x4,False
+Check_27,e.x1 e.x2 'AB' e.x3 e.x4,e.x1 e.x2  e.x3,False
+Check_27,e.x1 e.x2  'B' e.x3,e.x1 e.x2 s.z1 e.x3 e.x4,False
+Check_27,e.x1 e.x2  'B' e.x3,e.x1 e.x2  e.x3,False
+Check_27,e.x1 e.x2 s.z1 e.x3 e.x4,e.x1 e.x2  e.x3,False
+Check_28,e.x1 e.x2 'AB' e.x3,e.x1 e.x2 s.z1 e.x3,False
+Check_28,e.x1 e.x2 'AB' e.x3,e.x1 e.x2,False
+Check_28,e.x1 e.x2 s.z1 e.x3,e.x1 e.x2,False
+Check_12_5,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_5,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_5,'AB' e.x1 e.x2,e.x1,False
+Check_12_5,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_5,'B' e.x1,e.x1,False
+Check_12_5,s.z1 e.x1 e.x2,e.x1,False
+Check_123_14,'AB' e.x1,s.z1 e.x1,False
+Check_123_14,'AB' e.x1,,False
+Check_123_14,s.z1 e.x1,,False
+Check_29,e.x1 e.x2 e.x3 'AB' e.x4,e.x1 e.x2 e.x3 s.z1 e.x4,False
+Check_29,e.x1 e.x2 e.x3 'AB' e.x4,e.x1 e.x2 e.x3,False
+Check_29,e.x1 e.x2 e.x3 s.z1 e.x4,e.x1 e.x2 e.x3,False
+Check_12_6,'AB' e.x1 e.x2 e.x3,'B' e.x1 e.x2,False
+Check_12_6,'AB' e.x1 e.x2 e.x3,s.z1 e.x1 e.x2 e.x3,False
+Check_12_6,'AB' e.x1 e.x2 e.x3,e.x1 e.x2,False
+Check_12_6,'B' e.x1 e.x2,s.z1 e.x1 e.x2 e.x3,False
+Check_12_6,'B' e.x1 e.x2,e.x1 e.x2,False
+Check_12_6,s.z1 e.x1 e.x2 e.x3,e.x1 e.x2,False
+Check_12_7,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_7,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_7,'AB' e.x1 e.x2,e.x1,False
+Check_12_7,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_7,'B' e.x1,e.x1,False
+Check_12_7,s.z1 e.x1 e.x2,e.x1,False
+Check_123_15,'AB' e.x1,s.z1 e.x1,False
+Check_123_15,'AB' e.x1,,False
+Check_123_15,s.z1 e.x1,,False
+Check_30,e.x1 'AB' e.x2 e.x3,e.x1  'B' e.x2,False
+Check_30,e.x1 'AB' e.x2 e.x3,e.x1 s.z1 e.x2 e.x3,False
+Check_30,e.x1 'AB' e.x2 e.x3,e.x1  e.x2,False
+Check_30,e.x1  'B' e.x2,e.x1 s.z1 e.x2 e.x3,False
+Check_30,e.x1  'B' e.x2,e.x1  e.x2,False
+Check_30,e.x1 s.z1 e.x2 e.x3,e.x1  e.x2,False
+Check_31,e.x1 'AB' e.x2,e.x1 s.z1 e.x2,False
+Check_31,e.x1 'AB' e.x2,e.x1,False
+Check_31,e.x1 s.z1 e.x2,e.x1,False
+Check_123_16,'AB' e.x1,s.z1 e.x1,False
+Check_123_16,'AB' e.x1,,False
+Check_123_16,s.z1 e.x1,,False
+Check_32,e.x1 e.x2 'AB' e.x3,e.x1 e.x2 s.z1 e.x3,False
+Check_32,e.x1 e.x2 'AB' e.x3,e.x1 e.x2,False
+Check_32,e.x1 e.x2 s.z1 e.x3,e.x1 e.x2,False
+Check_12_8,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_8,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_8,'AB' e.x1 e.x2,e.x1,False
+Check_12_8,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_8,'B' e.x1,e.x1,False
+Check_12_8,s.z1 e.x1 e.x2,e.x1,False
+Check_123_17,'AB' e.x1,s.z1 e.x1,False
+Check_123_17,'AB' e.x1,,False
+Check_123_17,s.z1 e.x1,,False
+Check_33,s.z1 e.x1 'AB' e.x2 e.x3 e.x4,s.z1 e.x1  'B' e.x2 e.x3,False
+Check_33,s.z1 e.x1 'AB' e.x2 e.x3 e.x4,s.z1 e.x1 s.z2 e.x2 e.x3 e.x4,False
+Check_33,s.z1 e.x1 'AB' e.x2 e.x3 e.x4,s.z1 e.x1  e.x2 e.x3,False
+Check_33,s.z1 e.x1  'B' e.x2 e.x3,s.z1 e.x1 s.z2 e.x2 e.x3 e.x4,False
+Check_33,s.z1 e.x1  'B' e.x2 e.x3,s.z1 e.x1  e.x2 e.x3,False
+Check_33,s.z1 e.x1 s.z2 e.x2 e.x3 e.x4,s.z1 e.x1  e.x2 e.x3,False
+Check_34,s.z1 e.x1 'AB' e.x2 e.x3,s.z1 e.x1  'B' e.x2,False
+Check_34,s.z1 e.x1 'AB' e.x2 e.x3,s.z1 e.x1 s.z2 e.x2 e.x3,False
+Check_34,s.z1 e.x1 'AB' e.x2 e.x3,s.z1 e.x1  e.x2,False
+Check_34,s.z1 e.x1  'B' e.x2,s.z1 e.x1 s.z2 e.x2 e.x3,False
+Check_34,s.z1 e.x1  'B' e.x2,s.z1 e.x1  e.x2,False
+Check_34,s.z1 e.x1 s.z2 e.x2 e.x3,s.z1 e.x1  e.x2,False
+Check_35,s.z1 e.x1 'AB' e.x2,s.z1 e.x1 s.z2 e.x2,False
+Check_35,s.z1 e.x1 'AB' e.x2,'A' 'B' e.x1,False
+Check_35,s.z1 e.x1 'AB' e.x2,s.z1 e.x1,False
+Check_35,s.z1 e.x1 s.z2 e.x2,'A' 'B' e.x1,True
+Check_35,s.z1 e.x1 s.z2 e.x2,s.z1 e.x1,False
+Check_35,'A' 'B' e.x1,s.z1 e.x1,False
+Check_123_18,'AB' e.x1,s.z1 e.x1,False
+Check_123_18,'AB' e.x1,,False
+Check_123_18,s.z1 e.x1,,False
+Check_36,s.z1 e.x1 e.x2 'AB' e.x3,s.z1 e.x1 e.x2 s.z2 e.x3,False
+Check_36,s.z1 e.x1 e.x2 'AB' e.x3,'A' 'B' e.x1 e.x2,False
+Check_36,s.z1 e.x1 e.x2 'AB' e.x3,s.z1 e.x1 e.x2,False
+Check_36,s.z1 e.x1 e.x2 s.z2 e.x3,'A' 'B' e.x1 e.x2,True
+Check_36,s.z1 e.x1 e.x2 s.z2 e.x3,s.z1 e.x1 e.x2,False
+Check_36,'A' 'B' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_9,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_9,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_9,'AB' e.x1 e.x2,e.x1,False
+Check_12_9,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_9,'B' e.x1,e.x1,False
+Check_12_9,s.z1 e.x1 e.x2,e.x1,False
+Check_123_19,'AB' e.x1,s.z1 e.x1,False
+Check_123_19,'AB' e.x1,,False
+Check_123_19,s.z1 e.x1,,False
+Check_37,s.z1 e.x1 e.x2 'AB' e.x3 e.x4,s.z1 e.x1 e.x2  'B' e.x3,False
+Check_37,s.z1 e.x1 e.x2 'AB' e.x3 e.x4,s.z1 e.x1 e.x2 s.z2 e.x3 e.x4,False
+Check_37,s.z1 e.x1 e.x2 'AB' e.x3 e.x4,s.z1 e.x1 e.x2  e.x3,False
+Check_37,s.z1 e.x1 e.x2  'B' e.x3,s.z1 e.x1 e.x2 s.z2 e.x3 e.x4,False
+Check_37,s.z1 e.x1 e.x2  'B' e.x3,s.z1 e.x1 e.x2  e.x3,False
+Check_37,s.z1 e.x1 e.x2 s.z2 e.x3 e.x4,s.z1 e.x1 e.x2  e.x3,False
+Check_38,s.z1 e.x1 e.x2 'AB' e.x3,s.z1 e.x1 e.x2 s.z2 e.x3,False
+Check_38,s.z1 e.x1 e.x2 'AB' e.x3,'A' 'B' e.x1 e.x2,False
+Check_38,s.z1 e.x1 e.x2 'AB' e.x3,s.z1 e.x1 e.x2,False
+Check_38,s.z1 e.x1 e.x2 s.z2 e.x3,'A' 'B' e.x1 e.x2,True
+Check_38,s.z1 e.x1 e.x2 s.z2 e.x3,s.z1 e.x1 e.x2,False
+Check_38,'A' 'B' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_10,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_10,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_10,'AB' e.x1 e.x2,e.x1,False
+Check_12_10,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_10,'B' e.x1,e.x1,False
+Check_12_10,s.z1 e.x1 e.x2,e.x1,False
+Check_123_20,'AB' e.x1,s.z1 e.x1,False
+Check_123_20,'AB' e.x1,,False
+Check_123_20,s.z1 e.x1,,False
+Check_39,s.z1 e.x1 e.x2 e.x3 'AB' e.x4,s.z1 e.x1 e.x2 e.x3 s.z2 e.x4,False
+Check_39,s.z1 e.x1 e.x2 e.x3 'AB' e.x4,'A' 'B' e.x1 e.x2 e.x3,False
+Check_39,s.z1 e.x1 e.x2 e.x3 'AB' e.x4,s.z1 e.x1 e.x2 e.x3,False
+Check_39,s.z1 e.x1 e.x2 e.x3 s.z2 e.x4,'A' 'B' e.x1 e.x2 e.x3,True
+Check_39,s.z1 e.x1 e.x2 e.x3 s.z2 e.x4,s.z1 e.x1 e.x2 e.x3,False
+Check_39,'A' 'B' e.x1 e.x2 e.x3,s.z1 e.x1 e.x2 e.x3,False
+Check_12_11,'AB' e.x1 e.x2 e.x3,'B' e.x1 e.x2,False
+Check_12_11,'AB' e.x1 e.x2 e.x3,s.z1 e.x1 e.x2 e.x3,False
+Check_12_11,'AB' e.x1 e.x2 e.x3,e.x1 e.x2,False
+Check_12_11,'B' e.x1 e.x2,s.z1 e.x1 e.x2 e.x3,False
+Check_12_11,'B' e.x1 e.x2,e.x1 e.x2,False
+Check_12_11,s.z1 e.x1 e.x2 e.x3,e.x1 e.x2,False
+Check_12_12,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_12,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_12,'AB' e.x1 e.x2,e.x1,False
+Check_12_12,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_12,'B' e.x1,e.x1,False
+Check_12_12,s.z1 e.x1 e.x2,e.x1,False
+Check_123_21,'AB' e.x1,s.z1 e.x1,False
+Check_123_21,'AB' e.x1,,False
+Check_123_21,s.z1 e.x1,,False
+Check_40,e.x1 'AB' e.x2 e.x3,e.x1  'B' e.x2,False
+Check_40,e.x1 'AB' e.x2 e.x3,e.x1 s.z1 e.x2 e.x3,False
+Check_40,e.x1 'AB' e.x2 e.x3,e.x1  e.x2,False
+Check_40,e.x1  'B' e.x2,e.x1 s.z1 e.x2 e.x3,False
+Check_40,e.x1  'B' e.x2,e.x1  e.x2,False
+Check_40,e.x1 s.z1 e.x2 e.x3,e.x1  e.x2,False
+Check_41,e.x1 'AB' e.x2,e.x1 s.z1 e.x2,False
+Check_41,e.x1 'AB' e.x2,'B' e.x1,False
+Check_41,e.x1 'AB' e.x2,e.x1,False
+Check_41,e.x1 s.z1 e.x2,'B' e.x1,True
+Check_41,e.x1 s.z1 e.x2,e.x1,False
+Check_41,'B' e.x1,e.x1,False
+Check_123_22,'AB' e.x1,s.z1 e.x1,False
+Check_123_22,'AB' e.x1,,False
+Check_123_22,s.z1 e.x1,,False
+Check_42,e.x1 e.x2 'AB' e.x3,e.x1 e.x2 s.z1 e.x3,False
+Check_42,e.x1 e.x2 'AB' e.x3,'B' e.x1 e.x2,False
+Check_42,e.x1 e.x2 'AB' e.x3,e.x1 e.x2,False
+Check_42,e.x1 e.x2 s.z1 e.x3,'B' e.x1 e.x2,True
+Check_42,e.x1 e.x2 s.z1 e.x3,e.x1 e.x2,False
+Check_42,'B' e.x1 e.x2,e.x1 e.x2,False
+Check_12_13,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_13,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_13,'AB' e.x1 e.x2,e.x1,False
+Check_12_13,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_13,'B' e.x1,e.x1,False
+Check_12_13,s.z1 e.x1 e.x2,e.x1,False
+Check_123_23,'AB' e.x1,s.z1 e.x1,False
+Check_123_23,'AB' e.x1,,False
+Check_123_23,s.z1 e.x1,,False
+Check_43,e.x1 'AAB' e.x2 e.x3,e.x1 'A' 'B' e.x2,False
+Check_43,e.x1 'AAB' e.x2 e.x3,e.x1  'AB' e.x2,False
+Check_43,e.x1 'AAB' e.x2 e.x3,e.x1 s.z1 e.x2 e.x3,False
+Check_43,e.x1 'AAB' e.x2 e.x3,e.x1  e.x2,False
+Check_43,e.x1 'A' 'B' e.x2,e.x1  'AB' e.x2,False
+Check_43,e.x1 'A' 'B' e.x2,e.x1 s.z1 e.x2 e.x3,False
+Check_43,e.x1 'A' 'B' e.x2,e.x1  e.x2,False
+Check_43,e.x1  'AB' e.x2,e.x1 s.z1 e.x2 e.x3,False
+Check_43,e.x1  'AB' e.x2,e.x1  e.x2,False
+Check_43,e.x1 s.z1 e.x2 e.x3,e.x1  e.x2,False
+Check_44,e.x1 e.x2 'AAB' e.x3,e.x1 e.x2 s.z1 e.x3,False
+Check_44,e.x1 e.x2 'AAB' e.x3,'AB' e.x1 e.x2,False
+Check_44,e.x1 e.x2 'AAB' e.x3,'B' e.x1,False
+Check_44,e.x1 e.x2 'AAB' e.x3,s.z1 e.x1 e.x2,False
+Check_44,e.x1 e.x2 'AAB' e.x3,e.x1,False
+Check_44,e.x1 e.x2 s.z1 e.x3,'AB' e.x1 e.x2,True
+Check_44,e.x1 e.x2 s.z1 e.x3,'B' e.x1,True
+Check_44,e.x1 e.x2 s.z1 e.x3,s.z1 e.x1 e.x2,True
+Check_44,e.x1 e.x2 s.z1 e.x3,e.x1,False
+Check_44,'AB' e.x1 e.x2,'B' e.x1,False
+Check_44,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_44,'AB' e.x1 e.x2,e.x1,False
+Check_44,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_44,'B' e.x1,e.x1,False
+Check_44,s.z1 e.x1 e.x2,e.x1,False
+Check_45,e.x1 'AB' e.x2 e.x3,e.x1  'B' e.x2,False
+Check_45,e.x1 'AB' e.x2 e.x3,e.x1 s.z1 e.x2 e.x3,False
+Check_45,e.x1 'AB' e.x2 e.x3,e.x1  e.x2,False
+Check_45,e.x1  'B' e.x2,e.x1 s.z1 e.x2 e.x3,False
+Check_45,e.x1  'B' e.x2,e.x1  e.x2,False
+Check_45,e.x1 s.z1 e.x2 e.x3,e.x1  e.x2,False
+Check_46,e.x1 'AB' e.x2,e.x1 s.z1 e.x2,False
+Check_46,e.x1 'AB' e.x2,e.x1,False
+Check_46,e.x1 s.z1 e.x2,e.x1,False
+Check_123_24,'AB' e.x1,s.z1 e.x1,False
+Check_123_24,'AB' e.x1,,False
+Check_123_24,s.z1 e.x1,,False
+Check_47,e.x1 e.x2 'AB' e.x3,e.x1 e.x2 s.z1 e.x3,False
+Check_47,e.x1 e.x2 'AB' e.x3,e.x1 e.x2,False
+Check_47,e.x1 e.x2 s.z1 e.x3,e.x1 e.x2,False
+Check_12_14,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_14,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_14,'AB' e.x1 e.x2,e.x1,False
+Check_12_14,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_14,'B' e.x1,e.x1,False
+Check_12_14,s.z1 e.x1 e.x2,e.x1,False
+Check_123_25,'AB' e.x1,s.z1 e.x1,False
+Check_123_25,'AB' e.x1,,False
+Check_123_25,s.z1 e.x1,,False
+Check_48,e.x1 'AB' e.x2,e.x1 s.z1 e.x2,False
+Check_48,e.x1 'AB' e.x2,e.x1,False
+Check_48,e.x1 s.z1 e.x2,e.x1,False
+Check_123_26,'AB' e.x1,s.z1 e.x1,False
+Check_123_26,'AB' e.x1,,False
+Check_123_26,s.z1 e.x1,,False
+Check_49,s.z1 e.x1 'AB' e.x2 e.x3,s.z1 e.x1  'B' e.x2,False
+Check_49,s.z1 e.x1 'AB' e.x2 e.x3,s.z1 e.x1 s.z2 e.x2 e.x3,False
+Check_49,s.z1 e.x1 'AB' e.x2 e.x3,s.z1 e.x1  e.x2,False
+Check_49,s.z1 e.x1  'B' e.x2,s.z1 e.x1 s.z2 e.x2 e.x3,False
+Check_49,s.z1 e.x1  'B' e.x2,s.z1 e.x1  e.x2,False
+Check_49,s.z1 e.x1 s.z2 e.x2 e.x3,s.z1 e.x1  e.x2,False
+Check_50,s.z1 e.x1 'AB' e.x2,s.z1 e.x1 s.z2 e.x2,False
+Check_50,s.z1 e.x1 'AB' e.x2,'A' 'B' e.x1,False
+Check_50,s.z1 e.x1 'AB' e.x2,s.z1 e.x1,False
+Check_50,s.z1 e.x1 s.z2 e.x2,'A' 'B' e.x1,True
+Check_50,s.z1 e.x1 s.z2 e.x2,s.z1 e.x1,False
+Check_50,'A' 'B' e.x1,s.z1 e.x1,False
+Check_123_27,'AB' e.x1,s.z1 e.x1,False
+Check_123_27,'AB' e.x1,,False
+Check_123_27,s.z1 e.x1,,False
+Check_51,s.z1 e.x1 e.x2 'AB' e.x3,s.z1 e.x1 e.x2 s.z2 e.x3,False
+Check_51,s.z1 e.x1 e.x2 'AB' e.x3,'A' 'B' e.x1 e.x2,False
+Check_51,s.z1 e.x1 e.x2 'AB' e.x3,s.z1 e.x1 e.x2,False
+Check_51,s.z1 e.x1 e.x2 s.z2 e.x3,'A' 'B' e.x1 e.x2,True
+Check_51,s.z1 e.x1 e.x2 s.z2 e.x3,s.z1 e.x1 e.x2,False
+Check_51,'A' 'B' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_123_28,'AB' e.x1,s.z1 e.x1,False
+Check_123_28,'AB' e.x1,,False
+Check_123_28,s.z1 e.x1,,False
+Check_52,e.x1 'AB' e.x2,e.x1 s.z1 e.x2,False
+Check_52,e.x1 'AB' e.x2,'B' e.x1,False
+Check_52,e.x1 'AB' e.x2,e.x1,False
+Check_52,e.x1 s.z1 e.x2,'B' e.x1,True
+Check_52,e.x1 s.z1 e.x2,e.x1,False
+Check_52,'B' e.x1,e.x1,False
+Check_123_29,'AB' e.x1,s.z1 e.x1,False
+Check_123_29,'AB' e.x1,,False
+Check_123_29,s.z1 e.x1,,False
+Check_53,'A' 'AB' e.x1 e.x2,'A'  'B' e.x1,False
+Check_53,'A' 'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_53,'A'  'B' e.x1,s.z1 e.x1 e.x2,False
+Check_54,s.z1 e.x1 'AAB' e.x2 e.x3,s.z1 e.x1 'A' 'B' e.x2,False
+Check_54,s.z1 e.x1 'AAB' e.x2 e.x3,s.z1 e.x1  'AB' e.x2,False
+Check_54,s.z1 e.x1 'AAB' e.x2 e.x3,s.z1 e.x1 s.z2 e.x2 e.x3,False
+Check_54,s.z1 e.x1 'AAB' e.x2 e.x3,s.z1 e.x1  e.x2,False
+Check_54,s.z1 e.x1 'A' 'B' e.x2,s.z1 e.x1  'AB' e.x2,False
+Check_54,s.z1 e.x1 'A' 'B' e.x2,s.z1 e.x1 s.z2 e.x2 e.x3,False
+Check_54,s.z1 e.x1 'A' 'B' e.x2,s.z1 e.x1  e.x2,False
+Check_54,s.z1 e.x1  'AB' e.x2,s.z1 e.x1 s.z2 e.x2 e.x3,False
+Check_54,s.z1 e.x1  'AB' e.x2,s.z1 e.x1  e.x2,False
+Check_54,s.z1 e.x1 s.z2 e.x2 e.x3,s.z1 e.x1  e.x2,False
+Check_55,s.z1 e.x1 'AAB' e.x2,s.z1 e.x1 s.z2 e.x2,False
+Check_55,s.z1 e.x1 'AAB' e.x2,'A' 'B' e.x1,False
+Check_55,s.z1 e.x1 'AAB' e.x2,s.z1 e.x1,False
+Check_55,s.z1 e.x1 s.z2 e.x2,'A' 'B' e.x1,True
+Check_55,s.z1 e.x1 s.z2 e.x2,s.z1 e.x1,False
+Check_55,'A' 'B' e.x1,s.z1 e.x1,False
+Check_56,e.x1 'AB' e.x2,e.x1 s.z1 e.x2,False
+Check_56,e.x1 'AB' e.x2,e.x1,False
+Check_56,e.x1 s.z1 e.x2,e.x1,False
+Check_123_30,'AB' e.x1,s.z1 e.x1,False
+Check_123_30,'AB' e.x1,,False
+Check_123_30,s.z1 e.x1,,False
+Check_12_15,'AB' e.x1 e.x2,'B' e.x1,False
+Check_12_15,'AB' e.x1 e.x2,s.z1 e.x1 e.x2,False
+Check_12_15,'AB' e.x1 e.x2,e.x1,False
+Check_12_15,'B' e.x1,s.z1 e.x1 e.x2,False
+Check_12_15,'B' e.x1,e.x1,False
+Check_12_15,s.z1 e.x1 e.x2,e.x1,False
+Check_57,s.z1 e.x1 'AB' e.x2,s.z1 e.x1 s.z2 e.x2,False
+Check_57,s.z1 e.x1 'AB' e.x2,'A' 'B' e.x1,False
+Check_57,s.z1 e.x1 'AB' e.x2,s.z1 e.x1,False
+Check_57,s.z1 e.x1 s.z2 e.x2,'A' 'B' e.x1,True
+Check_57,s.z1 e.x1 s.z2 e.x2,s.z1 e.x1,False
+Check_57,'A' 'B' e.x1,s.z1 e.x1,False
+Check_123_31,'AB' e.x1,s.z1 e.x1,False
+Check_123_31,'AB' e.x1,,False
+Check_123_31,s.z1 e.x1,,False

@@ -1,0 +1,36 @@
+Weq {
+    <> = <RHS>;
+    <e.Rules s.1 e.1 s.1 e.2> = <RHS>;
+    <e.Rules s.name e.1 s.name e.2> = <RHS>;
+    <s.name TO s.1 s.name e.Rules s.1 e.1 s.name e.2> = <RHS>;
+    <s.name EMPTY e.Rules s.1 e.1 s.name e.2> = <RHS>;
+    <s.name TO s.1 s.name e.Rules s.name e.1 s.1 e.2> = <RHS>;
+    <s.name EMPTY e.Rules s.name e.1 s.1 e.2> = <RHS>;
+    <s.name EQUALS s.name2 e.Rules s.name e.1 s.name2 e.2> = <RHS>;
+    <s.name TO s.name2 s.name e.Rules s.name e.1 s.name2 e.2> = <RHS>;
+    <s.name2 TO s.name s.name2 e.Rules s.name e.1 s.name2 e.2> = <RHS>;
+    <s.name EMPTY e.Rules s.name e.1> = <RHS>;
+    <s.name EMPTY e.Rules s.name e.1> = <RHS>;
+    <e.Rules e.1 e.2> = <RHS>;
+}
+
+Subst {
+    <e.Result s.name e.ToSub s.name e.Expr> = <RHS>;
+    <e.Result e.Subst> = <RHS>;
+    <e.Result e.Subst t.Other e.Expr> = <RHS>;
+}
+
+Or {
+    <False False False> = <RHS>;
+    <e.1 False False> = <RHS>;
+    <e.1 False e.2> = <RHS>;
+    <False False e.1> = <RHS>;
+    <False e.1 False> = <RHS>;
+    <False e.1 e.2> = <RHS>;
+    <e.1 e.2 False> = <RHS>;
+    <e.1 e.2 e.3> = <RHS>;
+    <False False> = <RHS>;
+    <False e.1> = <RHS>;
+    <e.1 False> = <RHS>;
+    <e.1 e.2> = <RHS>;
+}

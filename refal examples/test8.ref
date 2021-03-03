@@ -1,0 +1,129 @@
+IfInSet {
+    <s.Term s.Term e.Rest> = <RHS>;
+    <s.Term> = <RHS>;
+    <s.Term s.OtherTerm e.Rest> = <RHS>;
+}
+
+Translate {
+    <> = <RHS>;
+    <' 'e.x> = <RHS>;
+    <e.x' '> = <RHS>;
+    <Started e.Result 'TF' e.variables e.alphabet s.Name's'> = <RHS>;
+    <Started e.Result 'TF' e.variables e.alphabet s.Name> = <RHS>;
+    <Started e.Result 'FT' e.variables e.alphabet s.Name> = <RHS>;
+    <Started e.Result 'TF' e.variables e.alphabet s.Name's ' s.Next e.Rest> = <RHS>;
+    <Started e.Result 'TF' e.variables e.alphabet s.Name' 's.Next e.Rest> = <RHS>;
+    <Started e.Result 'FT' e.variables e.alphabet s.Name' 's.Next e.Rest> = <RHS>;
+    <s.Term e.Rest> = <RHS>;
+}
+
+Eq {
+    <> = <RHS>;
+    <e.Rules e.Other> = <RHS>;
+    <s.x's -> empty' e.R1 e.LHS var 'e' s.x e.RHS e.Other> = <RHS>;
+    <s.x's -> empty' e.R1 var 'e' s.x e.LHS e.RHS e.Other> = <RHS>;
+    <s.x's -> 's.Sym' 's.x's' e.R1 var 'e' s.x e.LHS s.Sym e.RHS e.Other> = <RHS>;
+    <s.x's -> 's.Sym' 's.x's' e.R1 s.Sym e.LHS var 'e' s.x e.RHS e.Other> = <RHS>;
+    <s.x's -> 's.y's 's.x's' e.R1 var 'e' s.x e.LHS var 'e' s.y e.RHS e.Other> = <RHS>;
+    <s.y's -> 's.x's 's.y's' e.R1 var 'e' s.x e.LHS var 'e' s.y e.RHS e.Other> = <RHS>;
+    <e.R1 e.Other> = <RHS>;
+}
+
+subst {
+    <assign t.var e.val e.Result> = <RHS>;
+    <assign var s.type s.n e.val e.Result var s.type s.n e.Rest> = <RHS>;
+    <*	 assign var s.type s.n e.val e.Result var s.type s.n e.Rest> = <RHS>;
+    <assign t.var e.val e.Result t.other e.Rest> = <RHS>;
+}
+
+subst_2 {
+    <t.Asg e.LHS e.RHS e.Other> = <RHS>;
+    <t.Asg> = <RHS>;
+}
+
+Sim {
+    <e.Processed s.x e.LHS s.x e.RHS e.Other> = <RHS>;
+    <e.Processed e.LHS s.x e.RHS s.x e.Other> = <RHS>;
+    <e.Processed var s.type s.n e.LHS var s.type s.n e.RHS e.Other> = <RHS>;
+    <e.Processed e.LHS var s.type s.n e.RHS var s.type s.n e.Other> = <RHS>;
+    <e.Processed e.Other> = <RHS>;
+    <e.Processed> = <RHS>;
+}
+
+SortContr {
+    <e.Processed s.x s.y e.Other> = <RHS>;
+    <e.Processed e.NormalEq e.Other> = <RHS>;
+    <e.Processed> = <RHS>;
+}
+
+Sim2 {
+    <s.x e.LHS s.x e.RHS e.Other> = <RHS>;
+    <e.LHS s.x e.RHS s.x e.Other> = <RHS>;
+    <var s.type s.n e.LHS var s.type s.n e.RHS e.Other> = <RHS>;
+    <e.LHS var s.type s.n e.RHS var s.type s.n e.Other> = <RHS>;
+    <e.Other> = <RHS>;
+    <> = <RHS>;
+}
+
+Split {
+    <e.Result 'F' e.MS1 e.MS2 e.LPref e.RPref t.L1 e.LHS t.R1 e.RHS> = <RHS>;
+    <e.Result 'T' e.MS1 e.MS2 e.LPref e.RPref e.LHS e.RHS> = <RHS>;
+    <e.Result s.Log e.MS1 e.MS2> = <RHS>;
+    <e.Result s.Log e.MS1 e.MS2 e.LPref e.RPref e.LHS e.RHS> = <RHS>;
+}
+
+Include {
+    <s.Sym e.Prev e.MS Const e.Counter> = <RHS>;
+    <var 'e' s.name e.Prev var 'e' s.name e.Counter e.Rest> = <RHS>;
+    <var 'e' s.name e.Prev t.Other e.MS> = <RHS>;
+}
+
+AreEqual {
+    <e.M1 e.M2 FALSE> = <RHS>;
+    <> = <RHS>;
+    <e.Other> = <RHS>;
+    <e.Other> = <RHS>;
+}
+
+ElMinus {
+    <var 'e' s.name e.Counter e.Rest var 'e' s.name e.Counter2 e.Next> = <RHS>;
+    <t.El e.Rest t.Other e.Next> = <RHS>;
+    <t.El e.Rest> = <RHS>;
+}
+
+CountMinus {
+    <t.Name> = <RHS>;
+    <t.Name s.C e.Other s.C e.Other2> = <RHS>;
+    <t.Name e.Number> = <RHS>;
+    <t.Name e.Number> = <RHS>;
+}
+
+SplitRight {
+    <e.Result 'F' e.MS1 e.MS2 e.LSuff e.RSuff e.LHS t.LL e.RHS t.RL> = <RHS>;
+    <e.Result 'T' e.MS1 e.MS2 e.LSuff e.RSuff e.LHS e.RHS> = <RHS>;
+    <e.Result s.Log e.MS1 e.MS2> = <RHS>;
+    <e.Result s.Log e.MS1 e.MS2 e.LSuff e.RSuff e.LHS e.RHS> = <RHS>;
+}
+
+SubjugateEq {
+    <False e.Eq1 e.Eq2> = <RHS>;
+    <True e.Eq1 e.Eq2> = <RHS>;
+}
+
+SubtractMS {
+    <GREATER e.MS1> = <RHS>;
+    <LESSER e.MS2> = <RHS>;
+    <LESSER t.El e.MS1 e.MS2> = <RHS>;
+    <t.Other e.MS1 e.MS2> = <RHS>;
+}
+
+YieldCheckSubMS2 {
+    <e.MS1 e.MS2> = <RHS>;
+    <s.Cmp FALSE e.MS1 e.MS2> = <RHS>;
+}
+
+AddElsToMS {
+    <t.El e.Other e.MS> = <RHS>;
+    <e.MS> = <RHS>;
+}
+

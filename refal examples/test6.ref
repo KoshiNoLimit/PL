@@ -1,0 +1,93 @@
+Opt_12_0 {
+    <s.z1> = <RHS>;
+    <t.y1 s.z1 t.y2> = <RHS>;
+}
+
+Opt_12_1 {
+    <s.z1> = <RHS>;
+    <t.y1 s.z1 t.y2> = <RHS>;
+}
+
+Derivative_1234_0 {
+    <X e.x1> = <RHS>;
+    <s.z1 e.x1> = <RHS>;
+    <t.y1 '+' t.y2 e.x1> = <RHS>;
+    <t.y1 '*' t.y2 e.x1> = <RHS>;
+}
+
+Let_1 {
+    <s.z1> = <RHS>;
+    <t.y1 s.z1 t.y2> = <RHS>;
+}
+
+Let_2 {
+    <t.y1 '+' 0> = <RHS>;
+    <t.y1 '+' 0> = <RHS>;
+    <s.z1 '+' 0> = <RHS>;
+    <0 '+' s.z1> = <RHS>;
+    <0 '+' t.y1> = <RHS>;
+    <0 '+' t.y1> = <RHS>;
+    <t.y1 '*' 0> = <RHS>;
+    <t.y1 '*' 0> = <RHS>;
+    <s.z1 '*' 0> = <RHS>;
+    <0 '*' s.z1> = <RHS>;
+    <0 '*' t.y1> = <RHS>;
+    <0 '*' t.y1> = <RHS>;
+    <t.y1 '*' 1> = <RHS>;
+    <t.y1 '*' 1> = <RHS>;
+    <s.z1 '*' 1> = <RHS>;
+    <1 '*' s.z1> = <RHS>;
+    <1 '*' t.y1> = <RHS>;
+    <1 '*' t.y1> = <RHS>;
+    <t.y1 s.z1 s.z2> = <RHS>;
+    <t.y1 s.z1 t.y2> = <RHS>;
+    <s.z1 s.z2 t.y1> = <RHS>;
+}
+
+Let_3 {
+    <t.y1 '+' 0> = <RHS>;
+    <t.y1 '+' 0> = <RHS>;
+    <s.z1 '+' 0> = <RHS>;
+    <0 '+' s.z1> = <RHS>;
+    <0 '+' t.y1> = <RHS>;
+    <0 '+' t.y1> = <RHS>;
+    <t.y1 '*' 0> = <RHS>;
+    <t.y1 '*' 0> = <RHS>;
+    <s.z1 '*' 0> = <RHS>;
+    <0 '*' s.z1> = <RHS>;
+    <0 '*' t.y1> = <RHS>;
+    <0 '*' t.y1> = <RHS>;
+    <t.y1 '*' 1> = <RHS>;
+    <t.y1 '*' 1> = <RHS>;
+    <s.z1 '*' 1> = <RHS>;
+    <1 '*' s.z1> = <RHS>;
+    <1 '*' t.y1> = <RHS>;
+    <1 '*' t.y1> = <RHS>;
+    <t.y1 s.z1 s.z2> = <RHS>;
+    <t.y1 s.z1 t.y2> = <RHS>;
+    <s.z1 s.z2 t.y1> = <RHS>;
+}
+
+Let_4 {
+    <t.y1 '+' 0> = <RHS>;
+    <t.y1 '+' 0> = <RHS>;
+    <s.z1 '+' 0> = <RHS>;
+    <0 '+' s.z1> = <RHS>;
+    <0 '+' t.y1> = <RHS>;
+    <0 '+' t.y1> = <RHS>;
+    <t.y1 '*' 0> = <RHS>;
+    <t.y1 '*' 0> = <RHS>;
+    <s.z1 '*' 0> = <RHS>;
+    <0 '*' s.z1> = <RHS>;
+    <0 '*' t.y1> = <RHS>;
+    <0 '*' t.y1> = <RHS>;
+    <t.y1 '*' 1> = <RHS>;
+    <t.y1 '*' 1> = <RHS>;
+    <s.z1 '*' 1> = <RHS>;
+    <1 '*' s.z1> = <RHS>;
+    <1 '*' t.y1> = <RHS>;
+    <1 '*' t.y1> = <RHS>;
+    <t.y1 s.z1 s.z2> = <RHS>;
+    <t.y1 s.z1 t.y2> = <RHS>;
+    <s.z1 s.z2 t.y1> = <RHS>;
+}

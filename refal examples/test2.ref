@@ -1,0 +1,588 @@
+AlphabetT {
+    <> = <RHS>;
+    <s.Term> = <RHS>;
+    <s.Term s.OtherTerm e.Rest> = <RHS>;
+}
+
+IfInSetMultiple {
+    <s.Value e.ToSearch e.List> = <RHS>;
+    <s.Value e.ToSearch e.List 'T'> = <RHS>;
+    <s.Value e.ToSearch e.List 'F'> = <RHS>;
+    <e.List 'T'> = <RHS>;
+}
+
+Translate {
+    <> = <RHS>;
+    <' 'e.x> = <RHS>;
+    <e.x' '> = <RHS>;
+    <Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't'> = <RHS>;
+    <Started e.Result 'TFF' e.variables e.alphabet s.Name's'> = <RHS>;
+    <Started e.Result 'FTF' e.variables e.alphabet s.Name> = <RHS>;
+    <Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest> = <RHS>;
+    <Started e.Result 'TFT' e.variables e.alphabet s.Name s.Name2 s.Name3 s.Name4 s.Name5 't ' s.Next e.Rest> = <RHS>;
+    <Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest> = <RHS>;
+    <Started e.Result 'TFF' e.variables e.alphabet s.Name's ' s.Next e.Rest> = <RHS>;
+    <Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next s.Next2 s.Next3 s.Next4 s.Next5 e.Rest> = <RHS>;
+    <Started e.Result 'FTF' e.variables e.alphabet s.Name' 's.Next e.Rest> = <RHS>;
+    <s.Term s.Term2 s.Term3 s.Term4 s.Term5 e.Rest> = <RHS>;
+    <s.Term e.Rest> = <RHS>;
+}
+
+Eq {
+    <e.Rules e.System> = <RHS>;
+    <Solved e.Rules False> = <RHS>;
+    <Solved e.Rules e.System> = <RHS>;
+}
+
+FindMaxNameT {
+    <e.Max var 't' e.name e.LHS e.RHS e.Other> = <RHS>;
+    <e.Max e.LHS var 't' e.name e.RHS e.Other> = <RHS>;
+    <e.Max t.Any e.LHS t.Any2 e.RHS e.Other> = <RHS>;
+    <e.Max t.Any e.LHS e.Other> = <RHS>;
+    <e.Max t.Any e.RHS e.Other> = <RHS>;
+    <e.Max e.Other> = <RHS>;
+    <e.Max> = <RHS>;
+}
+
+SelectMax {
+    <e.Current e.Next e.Other 'G' e.Max> = <RHS>;
+    <e.Current e.Next e.Other s.Log e.Max> = <RHS>;
+    <e.Current 'G' e.Max> = <RHS>;
+    <e.Current s.Log e.Max> = <RHS>;
+}
+
+CompareNamesT {
+    <s.Sym e.x s.Sym e.y 'E'> = <RHS>;
+    <s.Sym e.x s.Sym2 e.y 'E'> = <RHS>;
+    <s.Sym e.x s.Sym2 e.y s.Log> = <RHS>;
+    <e.x  s.Log> = <RHS>;
+    <e.y s.Log> = <RHS>;
+    <s.Log> = <RHS>;
+    <s.Sym e.x s.Sym e.y> = <RHS>;
+    <s.Sym e.x s.Sym2 e.y> = <RHS>;
+    <e.x> = <RHS>;
+    <e.x> = <RHS>;
+    <> = <RHS>;
+}
+
+NextNameT {
+    <e.x'Z' e.Counter> = <RHS>;
+    <e.x s.Sym e.Counter> = <RHS>;
+    <> = <RHS>;
+    <e.Name> = <RHS>;
+}
+
+BuildNameA {
+    <e.Result> = <RHS>;
+    <e.Result e.X'I'> = <RHS>;
+    <e.X> = <RHS>;
+    <'B' 'A'> = <RHS>;
+    <'C' 'A'> = <RHS>;
+    <'D' 'A'> = <RHS>;
+    <'E' 'A'> = <RHS>;
+    <'F' 'A'> = <RHS>;
+    <'G' 'A'> = <RHS>;
+    <'H' 'A'> = <RHS>;
+    <'I' 'A'> = <RHS>;
+    <'J' 'A'> = <RHS>;
+    <'K' 'A'> = <RHS>;
+    <'L' 'A'> = <RHS>;
+    <'M' 'A'> = <RHS>;
+    <'N' 'A'> = <RHS>;
+    <'O' 'A'> = <RHS>;
+    <'P' 'A'> = <RHS>;
+    <'Q' 'A'> = <RHS>;
+    <'R' 'A'> = <RHS>;
+    <'S' 'A'> = <RHS>;
+    <'T' 'A'> = <RHS>;
+    <'U' 'A'> = <RHS>;
+    <'V' 'A'> = <RHS>;
+    <'W' 'A'> = <RHS>;
+    <'X' 'A'> = <RHS>;
+    <'Y' 'A'> = <RHS>;
+    <'Z' 'A'> = <RHS>;
+    <s.Sym s.Sym2> = <RHS>;
+}
+
+IncSym {
+    <'A'> = <RHS>;
+    <'B'> = <RHS>;
+    <'C'> = <RHS>;
+    <'D'> = <RHS>;
+    <'E'> = <RHS>;
+    <'F'> = <RHS>;
+    <'G'> = <RHS>;
+    <'H'> = <RHS>;
+    <'I'> = <RHS>;
+    <'J'> = <RHS>;
+    <'K'> = <RHS>;
+    <'L'> = <RHS>;
+    <'M'> = <RHS>;
+    <'N'> = <RHS>;
+    <'O'> = <RHS>;
+    <'P'> = <RHS>;
+    <'Q'> = <RHS>;
+    <'R'> = <RHS>;
+    <'S'> = <RHS>;
+    <'T'> = <RHS>;
+    <'U'> = <RHS>;
+    <'V'> = <RHS>;
+    <'W'> = <RHS>;
+    <'X'> = <RHS>;
+    <'Y'> = <RHS>;
+}
+
+DiophantineSolve {
+    <e.System> = <RHS>;
+    <BuildSet e.System e.Decoded> = <RHS>;
+    <FillSystem e.System e.Decoded e.AllSet t.Size> = <RHS>;
+    <RE e.System e.AllSet e.Filled e.Matrix> = <RHS>;
+    <K e.System e.AllSet e.RowEchelon e.Matrix e.RHS> = <RHS>;
+    <K e.System e.AllSet e.RowEchelon e.Matrix e.RHS> = <RHS>;
+    <X e.System e.AllSet e.Matrix False> = <RHS>;
+    <X e.System e.AllSet e.Matrix e.K> = <RHS>;
+    <Assign e.System e.AllSet e.Matrix e.K False> = <RHS>;
+    <Assign e.System e.AllSet e.Matrix e.K e.Result> = <RHS>;
+    <Apply e.System e.Solution> = <RHS>;
+}
+
+BuildMap {
+    <e.Result> = <RHS>;
+    <t.Any e.Rest e.Result> = <RHS>;
+}
+
+AddToMap {
+    <s.Sym e.Prev e.MS Const t.Counter> = <RHS>;
+    <var 'e' s.name e.Prev var 'e' s.name  t.Counter e.Rest> = <RHS>;
+    <var 'e' s.name e.Prev t.Other e.MS> = <RHS>;
+    <var 'e' s.name e.Prev> = <RHS>;
+    <var 't' s.x1 s.x2 s.x3 s.x4 s.x5 e.Prev e.MS Const t.Counter> = <RHS>;
+}
+
+SubElement {
+    <Const t.Counter e.Rest Const t.Counter2> = <RHS>;
+    <var 'e' s.name t.Counter e.Rest var 'e' s.name t.Counter2 e.Next> = <RHS>;
+    <t.El e.Rest t.Other e.Next> = <RHS>;
+    <var 'e' s.name t.Counter e.Rest> = <RHS>;
+}
+
+SubMaps {
+    <e.First t.Any e.Second> = <RHS>;
+    <e.First> = <RHS>;
+}
+
+ToLengthSystemEquation {
+    <e.Result e.LHS e.RHS e.Rest> = <RHS>;
+    <e.Result> = <RHS>;
+}
+
+FillMissingVar {
+    <var 'e' s.Name t.Counter e.Processed var 'e' s.Name t.Counter2 e.Left> = <RHS>;
+    <var 'e' s.Name '-' t.Counter e.Processed var 'e' s.Name t.Counter2 e.Left> = <RHS>;
+    <var 'e' s.Name t.Counter e.Processed t.Var e.Left> = <RHS>;
+    <var 'e' s.Name t.Counter e.Processed> = <RHS>;
+}
+
+FillMissing {
+    <e.Eq var 'e' s.Name t.Counter e.Left> = <RHS>;
+    <e.Eq> = <RHS>;
+}
+
+FillAll {
+    <e.Result e.Current e.Left e.Set> = <RHS>;
+    <e.Result  e.Set> = <RHS>;
+}
+
+BuildAllMap2 {
+    <var 'e' s.Name e.Any e.Current e.VarSet> = <RHS>;
+    <e.VarSet> = <RHS>;
+}
+
+BuildAllMap {
+    <e.Current Const e.Any e.Left e.VarSet> = <RHS>;
+    <e.VarSet> = <RHS>;
+}
+
+FindMinVar {
+    <e.Set Const e.Any> = <RHS>;
+    <var 'e' s.Name t.Counter e.Left> = <RHS>;
+    <var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2 e.Left> = <RHS>;
+    <var 'e' s.Name t.Counter> = <RHS>;
+    <var 'e' s.Name '-' t.Counter> = <RHS>;
+}
+
+SelectMinLetter {
+    <var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2> = <RHS>;
+    <var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2 'L'> = <RHS>;
+    <var 'e' s.Name t.Counter var 'e' s.Name2 t.Counter2 s.Log> = <RHS>;
+}
+
+ExtractMaxVar {
+    <var 'e' s.Name t.Counter e.Processed var 'e' s.Name t.Counter e.Next> = <RHS>;
+    <var 'e' s.Name t.Counter e.Processed t.Var e.Next> = <RHS>;
+}
+
+SortVars {
+    <> = <RHS>;
+    <e.Vars> = <RHS>;
+    <e.Processed Const t.Counter> = <RHS>;
+    <e.Processed e.Left> = <RHS>;
+    <var 'e' s.Name t.Counter e.Processed var 'e' s.Name t.Counter2> = <RHS>;
+    <var 'e' s.Name t.Counter e.Processed e.Left> = <RHS>;
+}
+
+SetSize {
+    <t.Count> = <RHS>;
+    <t.Any e.AllSet t.Count> = <RHS>;
+}
+
+BuildERow {
+    <t.Number t.Size> = <RHS>;
+    <t.Number t.Size t.Current 0 e.Result> = <RHS>;
+    <t.Number t.Size t.Number t.Left e.Result> = <RHS>;
+    <t.Number t.Size t.Current t.Left e.Result> = <RHS>;
+}
+
+BuildEMatrix {
+    <t.Size> = <RHS>;
+    <t.Counter 0 t.Size e.Result> = <RHS>;
+    <t.Counter t.Left t.Size e.Result> = <RHS>;
+}
+
+GetRHS {
+    <e.Result> = <RHS>;
+    <e.Any Const t.Count2 e.Rest e.Result> = <RHS>;
+}
+
+MakeTransponentRow {
+    <e.Truncated e.Result Const t.Count2 e.Rest> = <RHS>;
+    <e.Truncated e.Result var 'e' s.Name t.Count Const t.Count2 e.Rest> = <RHS>;
+    <e.Truncated e.Result var 'e' s.Name t.Count e.Eq e.Rest> = <RHS>;
+    <e.Truncated e.Result> = <RHS>;
+}
+
+MatrixFromMaps {
+    <> = <RHS>;
+    <e.Result e.System> = <RHS>;
+    <e.Result  e.Row> = <RHS>;
+    <e.Result e.System e.Row> = <RHS>;
+}
+
+GetByIndex {
+    <e.List t.Ind> = <RHS>;
+    <e.List t.Ind> = <RHS>;
+    <t.Current e.List t.Ind t.Ind> = <RHS>;
+    <t.Current e.List t.Ind t.CurrentInd> = <RHS>;
+}
+
+GetByIndexIfNotZero {
+    <e.Row t.Ind> = <RHS>;
+    <0> = <RHS>;
+    <0> = <RHS>;
+    <t.Result> = <RHS>;
+}
+
+Min {
+    <t.Ind1 t.Ind2> = <RHS>;
+    <t.Ind1 t.Second t.Ind2> = <RHS>;
+    <t.First t.Ind1  t.Ind2> = <RHS>;
+    <t.First t.Ind1 t.Second t.Ind2 '+'> = <RHS>;
+    <'-' t.First t.Ind1 t.Second t.Ind2 '+'> = <RHS>;
+    <t.First t.Ind1 '-' t.Second t.Ind2 '+'> = <RHS>;
+    <'-' t.First t.Ind1 '-' t.Second t.Ind2 '+'> = <RHS>;
+    <t.First t.Ind1 t.Second t.Ind2 s.Log> = <RHS>;
+    <'-' t.First t.Ind1 t.Second t.Ind2 s.Log> = <RHS>;
+    <t.First t.Ind1 '-' t.Second t.Ind2 s.Log> = <RHS>;
+    <'-' t.First t.Ind1 '-' t.Second t.Ind2 s.Log> = <RHS>;
+    <t.First t.Ind1 t.Second t.Ind2> = <RHS>;
+    <'-' t.First t.Ind1 t.Second t.Ind2> = <RHS>;
+    <t.First t.Ind1 '-' t.Second t.Ind2> = <RHS>;
+    <'-' t.First t.Ind1 '-' t.Second t.Ind2> = <RHS>;
+}
+
+FindMin {
+    <e.System t.CurrentRow t.CurrentColumn> = <RHS>;
+    <e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '-'> = <RHS>;
+    <e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn '0'> = <RHS>;
+    <e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex> = <RHS>;
+    <e.Row e.System t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex> = <RHS>;
+    <t.Skipped t.CurrentRow t.CurrentColumn s.Log t.CurrentMin t.MinIndex> = <RHS>;
+    <t.Skipped t.CurrentRow t.CurrentColumn s.Log t.MinIndex> = <RHS>;
+}
+
+CalcMultiplier {
+    <t.Value t.ToSubValue> = <RHS>;
+    <'-' t.Value> = <RHS>;
+    <t.Value> = <RHS>;
+}
+
+AddUnwrap {
+    <t.First t.Second> = <RHS>;
+    <'-' t.First t.Second> = <RHS>;
+    <t.First '-' t.Second> = <RHS>;
+    <'-' t.First '-' t.Second> = <RHS>;
+}
+
+SubUnwrap {
+    <t.First t.Second> = <RHS>;
+    <'-' t.First t.Second> = <RHS>;
+    <t.First '-' t.Second> = <RHS>;
+    <'-' t.First '-' t.Second> = <RHS>;
+}
+
+MulUnwrap {
+    <0 t.Any> = <RHS>;
+    <t.Any 0> = <RHS>;
+    <t.First t.Second> = <RHS>;
+    <'-' t.First t.Second> = <RHS>;
+    <t.First '-' t.Second> = <RHS>;
+    <'-' t.First '-' t.Second> = <RHS>;
+}
+
+ModUnwrap {
+    <0 t.Any> = <RHS>;
+    <t.First t.Second> = <RHS>;
+    <'-' t.First t.Second> = <RHS>;
+    <t.First '-' t.Second> = <RHS>;
+    <'-' t.First '-' t.Second> = <RHS>;
+}
+
+DivUnwrap {
+    <0 t.Any> = <RHS>;
+    <t.Value t.ToSubValue> = <RHS>;
+    <'-' t.Value t.ToSubValue> = <RHS>;
+    <t.Value '-' t.ToSubValue> = <RHS>;
+    <'-' t.Value '-' t.ToSubValue> = <RHS>;
+}
+
+CmpUnwrap {
+    <t.First t.Second> = <RHS>;
+    <'-' t.First t.Second> = <RHS>;
+    <t.First '-' t.Second> = <RHS>;
+    <'-' t.First '-' t.Second> = <RHS>;
+}
+
+MyCompare {
+    <0 0> = <RHS>;
+    <0 t.1> = <RHS>;
+    <t.1 0> = <RHS>;
+    <t.1 t.2> = <RHS>;
+}
+
+ReplaceElement {
+    <e.List t.Value t.Index> = <RHS>;
+    <e.List t.Value t.Index> = <RHS>;
+    <e.Processed t.Any e.List t.Value t.Index t.Current '-'> = <RHS>;
+    <e.Processed t.Any e.List t.Value t.Index t.Current '0'> = <RHS>;
+}
+
+SubRow {
+    <e.Row e.RowToSub t.Multiplier> = <RHS>;
+    <Started e.Result t.Element e.Row t.ToSubElement e.RowToSub t.Multiplier> = <RHS>;
+    <Started e.Result   t.Multiplier> = <RHS>;
+}
+
+SubRowWrapper {
+    <e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Value t.CurrentRow t.CurrentColumn t.Ind> = <RHS>;
+    <e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Value t.CurrentRow t.CurrentColumn t.Ind '-'> = <RHS>;
+    <e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Value t.CurrentRow t.CurrentColumn t.Ind s.Log> = <RHS>;
+    <e.ProcessedSystem e.ProcessedMatrix e.Row e.Row2 e.RowToSub e.RowToSub2 t.Multiplier> = <RHS>;
+}
+
+SubRows {
+    <e.System e.Matrix  t.CurrentRow t.CurrentColumn> = <RHS>;
+    <e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn> = <RHS>;
+    <e.System e.Matrix t.Value t.Index t.CurrentRow t.CurrentColumn> = <RHS>;
+    <e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Index t.CurrentRow t.CurrentColumn> = <RHS>;
+    <e.ProcessedSystem e.ProcessedMatrix t.SystemRow e.System t.MatrixRow e.Matrix t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn> = <RHS>;
+    <e.ProcessedSystem e.ProcessedMatrix   t.Value t.Index t.Row t.Row2 t.Ind t.CurrentRow t.CurrentColumn> = <RHS>;
+    <e.ProcessedSystem e.ProcessedMatrix t.CurrentRow t.CurrentColumn> = <RHS>;
+}
+
+MakeRowEchelonForColumn {
+    <e.System e.Matrix t.CurrentRow t.CurrentColumn> = <RHS>;
+    <e.System e.Matrix 'T' t.CurrentRow t.CurrentColumn> = <RHS>;
+    <e.System e.Matrix 'N' t.CurrentRow t.CurrentColumn> = <RHS>;
+    <e.System e.Matrix 'F' t.CurrentRow t.CurrentColumn> = <RHS>;
+}
+
+AddIfNotZero {
+    <t.First 0> = <RHS>;
+    <t.First 0> = <RHS>;
+    <t.First t.Second> = <RHS>;
+}
+
+CheckComplete {
+    <0> = <RHS>;
+    <0> = <RHS>;
+    <1> = <RHS>;
+    <1> = <RHS>;
+    <t.Count> = <RHS>;
+}
+
+SkipRows {
+    <e.Eq t.CurrentRow> = <RHS>;
+    <e.Eq t.CurrentRow> = <RHS>;
+    <e.Eq t.CurrentRow t.CurrentRow> = <RHS>;
+    <t.Any e.Eq t.CurrentRow t.Count> = <RHS>;
+}
+
+IsComplete {
+    <e.Eq t.CurrentRow t.CurrentColumn> = <RHS>;
+    <Started t.Any e.Eq t.CurrentColumn t.Count> = <RHS>;
+    <Started  t.CurrentColumn t.Count> = <RHS>;
+}
+
+MakeRowEchelon {
+    <> = <RHS>;
+    <e.System e.Matrix> = <RHS>;
+    <e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.CurrentColumn> = <RHS>;
+    <e.System e.Matrix t.CurrentRow t.CurrentColumn t.CurrentRow t.Columns> = <RHS>;
+    <e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns> = <RHS>;
+    <e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns Zero e.NewSystem e.NewMatrix> = <RHS>;
+    <e.System e.Matrix t.CurrentRow t.CurrentColumn t.Rows t.Columns NonZero e.NewSystem e.NewMatrix> = <RHS>;
+}
+
+RowsQty {
+    <e.System> = <RHS>;
+    <Started e.Eq e.System t.Count> = <RHS>;
+    <Started  t.Count> = <RHS>;
+}
+
+ColumnsQty {
+    <e.Eq e.System> = <RHS>;
+    <Started t.Any e.Rest t.Count> = <RHS>;
+    <Started  t.Count> = <RHS>;
+}
+
+MakeTransponentRowMatrix {
+    <e.Truncated e.Result t.Count e.Rest> = <RHS>;
+    <e.Truncated e.Result t.Count e.Eq e.Rest> = <RHS>;
+    <e.Truncated e.Result> = <RHS>;
+}
+
+TransposeMatrix {
+    <> = <RHS>;
+    <e.Result e.System> = <RHS>;
+    <e.Result  e.Row> = <RHS>;
+    <e.Result e.System e.Row> = <RHS>;
+}
+
+LetterByInd {
+    <e.List t.Count> = <RHS>;
+    <e.List t.Count> = <RHS>;
+    <s.A e.Rest t.Count t.Count> = <RHS>;
+    <s.A e.Rest t.Count t.Current> = <RHS>;
+}
+
+BuildK {
+    <t.Size> = <RHS>;
+    <t.Size> = <RHS>;
+    <e.Result t.Size t.Size> = <RHS>;
+    <e.Result t.Count t.Size> = <RHS>;
+}
+
+AddToKOrStop {
+    <e.Processed e.Left s.Var 0 t.Value> = <RHS>;
+    <e.Processed e.Left s.Var 0 t.Value> = <RHS>;
+    <e.Processed e.Left s.Var t.C t.Value> = <RHS>;
+    <e.Processed e.Left s.Var t.C t.Value 0> = <RHS>;
+    <e.Processed e.Left s.Var t.C t.Value 0> = <RHS>;
+    <e.Processed e.Left s.Var t.C t.Value t.Any> = <RHS>;
+}
+
+CalculateK {
+    <t.C e.Row e.Processed s.Var t.C2 e.K t.Value> = <RHS>;
+    <t.C e.Row e.Processed s.Var e.K t.Value> = <RHS>;
+}
+
+FindK {
+    <e.RHS> = <RHS>;
+    <e.Matrix e.RHS> = <RHS>;
+    <e.Row e.Matrix t.Value e.RHS e.K> = <RHS>;
+    <e.Matrix e.RHS False> = <RHS>;
+    <e.RHS e.K> = <RHS>;
+}
+
+ChooseK {
+    <e.Matrix False> = <RHS>;
+    <e.Matrix e.K> = <RHS>;
+}
+
+IsNegative {
+    <'-' t.Value> = <RHS>;
+    <t.Value> = <RHS>;
+}
+
+MultiplyRowColumn {
+    <e.Row e.K> = <RHS>;
+    <t.Value> = <RHS>;
+    <0 e.Row s.Name e.Any e.K t.Value> = <RHS>;
+    <t.A e.Row s.Name e.K t.Value> = <RHS>;
+    <t.A e.Row s.Name t.K e.K t.Value> = <RHS>;
+}
+
+FilterSolutions {
+    <e.List> = <RHS>;
+    <e.Result s.Name 'U' e.Rest> = <RHS>;
+    <e.Result s.Name t.Value '-' e.Rest> = <RHS>;
+    <e.Result s.Name t.Value s.Log e.Rest> = <RHS>;
+    <e.Result> = <RHS>;
+}
+
+CalcSolution {
+    <> = <RHS>;
+    <e.Row e.Matrix var 'e' s.Name e.Any e.AllVars e.K> = <RHS>;
+    <e.Result e.Row e.Matrix var 'e' s.Name2 e.Any e.AllVars e.K s.Name t.Value> = <RHS>;
+    <e.Result   e.K s.Name t.Value> = <RHS>;
+}
+
+FindInSolution {
+    <s.Name t.Any e.Solution s.Name> = <RHS>;
+    <s.Name2 t.Any e.Solution s.Name> = <RHS>;
+    <s.Name> = <RHS>;
+}
+
+GenerateLetterVars {
+    <t.Count s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <t.Count s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <e.Result s.x1 s.x2 s.x3 s.x4 s.x5 t.Count t.Current> = <RHS>;
+    <e.Result s.x1 s.x2 s.x3 s.x4 s.x5 t.Count t.Count> = <RHS>;
+}
+
+TryFirstReplaceDifferent {
+    <e.System s.Name s.Name2 t.Diff s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <RE e.System s.Name s.Name2 e.List s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+}
+
+TryFirstReplaceIfHasSolution {
+    <e.System s.Name s.Name2 t.Count1 t.Count2 s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <e.System s.Name s.Name2 t.Count  s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <e.System s.Name s.Name2  t.Count s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <e.System s.Name s.Name2   s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <e.System s.Name s.Name2 '-' t.Diff '-' s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <e.System s.Name s.Name2 t.Diff '0' s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <e.System s.Name s.Name2 t.Diff '+' s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+}
+
+TryFirstReplace {
+    <e.First e.System e.Solution s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <Started e.System var 'e' s.Name e.LHS var 'e' s.Name2 e.RHS e.Solution s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <Started e.System e.LHS e.RHS e.Solution s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+}
+
+ReplaceSingle {
+    <e.System s.Name 0 s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <e.System s.Name 0 s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <e.System s.Name t.Count s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <RE e.System s.Name e.List s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+}
+
+ApplySolution {
+    <e.System> = <RHS>;
+    <e.System e.Solution> = <RHS>;
+    <e.Solution e.System> = <RHS>;
+    <e.Solution e.System s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <Replace s.Name t.Count e.Solution e.System s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+    <Replace  e.System s.x1 s.x2 s.x3 s.x4 s.x5> = <RHS>;
+}

@@ -1,0 +1,104 @@
+function,pattern1,pattern2,result
+Even_0,e.x1 '1' e.x2 e.x3 e.x4,e.x1 e.x2 '1' e.x3 e.x4,True
+Even_0,e.x1 '1' e.x2 e.x3 e.x4,e.x1 e.x2 e.x3 '1' e.x4,True
+Even_0,e.x1 '1' e.x2 e.x3 e.x4,e.x1 'I0' e.x2 e.x3 e.x4,False
+Even_0,e.x1 '1' e.x2 e.x3 e.x4,e.x1 'I' e.x2 e.x3,False
+Even_0,e.x1 '1' e.x2 e.x3 e.x4,e.x1 e.x2 'I0' e.x3 e.x4,False
+Even_0,e.x1 '1' e.x2 e.x3 e.x4,e.x1 e.x2 '0' e.x3,False
+Even_0,e.x1 '1' e.x2 e.x3 e.x4,e.x1 e.x2 e.x3 'I0' e.x4,False
+Even_0,e.x1 '1' e.x2 e.x3 e.x4,e.x1 '0' e.x2 e.x3 e.x4,False
+Even_0,e.x1 '1' e.x2 e.x3 e.x4,e.x1 e.x2 e.x3,False
+Even_0,e.x1 e.x2 '1' e.x3 e.x4,e.x1 e.x2 e.x3 '1' e.x4,True
+Even_0,e.x1 e.x2 '1' e.x3 e.x4,e.x1 'I0' e.x2 e.x3 e.x4,False
+Even_0,e.x1 e.x2 '1' e.x3 e.x4,e.x1 'I' e.x2 e.x3,False
+Even_0,e.x1 e.x2 '1' e.x3 e.x4,e.x1 e.x2 'I0' e.x3 e.x4,False
+Even_0,e.x1 e.x2 '1' e.x3 e.x4,e.x1 e.x2 '0' e.x3,False
+Even_0,e.x1 e.x2 '1' e.x3 e.x4,e.x1 e.x2 e.x3 'I0' e.x4,False
+Even_0,e.x1 e.x2 '1' e.x3 e.x4,e.x1 '0' e.x2 e.x3 e.x4,False
+Even_0,e.x1 e.x2 '1' e.x3 e.x4,e.x1 e.x2 e.x3,False
+Even_0,e.x1 e.x2 e.x3 '1' e.x4,e.x1 'I0' e.x2 e.x3 e.x4,False
+Even_0,e.x1 e.x2 e.x3 '1' e.x4,e.x1 'I' e.x2 e.x3,False
+Even_0,e.x1 e.x2 e.x3 '1' e.x4,e.x1 e.x2 'I0' e.x3 e.x4,False
+Even_0,e.x1 e.x2 e.x3 '1' e.x4,e.x1 e.x2 '0' e.x3,False
+Even_0,e.x1 e.x2 e.x3 '1' e.x4,e.x1 e.x2 e.x3 'I0' e.x4,False
+Even_0,e.x1 e.x2 e.x3 '1' e.x4,e.x1 '0' e.x2 e.x3 e.x4,False
+Even_0,e.x1 e.x2 e.x3 '1' e.x4,e.x1 e.x2 e.x3,False
+Even_0,e.x1 'I0' e.x2 e.x3 e.x4,e.x1 'I' e.x2 e.x3,False
+Even_0,e.x1 'I0' e.x2 e.x3 e.x4,e.x1 e.x2 'I0' e.x3 e.x4,True
+Even_0,e.x1 'I0' e.x2 e.x3 e.x4,e.x1 e.x2 '0' e.x3,False
+Even_0,e.x1 'I0' e.x2 e.x3 e.x4,e.x1 e.x2 e.x3 'I0' e.x4,True
+Even_0,e.x1 'I0' e.x2 e.x3 e.x4,e.x1 '0' e.x2 e.x3 e.x4,False
+Even_0,e.x1 'I0' e.x2 e.x3 e.x4,e.x1 e.x2 e.x3,False
+Even_0,e.x1 'I' e.x2 e.x3,e.x1 e.x2 'I0' e.x3 e.x4,False
+Even_0,e.x1 'I' e.x2 e.x3,e.x1 e.x2 '0' e.x3,False
+Even_0,e.x1 'I' e.x2 e.x3,e.x1 e.x2 e.x3 'I0' e.x4,False
+Even_0,e.x1 'I' e.x2 e.x3,e.x1 '0' e.x2 e.x3 e.x4,False
+Even_0,e.x1 'I' e.x2 e.x3,e.x1 e.x2 e.x3,False
+Even_0,e.x1 e.x2 'I0' e.x3 e.x4,e.x1 e.x2 '0' e.x3,False
+Even_0,e.x1 e.x2 'I0' e.x3 e.x4,e.x1 e.x2 e.x3 'I0' e.x4,True
+Even_0,e.x1 e.x2 'I0' e.x3 e.x4,e.x1 '0' e.x2 e.x3 e.x4,False
+Even_0,e.x1 e.x2 'I0' e.x3 e.x4,e.x1 e.x2 e.x3,False
+Even_0,e.x1 e.x2 '0' e.x3,e.x1 e.x2 e.x3 'I0' e.x4,False
+Even_0,e.x1 e.x2 '0' e.x3,e.x1 '0' e.x2 e.x3 e.x4,True
+Even_0,e.x1 e.x2 '0' e.x3,e.x1 e.x2 e.x3,False
+Even_0,e.x1 e.x2 e.x3 'I0' e.x4,e.x1 '0' e.x2 e.x3 e.x4,False
+Even_0,e.x1 e.x2 e.x3 'I0' e.x4,e.x1 e.x2 e.x3,False
+Even_0,e.x1 '0' e.x2 e.x3 e.x4,e.x1 e.x2 e.x3,False
+Even_1_0,'II' e.x1 e.x2 e.x3 e.x4,'I' 'I' e.x1 e.x2 e.x3,False
+Even_1_0,'II' e.x1 e.x2 e.x3 e.x4,'II' e.x1 e.x2 e.x3,True
+Even_1_0,'I' 'I' e.x1 e.x2 e.x3,'II' e.x1 e.x2 e.x3,False
+Even_13_0,'II' e.x1 e.x2 e.x3,'I' 'I' e.x1 e.x2,False
+Even_13_0,'II' e.x1 e.x2 e.x3,'I'  e.x1,False
+Even_13_0,'II' e.x1 e.x2 e.x3,'II' e.x1 e.x2,True
+Even_13_0,'II' e.x1 e.x2 e.x3,'I' e.x1,False
+Even_13_0,'II' e.x1 e.x2 e.x3,'I' e.x1,False
+Even_13_0,'II' e.x1 e.x2 e.x3,,False
+Even_13_0,'I' 'I' e.x1 e.x2,'I'  e.x1,False
+Even_13_0,'I' 'I' e.x1 e.x2,'II' e.x1 e.x2,False
+Even_13_0,'I' 'I' e.x1 e.x2,'I' e.x1,False
+Even_13_0,'I' 'I' e.x1 e.x2,'I' e.x1,False
+Even_13_0,'I' 'I' e.x1 e.x2,,False
+Even_13_0,'I'  e.x1,'II' e.x1 e.x2,False
+Even_13_0,'I'  e.x1,'I' e.x1,True
+Even_13_0,'I'  e.x1,'I' e.x1,True
+Even_13_0,'I'  e.x1,,False
+Even_13_0,'II' e.x1 e.x2,'I' e.x1,False
+Even_13_0,'II' e.x1 e.x2,'I' e.x1,False
+Even_13_0,'II' e.x1 e.x2,,False
+Even_13_0,'I' e.x1,'I' e.x1,True
+Even_13_0,'I' e.x1,,False
+Even_13_0,'I' e.x1,,False
+Even_13_1,'II' e.x1 e.x2,'I' e.x1,False
+Even_13_1,'II' e.x1 e.x2,'I' e.x1,False
+Even_13_1,'II' e.x1 e.x2,,False
+Even_13_1,'I' e.x1,'I' e.x1,True
+Even_13_1,'I' e.x1,,False
+Even_13_1,'I' e.x1,,False
+Even_123_0,'II' e.x1,,False
+Even_123_0,'II' e.x1,'I',False
+Even_123_0,,'I',False
+Even_123_1,'II' e.x1,,False
+Even_123_1,'II' e.x1,'I',False
+Even_123_1,,'I',False
+Even_123_2,'II' e.x1,,False
+Even_123_2,'II' e.x1,'I',False
+Even_123_2,,'I',False
+Even_123_3,'II' e.x1,,False
+Even_123_3,'II' e.x1,'I',False
+Even_123_3,,'I',False
+Even_123_4,'II' e.x1,,False
+Even_123_4,'II' e.x1,'I',False
+Even_123_4,,'I',False
+Even_123_5,'II' e.x1,,False
+Even_123_5,'II' e.x1,'I',False
+Even_123_5,,'I',False
+Even_13_2,'II' e.x1 e.x2,'I' e.x1,False
+Even_13_2,'II' e.x1 e.x2,'I' e.x1,False
+Even_13_2,'II' e.x1 e.x2,,False
+Even_13_2,'I' e.x1,'I' e.x1,True
+Even_13_2,'I' e.x1,,False
+Even_13_2,'I' e.x1,,False
+Even_123_6,'II' e.x1,,False
+Even_123_6,'II' e.x1,'I',False
+Even_123_6,,'I',False
+Even_1,e.x1,e.x1 s.z1 e.x2,True
