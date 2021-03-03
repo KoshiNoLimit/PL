@@ -3,7 +3,7 @@ import algorithm.pattern_format as pf
 from algorithm.substitution import *
 import logging
 
-#logging.basicConfig(level=logging.DEBUG)
+# logging.basicConfig(level=logging.DEBUG)
 
 
 def enclosure_check(p1, p2):
@@ -45,8 +45,8 @@ def EPL_method(p1, p2):
     N = pf.len_max_t_subword(p1)
     q = ConstSubstitution.build(p2, N)
 
-    subs = ConstSubstitution(q, p1)
-    return subs.algorithm()
+    sub = ConstSubstitution(q, p1)
+    return sub.algorithm()
 
 
 def not_linear_method(p1, p2):
