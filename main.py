@@ -25,7 +25,5 @@ def code_tests_run():
         program_to_works(file)
 
 
-# unit_tests_run()
 code_tests_run()
-
-#print(enclosure_check('t.El e.Rest t.Other e.Next', 't.El e.Rest'))
+# unit_tests_run()
